@@ -12,6 +12,7 @@
 | Sofia "Sofi" Delgado | Chilean | 1990s | Feminist journalist | ? | Underground newsletter "Mujeres en Fuego" |
 | Andrés "Andy" Pérez | Mexican | 1970s | "Guerrilla" reporter | ? | Embedded with student protests; self-published chapbook |
 | Hunter S. Thompson | American | 1970s | Rolling Stone correspondent | Rolling Stone archives | Popularized "gonzo journalism" term |
+| Mariana van Zeller | Portuguese | 2010s-20s | Investigative journalist | Paramount+ | Goes inside dangerous black markets; drug cartels, human trafficking; gonzo-style immersive investigation |
 | William S. Burroughs | American | 1950s-60s | Experimental novelist | Literary archives | Cut-up technique influenced gonzo style |
 | Truman Capote | American | 1960s | Esquire writer | Literary archives | "Non-fiction novel" precursor to gonzo |
 | Lester Bangs | American | 1970s | Music journalist | Anthology collections | Influential music gonzo journalism |
