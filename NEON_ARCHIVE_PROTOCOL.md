@@ -7,6 +7,8 @@
 | Name | Nationality | Era | Contribution | Archive Status | Notes |
 |------|-------------|-----|-------------|----------------|-------|
 | Veikko Ennala | Finnish | 1950s | Sports reporter | Wikimedia Commons photo | First documented gonzo-style immersion journalist; FEATURED IN THE SCROLL |
+| Riku Rantala | Finnish | 2000s | TV Journalist/Director | Finnish archives | "Madventures" - Finnish gonzo travel show; traveled world immersive documentaries; with Tunna Milonoff |
+| Tunna Milonoff | Finnish | 2000s | TV Journalist/Director | Finnish archives | "Madventures" - Finnish gonzo travel show; traveled world immersive documentaries; with Riku Rantala |
 | Jessikka Aro | Finnish | 2010s-20s | Investigative journalist | Finnish archives | JAILED for investigating pro-Russia hate campaign; exposed Russian troll farms; convicted 2019 |
 | Marcelina "Marca" Varela | Argentine | 1970s | Investigative reporter | ? | Exposed military censorship ring; went underground |
 | Javier "Che" Rojas | Uruguayan | 1980s | Political cartoonist | ? | Published clandestine zine "Grito Libre" |
