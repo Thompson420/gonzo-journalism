@@ -73,6 +73,12 @@
 | Arshad Sharif | Pakistani | 2020s | Investigative journalist | ARY News | Prominent Pakistani journalist; fled Pakistan after sedition charges; SHOT DEAD in Kenya 2022; critical of military; "mistaken identity" |
 | Daphne Caruana Galizia | Maltese | 1987-2017 | Investigative journalist | Running Commentary blog | LEGEND; exposed Panama Papers in Malta; ASSASSINATED by CAR BOMB 2017; investigated corruption, money laundering; 48 libel suits; called "one-woman WikiLeaks" |
 | Ján Kuciak | Slovak | 2010s | Investigative journalist | Aktuality.sk | KILLED 2018; investigated corruption, Mafia links; shot at home with girlfriend; sparked massive protests in Slovakia |
+| Kurdish Journalists | Kurdish | 2020s | Various | Various | Multiple journalists jailed in Turkey; 2 killed in suspected Turkish drone attack in Syria 2024 |
+| Mech Dara | Cambodian | 2020s | Investigative journalist | Cambodian archives | Award-winning journalist; arrested 2024 for "incitement"; exposed scams |
+| Hem Vanna | Cambodian | 2020s | Investigative journalist | Cambodian archives | Arrested after exposing cyberscam farms; unjustly detained |
+| Anna Politkovskaya | Russian | 1990s-2006 | Journalist | Novaya Gazeta | Pulitzer Prize winner; covered Chechnya, Putin corruption; ASSASSINATED 2006 in Moscow; symbol of press freedom |
+| Bangladeshi Journalists | Bangladeshi | 2020s | Various | Various | Multiple arrested for investigating corruption, terrorism charges; 2021-2025 crackdown |
+| Myanmar Journalists | Myanmarese | 2021-2025 | Various | Various | Since 2021 coup: journalists tortured, killed in custody, arrested en masse; "terror campaign" by military |
 | Valentin Gendrot | French | 2020s | Investigative journalist | French archives | Went undercover with French police for 6 months; wrote book "Flic" exposing police brutality and racism in Paris |
 | Antonio Salas | Spanish | 2000s-10s | Undercover journalist | Spanish archives | Infiltrated Ultras Sur (neo-Nazi hooligans); exposed sex trafficking; infiltrated Hamas, Al-Qaeda, FARC, Carlos the Jackal; had himself circumcised to maintain cover; contract on his life |
 | Nick McKenzie | Australian | 2000s-20s | Investigative journalist | Australian archives | 20 Walkley Awards; exposed Reserve Bank bribery, Crown casino, Australian war crimes, Chinese foreign interference; won "defamation trial of century" vs Ben Roberts-Smith |
