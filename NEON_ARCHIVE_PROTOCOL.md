@@ -29,6 +29,7 @@
 | Seymour Hersh | American | 1960s-2020s | Investigative reporter | Pulitzer Prize | LEGEND; exposed My Lai Massacre 1969; Abu Ghraib; Syrian chemical weapons; Pulitzer Prize 1970; ongoing investigative work into Biden/Ukraine |
 | Veronica Guerin | Irish | 1990s | Investigative journalist | Sunday Independent | ASSASSINATED 1996; exposed gangland crime in Ireland; shot on way to court; sparked Criminal Assets Bureau establishment |
 | Jake Adelstein | American | 2000s-20s | Investigative journalist | Tokyo Vice | Covered Yakuza in Japan; wrote "Tokyo Vice"; death threats; exposed Japanese organized crime |
+| Javier Valdez | Mexican | 2000s-2017 | Journalist | Ríodo Mayor | KILLED 2017; covered drug cartels; wrote about organized crime; awarded |
 | Banana Yoshimoto | Japanese | 1980s-90s | Novelist | Japanese literary | Japanese gonzo, personal narrative |
 | Haruki Murakami | Japanese | 1980s-90s | Novelist | Literary archives | Japanese gonzo, magical realism |
 | Binyavanga Wainaina | Kenyan | 2000s | Granta/Guardian writer | Literary archives | African gonzo, personal narrative |

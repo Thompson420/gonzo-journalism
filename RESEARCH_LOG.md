@@ -24,6 +24,13 @@
 - Slovakia: Ján Kuciak (detailed doc created!)
 - Ireland: Veronica Guerin
 - Portugal: Mariana van Zeller
+- Japan: Jake Adelstein (Tokyo Vice)
+
+### Detailed Docs Created:
+- GUNTER_WALLRAFF.md
+- NELLIE_BLY.md
+- DAPHNE_CARUANA_GALIZIA.md
+- JAN_KUCIAK.md
 
 ### To Do:
 - Check database BEFORE adding any new entries
