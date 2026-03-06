@@ -45,6 +45,7 @@
 | Binyavanga Wainaina | Kenyan | 2000s-10s | Memoirist/Writer | Literary archives | Founded Kwani? (2003); Caine Prize 2002; "How to Write About Africa" (2005); came out as gay 2014; died 2019 |
 | Anas Aremeyaw Anas | Ghanaian | 2000s-20s | Investigative journalist | Ghanaian archives | "Faceless" undercover gonzo; "Number 12" exposé took down Ghana FA; collaborator assassinated 2019 |
 | Fisayo Soyombo | Nigerian | 2010s-20s | Investigative journalist | Nigerian archives | Undercover gonzo; got arrested to expose police corruption; spent 5 days in cell, 8 days in prison |
+| Cecilia Okoth | Ugandan | 2018-23 | Investigative journalist | Ugandan archives | Undercover at cancer center exposing medical bribery; exposed child trafficking to Kenya; helped rescue ~300 girls |
 | Eugène Marais | South African | 1920s-30s | Nature writer | South African archives | Early gonzo pioneer; lived immersed in nature for "The Soul of the White Ant" |
 | Arthur Maimane | South African | 1950s | Novelist/Journalist | Drum Magazine archives | Exposed Sophiatown street life through tavern observations |
 | Jacques Pauw | South African | 1990s-2000s | Investigative journalist | South African archives | "The President's Keepers" - political gonzo nonfiction |
