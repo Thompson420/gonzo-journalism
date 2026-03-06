@@ -25,6 +25,8 @@
 - Ukraine: Viktoriia Roshchyna
 - Belarus: Raman Pratasevich
 - Kurdish: journalists in Turkey/Syria
+- Portugal: Mariana van Zeller
+- Germany: Günter Wallraff (detailed doc created!)
 
 ### To Do:
 - Check database BEFORE adding any new entries
