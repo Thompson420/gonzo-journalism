@@ -47,6 +47,9 @@
 | Fisayo Soyombo | Nigerian | 2010s-20s | Investigative journalist | Nigerian archives | Undercover gonzo; got arrested to expose police corruption; spent 5 days in cell, 8 days in prison |
 | Cecilia Okoth | Ugandan | 2018-23 | Investigative journalist | Ugandan archives | Undercover at cancer center exposing medical bribery; exposed child trafficking to Kenya; helped rescue ~300 girls |
 | Anonymous Ugandan Journalist | Ugandan | 2010s-20s | Investigative journalist | ? | Sold into slavery in Dubai (6000 Dirham) to investigate maid abuse; posed as housemaid to expose trafficking |
+| Estacio Valoi | Mozambican | 2010s | Investigative journalist | Mozambican archives | Ruby mining exposé in Cabo Delgado; exposed corruption + deaths |
+| Carlos Cardoso | Mozambican | 1990s-2000 | Investigative journalist | Mozambican archives | Exposed bank privatization corruption; murdered 2000 |
+| Rafael Marques de Morais | Angolan | 2000s-20s | Anti-corruption journalist | Angolan archives | Runs "Maka Angola"; won 2015 Allard Prize for International Integrity |
 | Eugène Marais | South African | 1920s-30s | Nature writer | South African archives | Early gonzo pioneer; lived immersed in nature for "The Soul of the White Ant" |
 | Arthur Maimane | South African | 1950s | Novelist/Journalist | Drum Magazine archives | Exposed Sophiatown street life through tavern observations |
 | Jacques Pauw | South African | 1990s-2000s | Investigative journalist | South African archives | "The President's Keepers" - political gonzo nonfiction |
