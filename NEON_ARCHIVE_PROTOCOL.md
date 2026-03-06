@@ -42,7 +42,7 @@
 | The Yes Men | American | 1990s-2000s | Activist group | Activism archives | Collaborative gonzo, activist journalism |
 | Laurie Anderson | American | 1980s-2000s | Performance artist | Performance archives | Hybrid gonzo, multimedia journalism |
 | Trevor Noah | South African | 2010s-20s | Comedian/Writer | Comedy archives | Emerging gonzo, comedic journalism |
-| AI Journalists | Various | 2020s | Automated reporting | Digital archives | Future gonzo, AI-powered journalism |
+| Rong Wongsawan | Thai | 1960s-70s | War correspondent | Thai literary archives | Independent gonzo, covered Vietnam War from Thailand; wrote "The Man from Bangkok" |
 
 ## Protocol Status
 - **Active**: Adding new entries weekly
