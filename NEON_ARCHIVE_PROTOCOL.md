@@ -28,6 +28,7 @@
 | Nellie Bly | American | 1880s-1890s | Investigative reporter | Newspaper archives | PIONEER; "stunt journalism"; exposed asylum conditions 1887; "Ten Days in a Mad-House"; around the world in 72 days |
 | Seymour Hersh | American | 1960s-2020s | Investigative reporter | Pulitzer Prize | LEGEND; exposed My Lai Massacre 1969; Abu Ghraib; Syrian chemical weapons; Pulitzer Prize 1970; ongoing investigative work into Biden/Ukraine |
 | Veronica Guerin | Irish | 1990s | Investigative journalist | Sunday Independent | ASSASSINATED 1996; exposed gangland crime in Ireland; shot on way to court; sparked Criminal Assets Bureau establishment |
+| Jake Adelstein | American | 2000s-20s | Investigative journalist | Tokyo Vice | Covered Yakuza in Japan; wrote "Tokyo Vice"; death threats; exposed Japanese organized crime |
 | Banana Yoshimoto | Japanese | 1980s-90s | Novelist | Japanese literary | Japanese gonzo, personal narrative |
 | Haruki Murakami | Japanese | 1980s-90s | Novelist | Literary archives | Japanese gonzo, magical realism |
 | Binyavanga Wainaina | Kenyan | 2000s | Granta/Guardian writer | Literary archives | African gonzo, personal narrative |
