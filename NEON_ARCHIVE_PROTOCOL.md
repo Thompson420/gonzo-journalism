@@ -42,7 +42,7 @@
 | The Yes Men | American | 1990s-2000s | Activist group | Activism archives | Collaborative gonzo, activist journalism |
 | Laurie Anderson | American | 1980s-2000s | Performance artist | Performance archives | Hybrid gonzo, multimedia journalism |
 | Trevor Noah | South African | 2010s-20s | Comedian/Writer | Comedy archives | Emerging gonzo, comedic journalism |
-| Binyavanga Wainaina | Kenyan | 2000s-10s | Memoirist/Writer | Literary archives | Founded Kwani?; "How to Write About Africa"; died 2019 |
+| Binyavanga Wainaina | Kenyan | 2000s-10s | Memoirist/Writer | Literary archives | Founded Kwani? (2003); Caine Prize 2002; "How to Write About Africa" (2005); came out as gay 2014; died 2019 |
 | Eugène Marais | South African | 1920s-30s | Nature writer | South African archives | Early gonzo pioneer; lived immersed in nature for "The Soul of the White Ant" |
 | Arthur Maimane | South African | 1950s | Novelist/Journalist | Drum Magazine archives | Exposed Sophiatown street life through tavern observations |
 | Jacques Pauw | South African | 1990s-2000s | Investigative journalist | South African archives | "The President's Keepers" - political gonzo nonfiction |
