@@ -25,6 +25,7 @@
 - Ireland: Veronica Guerin
 - Portugal: Mariana van Zeller
 - Japan: Jake Adelstein (Tokyo Vice)
+- Nordic: Asne Seierstad (Norway), Stieg Larsson (Sweden), Icelandic journalists
 
 ### Detailed Docs Created:
 - GUNTER_WALLRAFF.md
