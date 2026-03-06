@@ -24,6 +24,7 @@
 | Robert Crumb | American | 1960s-70s | Zap Comix artist | Comic archives | Visual gonzo, counterculture journalism |
 | Ryszard Kapuściński | Polish | 1970s-80s | War correspondent | Literary archives | Polish gonzo, war correspondent |
 | Günter Grass | German | 1960s | Der Spiegel writer | Literary archives | German gonzo, political fiction |
+| Günter Wallraff | German | 1960s-2020s | Undercover journalist | German archives | LEGEND; undercover since 1960s; posed as worker, patient, migrant; exposed working conditions, tabloid journalism; famous "Headless" book; hosted Wolf Biermann, Salman Rushdie |
 | Banana Yoshimoto | Japanese | 1980s-90s | Novelist | Japanese literary | Japanese gonzo, personal narrative |
 | Haruki Murakami | Japanese | 1980s-90s | Novelist | Literary archives | Japanese gonzo, magical realism |
 | Binyavanga Wainaina | Kenyan | 2000s | Granta/Guardian writer | Literary archives | African gonzo, personal narrative |
