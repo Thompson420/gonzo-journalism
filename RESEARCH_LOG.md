@@ -18,15 +18,12 @@
 - Latin America pioneers already there
 
 ### Last Researched:
-- Russian: Anna Politkovskaya
-- Bangladesh: journalists arrested
-- Myanmar: coup journalists
-- Cambodia: Mech Dara, Hem Vanna
-- Ukraine: Viktoriia Roshchyna
-- Belarus: Raman Pratasevich
-- Kurdish: journalists in Turkey/Syria
-- Portugal: Mariana van Zeller
 - Germany: Günter Wallraff (detailed doc created!)
+- USA: Nellie Bly (detailed doc created!)
+- Malta: Daphne Caruana Galizia (detailed doc created!)
+- Slovakia: Ján Kuciak (detailed doc created!)
+- Ireland: Veronica Guerin
+- Portugal: Mariana van Zeller
 
 ### To Do:
 - Check database BEFORE adding any new entries
