@@ -6,7 +6,7 @@
 
 | Name | Nationality | Era | Contribution | Archive Status | Notes |
 |------|-------------|-----|-------------|----------------|-------|
-| Veikko Ennala | Finnish | 1950s | Sports reporter | Wikimedia Commons photo | First documented gonzo-style immersion journalist |
+| Veikko Ennala | Finnish | 1950s | Sports reporter | Wikimedia Commons photo | First documented gonzo-style immersion journalist; FEATURED IN THE SCROLL |
 | Marcelina "Marca" Varela | Argentine | 1970s | Investigative reporter | ? | Exposed military censorship ring; went underground |
 | Javier "Che" Rojas | Uruguayan | 1980s | Political cartoonist | ? | Published clandestine zine "Grito Libre" |
 | Sofia "Sofi" Delgado | Chilean | 1990s | Feminist journalist | ? | Underground newsletter "Mujeres en Fuego" |
@@ -81,7 +81,6 @@
 | Myanmar Journalists | Myanmarese | 2021-2025 | Various | Various | Since 2021 coup: journalists tortured, killed in custody, arrested en masse; "terror campaign" by military |
 | Viktoriia Roshchyna | Ukrainian | 2020s | Journalist | Ukrainian archives | Died in Russian custody 2025; TORTURED; detained for covering Ukraine war; "numerous signs of torture" |
 | Raman Pratasevich | Belarusian | 2020s | Journalist | Belarusian archives | Ryanair flight hijacked 2021; arrested; sentenced to 8 years; regime critic |
-| Veikko Ennala | Finnish | 1950s-1980s | Journalist | Hymy magazine | Finnish journalist; worked for Hymy magazine; known for nuanced character studies; sophisticated dresser; character in Risto Jarva film; FEATURED IN THE SCROLL |
 | Valentin Gendrot | French | 2020s | Investigative journalist | French archives | Went undercover with French police for 6 months; wrote book "Flic" exposing police brutality and racism in Paris |
 | Antonio Salas | Spanish | 2000s-10s | Undercover journalist | Spanish archives | Infiltrated Ultras Sur (neo-Nazi hooligans); exposed sex trafficking; infiltrated Hamas, Al-Qaeda, FARC, Carlos the Jackal; had himself circumcised to maintain cover; contract on his life |
 | Nick McKenzie | Australian | 2000s-20s | Investigative journalist | Australian archives | 20 Walkley Awards; exposed Reserve Bank bribery, Crown casino, Australian war crimes, Chinese foreign interference; won "defamation trial of century" vs Ben Roberts-Smith |
