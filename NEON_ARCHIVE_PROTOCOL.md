@@ -53,6 +53,8 @@
 | Maria Sarungi Tsehai | Tanzanian | 2020s | Journalist | Tanzanian archives | Briefly abducted in Kenya; activist journalist |
 | Erick Kabendera | Tanzanian | 2010s | Investigative journalist | Tanzanian archives | Arrested 2019 on sedition charges; jailed |
 | Zimbabwe Gold Mafia Journalists | Zimbabwean | 2023 | Investigative journalists | Al Jazeera archives | Exposed gold smuggling + money laundering involving gov officials |
+| Pape Alé Niang | Senegalese | 2020s | Investigative journalist | Senegalese archives | Arrested multiple times; hunger strike 2023; investigated political corruption |
+| Phillipbert Brown | Liberian | 2010s-20s | Investigative journalist | Liberian archives | Investigated "missing billions"; received death threats; declared wanted |
 | Mads Brügger | Danish | 2010s | Gonzo journalist/Director | Danish archives | "The Ambassador" (2011) - went undercover as Liberian ambassador to expose blood diamonds in CAR; "Cold Case Hammarskjöld" (2019) - investigated UN Sec-Gen death, linked to South African white supremacist organization; Sundance winner |
 | Eugène Marais | South African | 1920s-30s | Nature writer | South African archives | Early gonzo pioneer; lived immersed in nature for "The Soul of the White Ant" |
 | Arthur Maimane | South African | 1950s | Novelist/Journalist | Drum Magazine archives | Exposed Sophiatown street life through tavern observations |
@@ -62,6 +64,7 @@
 | Rong Wongsawan | Thai | 1960s-70s | War correspondent | Thai literary archives | Independent gonzo, covered Vietnam War from Thailand; wrote "The Man from Bangkok" |
 | Rodolfo Walsh | Argentine | 1950s-70s | Investigative reporter | Argentine archives | Founder of investigative journalism; "Operación Masacre" (1957) first non-fiction novel; killed 1977 |
 | Tiziano Terzani | Italian | 1965-2004 | War correspondent | Italian literary archives | Covered fall of Saigon & Phnom Penh; literary gonzo style in Asia reporting |
+| Mónica González | Chilean | 1980s-2020s | Investigative journalist | Chilean archives | Exposed Pinochet secrets; broke thousands of secret police docs used to prosecute dictatorship; jailed multiple times; Dan David Prize 2006 |
 
 ## Protocol Status
 - **Active**: Adding new entries weekly
