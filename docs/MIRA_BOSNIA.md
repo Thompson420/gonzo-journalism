@@ -19,7 +19,7 @@ Mira is a Bosnian journalist.
 
 ### Exposed
 - Genocide denial
-- perpetrators
+- Perpetrators
 - Justice
 
 ---
