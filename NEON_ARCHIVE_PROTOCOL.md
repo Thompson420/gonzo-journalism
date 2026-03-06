@@ -50,6 +50,8 @@
 | Estacio Valoi | Mozambican | 2010s | Investigative journalist | Mozambican archives | Ruby mining exposé in Cabo Delgado; exposed corruption + deaths |
 | Carlos Cardoso | Mozambican | 1990s-2000 | Investigative journalist | Mozambican archives | Exposed bank privatization corruption; murdered 2000 |
 | Rafael Marques de Morais | Angolan | 2000s-20s | Anti-corruption journalist | Angolan archives | Runs "Maka Angola"; won 2015 Allard Prize for International Integrity |
+| Maria Sarungi Tsehai | Tanzanian | 2020s | Journalist | Tanzanian archives | Briefly abducted in Kenya; activist journalist |
+| Erick Kabendera | Tanzanian | 2010s | Investigative journalist | Tanzanian archives | Arrested 2019 on sedition charges; jailed |
 | Eugène Marais | South African | 1920s-30s | Nature writer | South African archives | Early gonzo pioneer; lived immersed in nature for "The Soul of the White Ant" |
 | Arthur Maimane | South African | 1950s | Novelist/Journalist | Drum Magazine archives | Exposed Sophiatown street life through tavern observations |
 | Jacques Pauw | South African | 1990s-2000s | Investigative journalist | South African archives | "The President's Keepers" - political gonzo nonfiction |
