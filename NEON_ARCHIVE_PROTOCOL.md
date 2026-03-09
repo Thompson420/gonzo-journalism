@@ -266,3 +266,14 @@
 | Jennifer S. Cheng | Chinese-American | 2020s | Uyghur coverage | International archives | Exposed Xinjiang camps |
 | Li Yuan | Chinese | 2020s | Tech journalist | International archives | Covered tech sector crackdowns |
 | Steven Lee Myers | American (China) | 2010s-2020s | NYT bureau chief | International archives | Covered China for 30 years |
+| Sonia M. | Tunisian | 2010s-2020s | Revolution journalist | Tunisian archives | Covered Jasmine Revolution 2011 |
+| Lotfi L. | Tunisian | 2020s | Corruption investigator | Tunisian archives | Exposed government corruption; arrested 2021 |
+| Sophie S. | Moroccan | 2020s | Human rights journalist | Moroccan archives | Covered Hirak movement; faced harassment |
+| Rida R. | Libyan | 2010s-2020s | War correspondent | Libyan archives | Covered 2011 revolution; multiple kidnappings |
+| Amira T. | Libyan | 2020s | Women's rights journalist | Libyan archives | Documented women's participation in conflict |
+| Mohameden O. | Mauritanian | 2020s | Slavery investigator | Mauritanian archives | Exposed slavery rings |
+| Brahim N. | Sahrawi | 2020s | Independence journalist | Algerian archives | Covered Sahrawi cause in refugee camps |
+| Nino G. | Georgian | 2010s-2020s | EU integration journalist | Georgian archives | Covered Russia-Georgia war; occupied territories |
+| David S. | Georgian | 2020s | Freedom of press advocate | Georgian archives | Covered anti-government protests |
+| Arzu G. | Azerbaijani | 2020s | Investigative journalist | Azerbaijani archives | Exposed government corruption |
+| Marine K. | Armenian | 2020s | Nagorno-Karabakh correspondent | Armenian archives | Covered 2020 war; documented atrocities |
