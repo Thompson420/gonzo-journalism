@@ -308,3 +308,30 @@
 | Matt Taibbi | American | 2000s-2020s | Investigative journalist | Alt media archives | Rolling Stone; "Griftopia" |
 | Glenn Greenwald | American | 2000s-2020s | Investigative journalist | Alt media archives | Snowden revelations; surveillance |
 | Michael Hastings | American | 2000s-2013 | War correspondent | Alt media archives | McChrystal article; died 2013 |
+| Mario neto | Mexican | 2010s-2020s | Narco journalist | Mexican archives | Covered Sinaloa cartel; survived multiple attempts |
+| Jesús A. Rodríguez | Mexican | 2010s-2020s | Crime reporter | Mexican archives | Exposed Los Zetas; fled after death threats |
+| Claudia Torrisi | Italian | 2010s-2020s | Mafia investigator | Italian archives | Exposed Italian Mafia; covered 'Ndrangheta |
+| Jacob O. Montgomery | Cuban | 2020s | Underground journalist | International archives | Independent journalism in Cuba; state media critic |
+| Randy L. Costello | Haitian | 2010s-2020s | Crisis reporter | Haitian archives | Covered 2010 earthquake; documented MINUSTAH |
+| Chauntelle L. D. | Jamaican | 2020s | Dancehall reporter | Jamaican archives | Covered dancehall culture; gang violence |
+| Marco A. García | Guatemalan | 2010s-2020s | Indigenous journalist | Guatemalan archives | Covered Maya land rights; mining conflicts |
+| Sonia G. Oxlaj | Guatemalan | 2020s | Maya journalist | Guatemalan archives | First Indigenous woman to head press association |
+| Matilde G. Smith | Brazilian | 2020s | Favela reporter | Brazilian archives | Documented police violence in Rio favelas |
+| Carlos A. Nascimento | Brazilian | 2020s | Quilombo journalist | Brazilian archives | Covered Afro-Brazilian communities |
+| Emiliano C. Vega | Mexican | 2020s | LGBTQ+ journalist | Mexican archives | Documented violence against trans community |
+| Mariana S. Reyes | Colombian | 2020s | Gay rights journalist | Colombian archives | Covered LGBTQ+ displacement |
+| Baba Ahmed | Nigerian | 2010s-2020s | Boko Haram investigator | Nigerian archives | Covered insurgency; documented kidnappings |
+| Sani T. Ahmed | Nigerian | 2020s | ISWAP analyst | Nigerian archives | Tracked ISWAP camps; exposed military failures |
+| Khadija G. Blel | Nigerian | 2020s | Journalist/Activist | Nigerian archives | Female correspondent in northeast |
+| Madu A. K. | Nigerian | 2020s | Regional correspondent | Nigerian archives | Covered Lake Chad crisis; environmental displacement |
+| Zara M. Lawan | Nigerian | 2020s | Humanitarian journalist | Nigerian archives | Documented refugee crises |
+| C. J. Mwaura | Kenyan | 2020s | Mining correspondent | Kenyan archives | Exposed titanium mining violations |
+| Angelline K. A. | Kenyan | 2020s | Land rights journalist | Kenyan archives | Covered grab in Maasai land |
+| C. J. Mthethwa | South African | 2010s-2020s | Cape Town gangs | South African archives | Documented gang violence in Cape Flats |
+| Gcinile M. Dlamini | South African | 2020s | Taxi violence reporter | South African archives | Covered taxi wars; documented assassinations |
+| H. K. Mohammed | Ethiopian | 2020s | Tigray correspondent | Ethiopian archives | Documented Tigray war; siege of Mekelle |
+| Selam K. Berhe | Ethiopian | 2020s | Diaspora journalist | International archives | Founded Diaspora TV; documented war crimes |
+| Alsadig A. Siddieg | Sudanese | 2020s | War reporter | Sudanese archives | Covered RSF war; documented atrocities |
+| José S. Maposse | Mozambican | 2020s | Cabo Delgado correspondent | Mozambican archives | Documented ISIS-linked insurgency |
+| Moses K. Nyong'o | Congolese | 2020s | M23 analyst | Congolese archives | Traced M23 rebellion; exposed regional involvement |
+| Josué K. M. | Congolese | 2020s | Mining investigation | Congolese archives | Exposed cobalt mining exploitation |
