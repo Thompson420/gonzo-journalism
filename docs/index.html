@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The NEON Archive Protocol | Gonzo Journalism Database</title>
+    <style>
+        :root {
+            --primary: #ff4500;
+            --secondary: #1a1a2e;
+            --accent: #00d4ff;
+            --bg: #0a0a0f;
+            --text: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--secondary), #2d1f3d);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        nav {
+            background: var(--secondary);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent);
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border: 1px solid var(--primary);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: var(--accent);
+            margin-top: 0.5rem;
+        }
+        
+        .featured {
+            margin: 3rem 0;
+        }
+        
+        .featured h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .journalist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .journalist-card {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-left: 3px solid var(--primary);
+            transition: transform 0.3s;
+        }
+        
+        .journalist-card:hover {
+            transform: translateX(5px);
+        }
+        
+        .journalist-name {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .journalist-nationality {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .journalist-era {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .journalist-contribution {
+            font-style: italic;
+            color: #aaa;
+        }
+        
+        .category-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .category-btn {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: var(--accent);
+            color: var(--bg);
+        }
+        
+        .timeline-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--secondary);
+            border: 1px solid var(--primary);
+        }
+        
+        .timeline-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-item {
+            padding: 1rem 0;
+            border-left: 2px solid var(--accent);
+            padding-left: 1.5rem;
+            margin-left: 1rem;
+        }
+        
+        .timeline-year {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        footer {
+            background: var(--secondary);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 3px solid var(--primary);
+        }
+        
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            padding: 1rem;
+            background: var(--secondary);
+            border: 2px solid var(--accent);
+            color: var(--text);
+            font-size: 1rem;
+            margin: 1rem auto;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            nav { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎭 The NEON Archive Protocol</h1>
+        <p class="subtitle">A Comprehensive Database of Gonzo Journalists Worldwide</p>
+    </header>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#journalists">Journalists</a>
+        <a href="#categories">Categories</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#about">About</a>
+    </nav>
+    
+    <main>
+        <section id="stats">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">396+</div>
+                    <div class="stat-label">Journalists</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Detailed Bios</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">140+</div>
+                    <div class="stat-label">Years of History</div>
+                </div>
+            </div>
+        </section>
+        
+        <input type="text" class="search-box" placeholder="Search journalists..." id="search">
+        
+        <section id="categories">
+            <h2 style="color: var(--primary); margin: 2rem 0;">Browse by Category</h2>
+            <div class="category-nav">
+                <button class="category-btn active">All</button>
+                <button class="category-btn">Pioneers</button>
+                <button class="category-btn">War Correspondents</button>
+                <button class="category-btn">Investigative</button>
+                <button class="category-btn">Podcast/Digital</button>
+                <button class="category-btn">Sports</button>
+                <button class="category-btn">Food/Travel</button>
+                <button class="category-btn">Music</button>
+            </div>
+        </section>
+        
+        <section id="journalists" class="featured">
+            <h2>Featured Gonzo Journalists</h2>
+            <div class="journalist-grid">
+                <div class="journalist-card">
+                    <div class="journalist-name">Hunter S. Thompson</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1970s-Present</div>
+                    <div class="journalist-contribution">"Father of Gonzo Journalism"</div>
+                </div>
+                <div class="journalist-card">
+                    <div class="journalist-name">Anna Politkovskaya</div>
+                    <div class="journalist-nationality">Russian</div>
+                    <div class="journalist-era">1990s-2006</div>
+                    <div class="journalist-contribution">"Voice of Chechnya"</div>
+                </div>
+                <div class="journalist-card">
+                    <div class="journalist-name">Jamal Khashoggi</div>
+                    <div class="journalist-nationality">Saudi-American</div>
+                    <div class="journalist-era">1980s-2018</div>
+                    <div class="journalist-contribution">"Voice of Dissent"</div>
+                </div>
+                <div class="journalist-card">
+                    <div class="journalist-name">Maria Ressa</div>
+                    <div class="journalist-nationality">Filipino-American</div>
+                    <div class="journalist-era">1990s-Present</div>
+                    <div class="journalist-contribution">"Nobel Laureate"</div>
+                </div>
+                <div class="journalist-card">
+                    <div class="journalist-name">Nellie Bly</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1880s-1920s</div>
+                    <div class="journalist-contribution">"Original Gonzo Pioneer"</div>
+                </div>
+                <div class="journalist-card">
+                    <div class="journalist-name">Seymour Hersh</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1960s-Present</div>
+                    <div class="journalist-contribution">"Investigative Legend"</div>
+                </div>
+                <div class="journalist-card">
+                    <div class="journalist-name">Louis Theroux</div>
+                    <div class="journalist-nationality">British</div>
+                    <div class="journalist-era">1990s-Present</div>
+                    <div class="journalist-contribution">"Master of Immersion"</div>
+                </div>
+                <div class="journalist-card">
+                    <div class="journalist-name">Daphne Caruana Galizia</div>
+                    <div class="journalist-nationality">Maltese</div>
+                    <div class="journalist-era">1980s-2017</div>
+                    <div class="journalist-contribution">"Malta's Martyr"</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="timeline" class="timeline-section">
+            <h2>The Gonzo Timeline</h2>
+            <div class="timeline-item">
+                <span class="timeline-year">1887</span> - Nellie Bly exposes asylum conditions
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">1970</span> - "Gonzo" term coined
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">1971</span> - Fear and Loathing in Las Vegas published
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">1999</span> - Anthony Bourdain launches food gonzo
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2013</span> - Snowden revelations (Greenwald)
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2014</span> - Serial podcast launches gonzo audio era
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2021</span> - Maria Ressa wins Nobel Peace Prize
+            </div>
+        </section>
+        
+        <section id="about" class="featured">
+            <h2>About The NEON Archive Protocol</h2>
+            <p>The NEON Archive Protocol is a comprehensive database documenting gonzo journalists from around the world and throughout history. From Nellie Bly's 1887 undercover investigations to modern podcast journalists, we've catalogued the pioneers who shaped immersive, first-person journalism.</p>
+            <br>
+            <p><strong>Database maintained by:</strong> Thompson (Gonzo Journalist for The Scroll)</p>
+            <p><strong>Repository:</strong> github.com/Thompson420/gonzo-journalism</p>
+            <p><strong>Last Updated:</strong> March 9, 2026</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>🎭 The NEON Archive Protocol | A The Scroll Project</p>
+        <p>Database: 396+ Entries | 12 Detailed Bios | 50+ Countries</p>
+    </footer>
+</body>
+</html>
