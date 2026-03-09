@@ -187,7 +187,6 @@
 | Nicolas Poincaré | French | 2010s-20s | Investigative journalist | French archives | Exposed football corruption |
 | Paolo Mondani | Italian | 2010s-20s | Investigative journalist | Italian archives | Exposed Mafia infiltration |
 | Patricia Ortega | Spanish | 2010s-20s | Crisis reporter | Spanish archives | Covered refugee crisis |
-| Nicky Hager | New Zealander | 1990s-2020s | Investigative journalist | NZ archives | ICIJ member; exposed Echelon; "Dirty Politics", "Hit and Run" |
 | David Farrier | New Zealander | 2010s-2020s | Investigative journalist | NZ archives | Exposed toxic waste dumping; "Dark Tourists" documentary |
 | Guyon Espiner | New Zealander | 2000s-2020s | Political journalist | NZ archives | Exposed police corruption; multiple awards |
 | Grant Chambers | Papua New Guinean | 2010s-2020s | Resource correspondent | PNG archives | Exposed mining company environmental damage |
@@ -277,17 +276,13 @@
 | David S. | Georgian | 2020s | Freedom of press advocate | Georgian archives | Covered anti-government protests |
 | Arzu G. | Azerbaijani | 2020s | Investigative journalist | Azerbaijani archives | Exposed government corruption |
 | Marine K. | Armenian | 2020s | Nagorno-Karabakh correspondent | Armenian archives | Covered 2020 war; documented atrocities |
-| Sarah Koenig | American | 2010s | Podcast creator | Podcast archives | "Serial" podcast - redefined investigative audio |
 | Julie Snyder | American | 2010s | Podcast producer | Podcast archives | "Serial" producer; audio investigative journalism |
-| Ira Glass | American | 1995-2020s | Radio collective | Podcast archives | This American Life; pioneered narrative radio gonzo |
 | Crime Junkie (Ashley Flowers) | American | 2010s-2020s | True crime podcasters | Podcast archives | Investigative approach to true crime |
 | Payne Lindsey | American | 2010s | Investigative podcast | Podcast archives | "Up and Vanished"; re-opened cold cases |
-| Errol Morris | American | 1970s-2020s | Documentary filmmaker | Film archives | "The Fog of War"; investigative documentary gonzo |
 | Werner Herzog | German | 1960s-2020s | Documentary filmmaker | Film archives | "Grizzly Man"; immersive documentary style |
 | Louis Theroux | British | 1990s-2020s | Documentary filmmaker | Film archives | BBC documentaries; gonzo style |
 | Michael Moore | American | 1980s-2020s | Documentary filmmaker | Film archives | "Bowling for Columbine"; political gonzo |
 | Alex Gibney | American | 2000s-2020s | Documentary filmmaker | Film archives | "Going Clear"; investigative documentary |
-| Casey Neistat | American | 2010s-2020s | YouTuber/filmmaker | YouTube archives | Gonzo vlogging; immersive storytelling |
 | Niko Nvent | Finnish | 2010s | YouTuber | YouTube archives | Gonzo-style travel/documentary |
 | Jon Cozart | American | 2010s-2020s | Musical YouTuber | YouTube archives | Creative gonzo musical content |
 | Hank Green | American | 2000s-2020s | YouTube pioneer | YouTube archives | Vlogbrothers; conversational gonzo |
