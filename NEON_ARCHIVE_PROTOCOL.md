@@ -394,3 +394,11 @@
 | Nick Kent | British | 1970s-2020s | Music journalist | NME archives | Covered rock; punk; gonzo music criticism |
 | Andy Zaltzman | British | 2000s-2020s | Political satirist | Comedy archives | The Bugle; gonzo political satire |
 | Isabella Rossellini | Italian-American | 1980s-2020s | Actress/director | Film archives | "Green Porno" series; gonzo nature filmmaking |
+| Jerry Thomas | American | 1800s | Bartender/author | Bar archives | Father of American mixology; "How to Mix Drinks" |
+| Dave Arnold | American | 2000s-2020s | Cocktail historian | Museum archives | Museum founder; scientific cocktail gonzo |
+| Calvin Trillin | American | 1970s-2020s | Food essayist | New Yorker archives | Food poems; restaurant chronicles |
+| Ruth Reichl | American | 1980s-2020s | Food editor | NY Times archives | "Tender at the Bone"; restaurant critic |
+| Joel McIver | British | 1990s-2020s | Metal writer | Kerrang! archives | "The Story of Metal" |
+| Ian Christe | American | 1990s-2020s | Metal historian | Metal Hammer archives | "Sound of the Beast" |
+| Gay Talese | American | 1967-Present | New Journalism | Columbia archives | "The Loneliest Boy"; embedded journalism |
+| Nat Hentoff | American | 1960s-2000s | Jazz critic | Village Voice archives | Gonzo music criticism |
