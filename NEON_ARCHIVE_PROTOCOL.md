@@ -277,3 +277,34 @@
 | David S. | Georgian | 2020s | Freedom of press advocate | Georgian archives | Covered anti-government protests |
 | Arzu G. | Azerbaijani | 2020s | Investigative journalist | Azerbaijani archives | Exposed government corruption |
 | Marine K. | Armenian | 2020s | Nagorno-Karabakh correspondent | Armenian archives | Covered 2020 war; documented atrocities |
+| Sarah Koenig | American | 2010s | Podcast creator | Podcast archives | "Serial" podcast - redefined investigative audio |
+| Julie Snyder | American | 2010s | Podcast producer | Podcast archives | "Serial" producer; audio investigative journalism |
+| Ira Glass | American | 1995-2020s | Radio collective | Podcast archives | This American Life; pioneered narrative radio gonzo |
+| Crime Junkie (Ashley Flowers) | American | 2010s-2020s | True crime podcasters | Podcast archives | Investigative approach to true crime |
+| Payne Lindsey | American | 2010s | Investigative podcast | Podcast archives | "Up and Vanished"; re-opened cold cases |
+| Errol Morris | American | 1970s-2020s | Documentary filmmaker | Film archives | "The Fog of War"; investigative documentary gonzo |
+| Werner Herzog | German | 1960s-2020s | Documentary filmmaker | Film archives | "Grizzly Man"; immersive documentary style |
+| Louis Theroux | British | 1990s-2020s | Documentary filmmaker | Film archives | BBC documentaries; gonzo style |
+| Michael Moore | American | 1980s-2020s | Documentary filmmaker | Film archives | "Bowling for Columbine"; political gonzo |
+| Alex Gibney | American | 2000s-2020s | Documentary filmmaker | Film archives | "Going Clear"; investigative documentary |
+| Casey Neistat | American | 2010s-2020s | YouTuber/filmmaker | YouTube archives | Gonzo vlogging; immersive storytelling |
+| Niko Nvent | Finnish | 2010s | YouTuber | YouTube archives | Gonzo-style travel/documentary |
+| Jon Cozart | American | 2010s-2020s | Musical YouTuber | YouTube archives | Creative gonzo musical content |
+| Hank Green | American | 2000s-2020s | YouTube pioneer | YouTube archives | Vlogbrothers; conversational gonzo |
+| James Nachtwey | American | 1980s-2020s | War photographer | Photo archives | Covered every major conflict since 1981 |
+| Don McCullin | British | 1960s-2010s | War photographer | Photo archives | Iconic war photography |
+| Lynsey Addario | American | 2000s-2020s | War photographer | Photo archives | Captured conflicts globally; kidnapped in Libya |
+| Kevin Carter | South African | 1980s-1994 | War photographer | Photo archives | Pulitzer Prize 1994; covered Sudan famine |
+| David Attenborough | British | 1970s-2020s | Nature documentary | BBC archives | Planet Earth; climate documentaries |
+| Greta Thunberg | Swedish | 2018-2020s | Climate activist | Climate archives | School climate strike; gonzo activism |
+| Bill McKibben | American | 1980s-2020s | Climate writer/activist | Climate archives | 350.org founder; climate gonzo |
+| George Monbiot | British | 1990s-2020s | Environmental writer | Climate archives | The Guardian; environmental gonzo |
+| Naomi Klein | Canadian | 2000s-2020s | Author/activist | Climate archives | "This Changes Everything"; climate capitalism |
+| Tristan Harris | American | 2010s-2020s | Tech ethicist | Tech archives | "The Social Dilemma"; tech addiction gonzo |
+| Edward Snowden | American | 2013-2020s | Whistleblower | Tech archives | NSA revelations; digital privacy |
+| Julian Assange | Australian | 2006-2020s | WikiLeaks founder | Tech archives | Diplomatic cables; information gonzo |
+| Chelsea Manning | American | 2010-2020s | Whistleblower | Tech archives | Iraq war logs; whistleblower gonzo |
+| Cory Doctorow | Canadian-British | 2000s-2020s | Tech writer/activist | Tech archives | Boing Boing; EFF |
+| Matt Taibbi | American | 2000s-2020s | Investigative journalist | Alt media archives | Rolling Stone; "Griftopia" |
+| Glenn Greenwald | American | 2000s-2020s | Investigative journalist | Alt media archives | Snowden revelations; surveillance |
+| Michael Hastings | American | 2000s-2013 | War correspondent | Alt media archives | McChrystal article; died 2013 |
