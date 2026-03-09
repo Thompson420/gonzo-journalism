@@ -335,3 +335,48 @@
 | José S. Maposse | Mozambican | 2020s | Cabo Delgado correspondent | Mozambican archives | Documented ISIS-linked insurgency |
 | Moses K. Nyong'o | Congolese | 2020s | M23 analyst | Congolese archives | Traced M23 rebellion; exposed regional involvement |
 | Josué K. M. | Congolese | 2020s | Mining investigation | Congolese archives | Exposed cobalt mining exploitation |
+| Anna Maria Tremonti | Canadian | 2000s-2020s | CBC host | CBC archives | First female host of CBC morning show; covered residential schools |
+| Robyn Doolittle | Canadian | 2010s-2020s | Investigative journalist | Canadian archives | Exposed Rob Ford scandal; "Crazy Town" |
+| Glen McGregor | Canadian | 2010s-2020s | Political journalist | Canadian archives | Covered Ottawa politics; exposed WE Charity scandal |
+| Janice Dickson | Canadian | 2020s | Climate journalist | Canadian archives | Covered climate change; wildfires |
+| Tasha Kheiriddin | Canadian | 2000s-2020s | Political commentator | Canadian archives | Radio/podcast host; political analysis |
+| David Cochrane | Canadian | 2000s-2020s | Parliamentary reporter | Canadian archives | CBC Parliamentary correspondent |
+| Susan L. Smith | Canadian | 2010s-2020s | Indigenous affairs | Canadian archives | Covered residential schools; MMIW |
+| John Doyle | Canadian | 2010s-2020s | Media critic | Canadian archives | Media analysis; Canadian media landscape |
+| Emma H. | Canadian | 2020s | Freelance journalist | Canadian archives | Covered convoy protests; emergency powers |
+| Michael M. | Canadian | 2020s | Tech journalist | Canadian archives | Covered tech sector; digital privacy |
+| Kylie McCullough | Australian | 2020s | Youth journalist | Australian archives | Covered youth activism; climate strikes |
+| Jamie Walker | Australian | 2000s-2020s | Foreign correspondent | Australian archives | Covered Asia; Middle East; war zones |
+| Megan L. | Australian | 2020s | Regional journalist | Australian archives | Rural Australia; drought; communities |
+| Peter W. | Australian | 2000s-2020s | Finance journalist | Australian archives | Exposed banking scandals |
+| Sarah D. | Australian | 2020s | Health journalist | Australian archives | COVID-19 coverage; healthcare |
+| Tim D. | Australian | 2020s | Education reporter | Australian archives | Schools; universities; policy |
+| Mediapart Team (France) | French | 2010s-2020s | Investigative journalists | French archives | Exposed presidential corruption |
+| Patrick Cohen | French | 2010s-2020s | Radio host | French archives | Covered Charlie Hebdo; terrorism |
+| Lénaïg Bredoux | French | 2010s-2020s | Political journalist | French archives | Mediapart; government scandals |
+| Justine D. | French | 2020s | Climate journalist | French archives | Covered gilets jaunes; yellow vests |
+| Heribert Schwan | German | 2010s | Biographer | German archives | Exposed Kohl's secret accounts |
+| Hans Hoyng | German | 2010s-2020s | Der Spiegel reporter | German archives | NSA revelations; surveillance |
+| Melanie H. | German | 2020s | Crime reporter | German archives | Covered Halle attack; extremism |
+| Frederik R. | German | 2020s | Tech journalist | German archives | Wirecard scandal; fintech |
+| Giovanni Tizian | Italian | 2010s-2020s | Mafia reporter | Italian archives | Exposed 'Ndrangheta |
+| Paolo Borrometi | Italian | 2010s-2020s | Investigative journalist | Italian archives | Covered Sicilian Mafia; threatened |
+| Fabrizio G. | Italian | 2020s | Corruption investigator | Italian archives | Covered Roman Mafia |
+| Eduardo Fernández | Spanish | 2010s-2020s | Political journalist | Spanish archives | Covered Catalonia independence |
+| Jesús G. | Spanish | 2020s | Corruption reporter | Spanish archives | Exposed Gürtel case |
+| María R. | Spanish | 2020s | Freelance journalist | Spanish archives | Covered 15-M movement |
+| São José Almeida | Portuguese | 2010s-2020s | Political journalist | Portuguese archives | Covered bailout crisis |
+| António C. | Portuguese | 2020s | Economic journalist | Portuguese archives | Covered debt crisis; EU |
+| Jeroen van der Boom | Dutch | 2010s-2020s | Investigative journalist | Dutch archives | Covered Uber Files; Shell |
+| Floor W. | Dutch | 2020s | Tech journalist | Dutch archives | Covered ASML; chip wars |
+| Karl L. | Belgian | 2010s-2020s | EU correspondent | Belgian archives | Covered EU Commission |
+| Annelies V. | Belgian | 2020s | Brussels reporter | Belgian archives | Covered EU Parliament |
+| Paul K. | Austrian | 2020s | Political journalist | Austrian archives | Covered Kurz scandal |
+| Nicolas W. | Swiss | 2020s | Banking journalist | Swiss archives | Credit Suisse; UBS |
+| Sam McBride | Irish | 2020s | Political correspondent | Irish archives | Covered Northern Ireland; Brexit |
+| Kitty H. | Irish | 2020s | Social affairs journalist | Irish archives | Covered housing crisis |
+| Maria Y. | Swedish | 2020s | Crime reporter | Swedish archives | Covered gang violence |
+| Erik H. | Norwegian | 2020s | Climate journalist | Norwegian archives | Covered oil industry |
+| Katrine E. | Danish | 2020s | Welfare reporter | Danish archives | Covered welfare state |
+| Nikos M. | Greek | 2010s-2020s | Crisis journalist | Greek archives | Covered debt crisis |
+| Popi K. | Greek | 2020s | Migration reporter | Greek archives | Covered refugee crisis |
