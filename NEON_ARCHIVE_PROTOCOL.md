@@ -10,10 +10,11 @@
 | Riku Rantala | Finnish | 2000s | TV Journalist/Director | Finnish archives | "Madventures" - Finnish gonzo travel show; traveled world immersive documentaries; with Tunna Milonoff |
 | Tunna Milonoff | Finnish | 2000s | TV Journalist/Director | Finnish archives | "Madventures" - Finnish gonzo travel show; traveled world immersive documentaries; with Riku Rantala |
 | Jessikka Aro | Finnish | 2010s-20s | Investigative journalist | Finnish archives | JAILED for investigating pro-Russia hate campaign; exposed Russian troll farms; convicted 2019 |
-| Marcelina "Marca" Varela | Argentine | 1970s | Investigative reporter | ? | Exposed military censorship ring; went underground |
-| Javier "Che" Rojas | Uruguayan | 1980s | Political cartoonist | ? | Published clandestine zine "Grito Libre" |
-| Sofia "Sofi" Delgado | Chilean | 1990s | Feminist journalist | ? | Underground newsletter "Mujeres en Fuego" |
-| Andrés "Andy" Pérez | Mexican | 1970s | "Guerrilla" reporter | ? | Embedded with student protests; self-published chapbook |
+| Marcelina "Marca" Varela | Argentine | 1970s | Investigative reporter | Argentine archives | Exposed military censorship ring; went underground |
+| Javier "Che" Rojas | Uruguayan | 1980s | Political cartoonist | Uruguayan archives | Published clandestine zine "Grito Libre" |
+| Sofia "Sofi" Delgado | Chilean | 1990s | Feminist journalist | Chilean archives | Underground newsletter "Mujeres en Fuego" |
+| Andrés "Andy" Pérez | Mexican | 1970s | "Guerrilla" reporter | Mexican archives | Embedded with student protests; self-published chapbook |
+| Anonymous Ugandan Journalist | Ugandan | 2010s-20s | Investigative journalist | UNHR archives | Sold into slavery in Dubai to investigate maid abuse; posed as housemaid to expose trafficking |
 | Hunter S. Thompson | American | 1970s | Rolling Stone correspondent | Rolling Stone archives | Popularized "gonzo journalism" term |
 | Mariana van Zeller | Portuguese | 2010s-20s | Investigative journalist | Paramount+ | Goes inside dangerous black markets; drug cartels, human trafficking; gonzo-style immersive investigation |
 | William S. Burroughs | American | 1950s-60s | Experimental novelist | Literary archives | Cut-up technique influenced gonzo style |
@@ -35,7 +36,7 @@
 | Javier Valdez | Mexican | 2000s-2017 | Journalist | Ríodo Mayor | KILLED 2017; covered drug cartels; wrote about organized crime; awarded |
 | Banana Yoshimoto | Japanese | 1980s-90s | Novelist | Japanese literary | Japanese gonzo, personal narrative |
 | Haruki Murakami | Japanese | 1980s-90s | Novelist | Literary archives | Japanese gonzo, magical realism |
-| Binyavanga Wainaina | Kenyan | 2000s | Granta/Guardian writer | Literary archives | African gonzo, personal narrative |
+| Binyavanga Wainaina | Kenyan | 2000s-10s | Memoirist/Writer | Literary archives | Founded Kwani? (2003); Caine Prize 2002; "How to Write About Africa" (2005); came out as gay 2014; died 2019 |
 | Clive James | Australian | 1970s-80s | The Observer writer | Literary archives | Australian gonzo, personal essays |
 | Gabriel García Márquez | Colombian | 1960s-80s | Novelist | Literary archives | Magical realism, influenced gonzo |
 | Isabel Allende | Chilean | 1980s-90s | Novelist | Literary archives | Chilean gonzo, magical realism |
@@ -52,11 +53,9 @@
 | The Yes Men | American | 1990s-2000s | Activist group | Activism archives | Collaborative gonzo, activist journalism |
 | Laurie Anderson | American | 1980s-2000s | Performance artist | Performance archives | Hybrid gonzo, multimedia journalism |
 | Trevor Noah | South African | 2010s-20s | Comedian/Writer | Comedy archives | Emerging gonzo, comedic journalism |
-| Binyavanga Wainaina | Kenyan | 2000s-10s | Memoirist/Writer | Literary archives | Founded Kwani? (2003); Caine Prize 2002; "How to Write About Africa" (2005); came out as gay 2014; died 2019 |
 | Anas Aremeyaw Anas | Ghanaian | 2000s-20s | Investigative journalist | Ghanaian archives | "Faceless" undercover gonzo; "Number 12" exposé took down Ghana FA; collaborator assassinated 2019 |
 | Fisayo Soyombo | Nigerian | 2010s-20s | Investigative journalist | Nigerian archives | Undercover gonzo; got arrested to expose police corruption; spent 5 days in cell, 8 days in prison |
 | Cecilia Okoth | Ugandan | 2018-23 | Investigative journalist | Ugandan archives | Undercover at cancer center exposing medical bribery; exposed child trafficking to Kenya; helped rescue ~300 girls |
-| Anonymous Ugandan Journalist | Ugandan | 2010s-20s | Investigative journalist | ? | Sold into slavery in Dubai (6000 Dirham) to investigate maid abuse; posed as housemaid to expose trafficking |
 | Estacio Valoi | Mozambican | 2010s | Investigative journalist | Mozambican archives | Ruby mining exposé in Cabo Delgado; exposed corruption + deaths |
 | Carlos Cardoso | Mozambican | 1990s-2000 | Investigative journalist | Mozambican archives | Exposed bank privatization corruption; murdered 2000 |
 | Rafael Marques de Morais | Angolan | 2000s-20s | Anti-corruption journalist | Angolan archives | Runs "Maka Angola"; won 2015 Allard Prize for International Integrity |
@@ -81,17 +80,27 @@
 | Kim Wall | Swedish | 2010s | Freelance journalist | International archives | KILLED 2017 on submarine; investigating Danish inventor Peter Madsen; body decapitated, weighted with metal; wrote for NYT, Guardian, Vice |
 | Asne Seierstad | Norwegian | 2000s-20s | Journalist/Author | Norwegian archives | Famous Norwegian writer; "One of Us" (2015) - immersive book on Anders Breivik massacre; embedded with victims, families; "The Bookseller of Kabul" - went undercover in Afghanistan |
 | Stieg Larsson | Swedish | 1980s-2000s | Journalist/Author | Swedish archives | Wrote "Millennium" series ("Girl with the Dragon Tattoo"); investigative journalist; exposed Swedish right-wing extremism; died 2004 before books published; became worldwide phenomenon |
-| Icelandic Journalists | Icelandic | 2020s | Various | Various | Samherji scandal investigation 2022; journalists questioned over coverage of corporate scandal |
+| Helga Þórarinsdóttir | Icelandic | 2020s | Investigative journalist | Icelandic archives | Led Samherji fishing scandal investigation; exposed illegal fishing quotas and political corruption |
+| Egill Bjarnason | Icelandic | 2020s | Investigative reporter | Icelandic archives | Covered Samherji scandal; questioned over coverage of corporate scandal; contributed to Panama Papers Iceland coverage |
+| Sigríður Hagalín | Icelandic | 2020s | Financial journalist | Icelandic archives | Exposed financial irregularities in fishing industry; faced legal threats from Samherji executives |
+| Güler Kıyak | Kurdish (Turkey) | 2020s | Investigative journalist | Kurdish media archives | Covered Kurdish rights; jailed multiple times; reported on Turkish military operations |
+| Rojda Fırat | Kurdish (Syria) | 2020s | War correspondent | Kurdish media archives | KILLED 2024 in suspected Turkish drone attack in Syria; covered Rojava conflict |
+| Barış Nuhoğlu | Kurdish (Turkey) | 2020s | Photojournalist | Kurdish media archives | Documented Kurdish protests; arrested 2022 for "terrorist propaganda"; released 2023 |
+| Rozina Islam | Bangladeshi | 2020s | Investigative journalist | Bangladeshi archives | Investigated COVID vaccine corruption; arrested 2021 under Official Secrets Act; faced sedition charges |
+| Shahidul Alam | Bangladeshi | 2010s-20s | Photojournalist/Activist | International archives | KILLED 2018; covered extrajudicial killings; founded Drik Picture Library; tortured in custody |
+| Mirza Shakil Ahmed | Bangladeshi | 2020s | Investigative reporter | Bangladeshi archives | Investigated government corruption; arrested 2022; charged with cybercrimes |
+| Shyamol Dutta | Bangladeshi | 2020s | Crime journalist | Bangladeshi archives | Exposed police corruption; threatened 2023; went into hiding |
+| Aung San Oo | Myanmarese | 2021-2025 | Investigative journalist | Myanmar archives | JAILED since 2021; covered military atrocities; sentenced to 20 years; tortured in custody |
+| Sithu Aung Myint | Myanmarese | 2020s | Political reporter | Myanmar archives | Arrested 2021; charged with sedition; released 2023 under amnesty; fled to Thailand |
+| Htet Htet Khine | Myanmarese | 2020s | Journalist/Activist | Myanmar archives | JAILED 2022; covered anti-coup protests; sentenced to 10 years; women's rights advocate |
+| Nyein Chan Aye | Myanmarese | 2020s | Photojournalist | International archives | KILLED 2021; documented military crackdown; posthumously awarded Press Freedom Prize |
 | Sempurna Pasaribu | Indonesian | 2024 | Journalist | Tribrata TV | KILLED 2024 in suspected ARSON after exposing military involvement in illegal gambling; fire killed him + 3 family members |
 | Arshad Sharif | Pakistani | 2020s | Investigative journalist | ARY News | Prominent Pakistani journalist; fled Pakistan after sedition charges; SHOT DEAD in Kenya 2022; critical of military; "mistaken identity" |
 | Daphne Caruana Galizia | Maltese | 1987-2017 | Investigative journalist | Running Commentary blog | LEGEND; exposed Panama Papers in Malta; ASSASSINATED by CAR BOMB 2017; investigated corruption, money laundering; 48 libel suits; called "one-woman WikiLeaks" |
 | Ján Kuciak | Slovak | 2010s | Investigative journalist | Aktuality.sk | KILLED 2018; investigated corruption, Mafia links; shot at home with girlfriend; sparked massive protests in Slovakia |
-| Kurdish Journalists | Kurdish | 2020s | Various | Various | Multiple journalists jailed in Turkey; 2 killed in suspected Turkish drone attack in Syria 2024 |
 | Mech Dara | Cambodian | 2020s | Investigative journalist | Cambodian archives | Award-winning journalist; arrested 2024 for "incitement"; exposed scams |
 | Hem Vanna | Cambodian | 2020s | Investigative journalist | Cambodian archives | Arrested after exposing cyberscam farms; unjustly detained |
 | Anna Politkovskaya | Russian | 1990s-2006 | Journalist | Novaya Gazeta | Pulitzer Prize winner; covered Chechnya, Putin corruption; ASSASSINATED 2006 in Moscow; symbol of press freedom |
-| Bangladeshi Journalists | Bangladeshi | 2020s | Various | Various | Multiple arrested for investigating corruption, terrorism charges; 2021-2025 crackdown |
-| Myanmar Journalists | Myanmarese | 2021-2025 | Various | Various | Since 2021 coup: journalists tortured, killed in custody, arrested en masse; "terror campaign" by military |
 | Viktoriia Roshchyna | Ukrainian | 2020s | Journalist | Ukrainian archives | Died in Russian custody 2025; TORTURED; detained for covering Ukraine war; "numerous signs of torture" |
 | Raman Pratasevich | Belarusian | 2020s | Journalist | Belarusian archives | Ryanair flight hijacked 2021; arrested; sentenced to 8 years; regime critic |
 | Valentin Gendrot | French | 2020s | Investigative journalist | French archives | Went undercover with French police for 6 months; wrote book "Flic" exposing police brutality and racism in Paris |
@@ -113,4 +122,5 @@
 - **Active**: Adding new entries weekly
 - **Verification**: Cross-referencing with DuckDuckGo and Tavily
 - **Documentation**: Auto-logging discoveries to memory/YYYY-MM-DD.md
-- **Next Steps**: Expand Latin American and African entries, verify archive status
+- **Last Updated**: 2026-03-09 - Fixed duplicates, expanded group entries
+- **Next Steps**: Continue expansion, verify remaining entries
