@@ -157,3 +157,33 @@
 - **Documentation**: Auto-logging discoveries to memory/YYYY-MM-DD.md
 - **Last Updated**: 2026-03-09 - Added Central Asia, Pacific, Caribbean entries
 - **Next Steps**: Continue geographic expansion, verify new entries
+| Mohammad Nourizad | Iranian | 2000s-2020s | Investigative journalist | International archives | Jailed multiple times; exposed corruption in judiciary |
+| Issa Boudin | Iranian-French | 2010s-20s | Photojournalist | International archives | Covered Iranian protests; arrested 2019; French-Iranian dual citizen |
+| Diana Moukalled | Lebanese | 2000s-2020s | War correspondent | Lebanese archives | Covered Syrian civil war; founded Daraj platform; death threats |
+| Rabih Amour | Lebanese | 2010s-20s | Investigative journalist | Lebanese archives | Exposed Lebanese banking corruption |
+| Tayseer Al-Tamimi | Jordanian | 2010s-20s | Investigative journalist | Jordanian archives | Investigated government corruption; fled Jordan 2020 |
+| Mohammed Al-Maqtari | Yemeni | 2010s-20s | Citizen journalist | International archives | Documented Yemen war; killed 2018 in airstrike |
+| Rasha Al Joundi | Yemeni | 2010s | Journalist/Activist | Yemeni archives | Died 2012; symbol of Yemeni revolution |
+| Mahmoud Hussein | Egyptian | 2000s-2020s | Investigative journalist | Egyptian archives | Al Jazeera correspondent; jailed for "false news" |
+| Hossam Taha | Egyptian | 2010s-20s | Photojournalist | Egyptian archives | Documented Rabaa massacre 2013 |
+| Khaled Drareni | Algerian | 2010s-20s | Journalist/founder | Algerian archives | Founded Casbah Tribune; jailed 2020 |
+| Sagarika Ghose | Indian | 2000s-2020s | Senior journalist | Indian archives | Covered Kashmir conflict; exposed human rights |
+| Ritika Chopra | Indian | 2010s-20s | Investigative journalist | Indian archives | Exposed illegal sand mining mafia |
+| Snehitha Yechuri | Indian | 2020s | Freelance journalist | Indian archives | Covered Delhi riots 2020 |
+| Ahmad Noorani | Pakistani | 2010s-20s | Investigative journalist | Pakistani archives | Exposed military's role in politics |
+| Cyril Almeida | Pakistani | 2010s | Dawn newspaper journalist | Pakistani archives | Wrote about Pakistan Army's role |
+| Shaheen Sehbai | Pakistani | 2000s-2020s | Senior journalist/editor | Pakistani archives | Exposed Musharraf's secret deals |
+| Najibullah | Afghan | 2020s | Photojournalist | International archives | Documented Taliban takeover 2021 |
+| Farida Nekzad | Afghan | 2000s-2020s | Founder/Editor | International archives | Founded Killid media; fled after Taliban |
+| Lasantha Wickrematunga | Sri Lankan | 1990s-2000s | Editor/Investigative | Sri Lankan archives | KILLED 2009; exposed government corruption |
+| Kedar Poudel | Nepali | 2010s-20s | Investigative journalist | Nepali archives | Exposed hydropower corruption |
+| Oleksandra Koval | Ukrainian | 2020s | War correspondent | Ukrainian archives | Documented Bucha massacre 2022 |
+| Maksym Oleinichenko | Ukrainian | 2020s | Photojournalist | Ukrainian archives | KILLED 2024; documented Russian invasion |
+| Maria Pevchikh | Russian | 2010s-20s | Investigative journalist | International archives | Navalny team; exposed Putin's palace |
+| Irina Vlaskina | Russian | 2000s-2020s | TV journalist | International archives | Quit RT in protest 2022 |
+| Tomasz Piatek | Polish | 2010s-20s | Investigative journalist | Polish archives | Exposed PiS party corruption |
+| Emilia Sercau | Romanian | 2010s-20s | Investigative journalist | Romanian archives | Exposed EU fund fraud |
+| Dragana Peco | Serbian | 2010s-20s | War crimes investigator | Serbian archives | Documented 1990s war crimes |
+| Nicolas Poincaré | French | 2010s-20s | Investigative journalist | French archives | Exposed football corruption |
+| Paolo Mondani | Italian | 2010s-20s | Investigative journalist | Italian archives | Exposed Mafia infiltration |
+| Patricia Ortega | Spanish | 2010s-20s | Crisis reporter | Spanish archives | Covered refugee crisis |
