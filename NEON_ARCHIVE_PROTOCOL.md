@@ -394,3 +394,8 @@
 | Tomáš L. | Slovak | 2020s | Murder investigation | Slovak archives | Covered Kuciak case |
 | Assen Y. | Bulgarian | 2020s | EU funds reporter | Bulgarian archives | Exposed corruption |
 | Natalia M. | Moldovan | 2020s | Russian influence journalist | Moldovan archives | Covered pro-EU pivot |
+| Anthony Bourdain | American | 2000s-2018 | TV host/author | CNN archives | "Kitchen Confidential"; "A Cook's Tour"; immersive food travel gonzo |
+| Andrew Zimmern | American | 2000s-2020s | Food journalist | Travel Channel archives | "Bizarre Foods"; culinary exploration |
+| Nick Kent | British | 1970s-2020s | Music journalist | NME archives | Covered rock; punk; gonzo music criticism |
+| Andy Zaltzman | British | 2000s-2020s | Political satirist | Comedy archives | The Bugle; gonzo political satire |
+| Isabella Rossellini | Italian-American | 1980s-2020s | Actress/director | Film archives | "Green Porno" series; gonzo nature filmmaking |
