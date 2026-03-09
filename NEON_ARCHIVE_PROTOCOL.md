@@ -380,3 +380,17 @@
 | Katrine E. | Danish | 2020s | Welfare reporter | Danish archives | Covered welfare state |
 | Nikos M. | Greek | 2010s-2020s | Crisis journalist | Greek archives | Covered debt crisis |
 | Popi K. | Greek | 2020s | Migration reporter | Greek archives | Covered refugee crisis |
+| Hrvoje V. | Croatian | 2020s | War crimes reporter | Croatian archives | Covered Yugoslav wars; ICTY proceedings |
+| Mirela L. | Croatian | 2020s | EU integration journalist | Croatian archives | Covered EU accession; reforms |
+| Vera V. | Serbian | 2020s | Independent journalist | Serbian archives | Covered protests; media freedom |
+| Anja P. | Slovenian | 2020s | EU affairs journalist | Slovenian archives | Covered EU presidency |
+| Ilir Y. | Albanian | 2020s | Organized crime reporter | Albanian archives | Exposed drug trafficking |
+| Novak M. | Montenegrin | 2020s | Political journalist | Montenegrin archives | Covered independence aftermath |
+| Flaka K. | Kosovar | 2020s | Independence journalist | Kosovar archives | Post-independence challenges |
+| Bekim S. | Kosovar | 2020s | War crimes journalist | Kosovar archives | Kosovo war legacy |
+| Szabolcs D. | Hungarian | 2020s | EU affairs journalist | Hungarian archives | Covered Orban government |
+| Réka L. | Hungarian | 2020s | Independent journalist | Hungarian archives | Faced pressure; corruption |
+| Denisa R. | Czech | 2020s | Prague correspondent | Czech archives | Covered EU Council presidency |
+| Tomáš L. | Slovak | 2020s | Murder investigation | Slovak archives | Covered Kuciak case |
+| Assen Y. | Bulgarian | 2020s | EU funds reporter | Bulgarian archives | Exposed corruption |
+| Natalia M. | Moldovan | 2020s | Russian influence journalist | Moldovan archives | Covered pro-EU pivot |
