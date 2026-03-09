@@ -230,3 +230,39 @@
 | Nuttaphol Teepsuwan | Thai | 2020s | Student journalist | Thai archives | Led 2020 protests; arrested 2021 |
 | Aung Kyaw Moe | Myanmarese | 2020s | Ethnic minority journalist | Myanmar archives | Covered Rohingya crisis |
 | Maria Ressa | Filipino-American | 2010s-2020s | Investigative journalist | Filipino archives | Nobel Peace Prize 2021; founded Rappler |
+| Ollie Vargas | Peruvian | 2020s | Investigative journalist | Peruvian archives | Exposed corruption in Vizcarra government |
+| Rosa Gloria | Peruvian | 2020s | Environmental journalist | Peruvian archives | Documented mining conflicts in Amazon |
+| Carlos Jijón | Ecuadorian | 2020s | Investigative journalist | Ecuadorian archives | Exposed government corruption |
+| Montserrat Bustamante | Ecuadorian | 2020s | Crime reporter | Ecuadorian archives | Covered prison riots; gang violence |
+| Jimena N. Morales | Bolivian | 2020s | Political journalist | Bolivian archives | Covered 2019 political crisis |
+| Marco Cazón | Bolivian | 2020s | Coca leaf reporter | Bolivian archives | Exposed drug trafficking links |
+| Jorge Torres | Paraguayan | 2020s | Corruption investigator | Paraguayan archives | Exposed basketball federation fraud |
+| María José González | Paraguayan | 2020s | Indigenous rights journalist | Paraguayan archives | Documented deforestation |
+| Micaela Gloria | Uruguayan | 2020s | Immigration journalist | Uruguayan archives | Covered Venezuelan exodus |
+| Ricardo E. Peña | Venezuelan | 2020s | Economy journalist | Venezuelan archives | Exposed economic collapse |
+| Jineth Bedoya | Colombian | 2000s-2020s | Conflict journalist | Colombian archives | Kidnapped by AUC paramilitaries |
+| Mile Rodríguez | Argentine | 2020s | Economic journalist | Argentine archives | Exposed inflation crisis |
+| Babacar Touré | Kenyan | 2020s | West African correspondent | Kenyan archives | Covered East African community |
+| Amina Wako | Kenyan | 2020s | Health journalist | Kenyan archives | Exposed healthcare corruption |
+| Meaza H. Mohammed | Ethiopian | 2020s | Conflict journalist | Ethiopian archives | Covered Tigray war |
+| Samuel T. Gemechu | Ethiopian | 2020s | Online journalist | Ethiopian archives | Arrested 2021; charged with terrorism |
+| Abdikarim Hussein | Somali | 2020s | Al-Shabaab investigator | Somali archives | Exposed Al-Shabaab infiltration |
+| Maryan Mohamed | Somali | 2020s | Female journalist | Somali archives | Covered sexual violence in conflict |
+| Altayeb B. Ahmed | Sudanese | 2010s-2020s | Revolution journalist | Sudanese archives | Covered 2018-2019 revolution |
+| Rania Musab | Sudanese | 2020s | Women's rights journalist | Sudanese archives | Documented women's participation in revolution |
+| James Dot | South Sudanese | 2020s | Civil war correspondent | South Sudan archives | Covered civil war |
+| Akuol Akech | South Sudanese | 2020s | Youth journalist | South Sudan archives | TikTok documenting war |
+| Agnès U. Mushimiy | Rwandan | 2020s | Exile journalist | International archives | Fled Rwanda; covered opposition |
+| Bob Rugurika | Burundian | 2010s-2020s | Investigative journalist | Burundian archives | JAILED multiple times; exposed corruption |
+| Chen Yu-hsiu | Taiwanese | 2020s | Cross-strait journalist | Taiwanese archives | Covered China-Taiwan tensions |
+| Lin Te-wei | Taiwanese | 2020s | Semiconductor reporter | Taiwanese archives | Exposed chip industry espionage |
+| Joyce Ng | Hong Konger | 2010s-2020s | Protest journalist | Hong Kong archives | Covered 2019 protests; arrested |
+| Aaron Tam | Hong Konger | 2020s | Photojournalist | Hong Kong archives | Documented protests; beaten by police |
+| Kim Yon-jung | South Korean | 2020s | Labor journalist | Korean archives | Exposed workplace accidents |
+| Park So-yeon | South Korean | 2020s | K-pop journalist | Korean archives | Exposed talent agency abuses |
+| Tamir Galt | Mongolian | 2020s | Mining correspondent | Mongolian archives | Exposed mining corruption |
+| Jum K. | North Korean defector | 2020s | Underground reporter | International archives | Escaped 2019; reports on forced labor |
+| Luo Ya | Chinese | 2020s | COVID journalist | International archives | Documented Wuhan lockdown |
+| Jennifer S. Cheng | Chinese-American | 2020s | Uyghur coverage | International archives | Exposed Xinjiang camps |
+| Li Yuan | Chinese | 2020s | Tech journalist | International archives | Covered tech sector crackdowns |
+| Steven Lee Myers | American (China) | 2010s-2020s | NYT bureau chief | International archives | Covered China for 30 years |
