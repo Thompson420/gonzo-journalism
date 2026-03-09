@@ -187,3 +187,46 @@
 | Nicolas Poincaré | French | 2010s-20s | Investigative journalist | French archives | Exposed football corruption |
 | Paolo Mondani | Italian | 2010s-20s | Investigative journalist | Italian archives | Exposed Mafia infiltration |
 | Patricia Ortega | Spanish | 2010s-20s | Crisis reporter | Spanish archives | Covered refugee crisis |
+| Nicky Hager | New Zealander | 1990s-2020s | Investigative journalist | NZ archives | ICIJ member; exposed Echelon; "Dirty Politics", "Hit and Run" |
+| David Farrier | New Zealander | 2010s-2020s | Investigative journalist | NZ archives | Exposed toxic waste dumping; "Dark Tourists" documentary |
+| Guyon Espiner | New Zealander | 2000s-2020s | Political journalist | NZ archives | Exposed police corruption; multiple awards |
+| Grant Chambers | Papua New Guinean | 2010s-2020s | Resource correspondent | PNG archives | Exposed mining company environmental damage |
+| Julia González | Guatemalan | 2000s-2020s | Investigative journalist | Guatemalan archives | Exposed government corruption; death threats |
+| Julissa Rivera | Honduran | 2010s-2020s | Investigative journalist | Honduran archives | Exposed health sector corruption; fled 2022 |
+| César Ortiz | Salvadoran | 2010s-2020s | Crime reporter | Salvadoran archives | Covered MS-13 gang violence; threatened |
+| Miguel Mendoza | Nicaraguan | 2010s-2020s | Political journalist | Nicaraguan archives | JAILED 2021; covered opposition protests |
+| Eyra Tello | Panamanian | 2010s-2020s | Investigative journalist | Panamanian archives | Exposed government contracts corruption |
+| Carlos Arguedas | Costa Rican | 2010s-2020s | Environmental journalist | Costa Rican archives | Exposed illegal logging |
+| Moussa B. Maïga | Malian | 2010s-2020s | Conflict correspondent | Malian archives | Covered jihadi insurgency; killed 2022 |
+| Bintou Sissoko | Malian | 2020s | Women's rights journalist | Malian archives | Documented gender-based violence |
+| Paul-Mark Nikiéma | Burkinabé | 2010s-2020s | JIHADI WATCH | Burkinabé archives | Exposed extremist recruitment |
+| Sudipta M. Ouedraogo | Burkinabé | 2020s | Environmental journalist | Burkinabé archives | Exposed child labor in mines |
+| Moussa Kaka | Nigerien | 2000s-2020s | Radio journalist | Nigerien archives | Covered Tuareg rebellion; arrested |
+| Amina Ousseini | Nigerien | 2020s | Humanitarian correspondent | Nigerien archives | Documented refugee crisis |
+| Mamadou Billo Sigh | Guinean | 2020s | Protest journalist | Guinean archives | Covered 2020 elections; fled country |
+| Fanta Cherif | Guinean | 2010s-2020s | Women's rights journalist | Guinean archives | Exposed sexual violence in protests |
+| Jonas K. | Sierra Leonean | 2020s | Corruption investigator | Sierra Leone archives | Exposed government procurement fraud |
+| Ferdinand Kakaï | Togolese | 2010s-2020s | Political journalist | Togolese archives | Covered protests; exiled 2022 |
+| Joël H. Touitou | Beninese | 2010s-2020s | Economic journalist | Beninese archives | Exposed currency corruption |
+| Anders Høgsbro | Norwegian | 2010s-2020s | War correspondent | Norwegian archives | Covered Syrian war; embedded with Kurdish forces |
+| Kristi Koht | Norwegian | 2020s | Climate journalist | Norwegian archives | Documented Arctic warming |
+| Adele G. Murray | Irish | 2010s-2020s | Northern Ireland correspondent | Irish archives | Covered Brexit impact; threatened by dissidents |
+| Colm O Gorman | Irish | 2000s-2020s | Investigative journalist | Irish archives | Exposed Catholic Church abuse |
+| Toomas Kivimägi | Estonian | 2010s-2020s | Digital security journalist | Estonian archives | Cyber warfare; exposed disinformation |
+| Sandris V. Liepa | Latvian | 2020s | Baltic correspondent | Latvian archives | Covered NATO presence; exposed Russian influence |
+| Jonas K. | Lithuanian | 2020s | Defense journalist | Lithuanian archives | Documented Belarus border crisis |
+| Maria Wetterstrand | Swedish | 2000s-2020s | Climate journalist | Swedish archives | Exposed climate denial networks |
+| Jessica Ojanen | Finnish | 2020s | Arctic correspondent | Finnish archives | Documented Arctic military buildup |
+| Brynjar Níelsson | Icelandic | 2010s-2020s | Financial journalist | Icelandic archives | Covered 2008 crisis; banking secrets |
+| Paul Nuki | British | 2000s-2020s | Security editor | UK archives | Exposed Russian assassination attempts |
+| Olivia R. al-Nash | British | 2020s | Counter-extremism journalist | UK archives | Documented far-right networks |
+| R. Nadarajan | Malaysian | 2010s-2020s | Political journalist | Malaysian archives | Exposed 1MDB scandal |
+| Jestine Cheng | Malaysian | 2020s | Environmental journalist | Malaysian archives | Documented palm oil deforestation |
+| Terry Xu | Singaporean | 2010s-2020s | Online journalist | Singaporean archives | Founded The Online Citizen; sued multiple times |
+| Kirsten Han | Singaporean | 2020s | Young journalist | Singaporean archives | Documented migrant worker conditions |
+| Nguyễn Văn Đức | Vietnamese | 2010s-2020s | Blogger/activist | International archives | Arrested for "propaganda against state" |
+| Phạm Đoan Trang | Vietnamese | 2010s-2020s | Lawyer/journalist | International archives | JAILED 2020; founded Progressive Voice |
+| Pravit Rojanaphruk | Thai | 2010s-2020s | Political journalist | Thai archives | Covered Thai politics; detained |
+| Nuttaphol Teepsuwan | Thai | 2020s | Student journalist | Thai archives | Led 2020 protests; arrested 2021 |
+| Aung Kyaw Moe | Myanmarese | 2020s | Ethnic minority journalist | Myanmar archives | Covered Rohingya crisis |
+| Maria Ressa | Filipino-American | 2010s-2020s | Investigative journalist | Filipino archives | Nobel Peace Prize 2021; founded Rappler |
