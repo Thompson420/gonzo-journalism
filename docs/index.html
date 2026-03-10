@@ -13,11 +13,7 @@
             --text: #e0e0e0;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Courier New', monospace;
@@ -41,10 +37,7 @@
             margin-bottom: 0.5rem;
         }
         
-        .subtitle {
-            color: var(--accent);
-            font-size: 1.1rem;
-        }
+        .subtitle { color: var(--accent); font-size: 1.1rem; }
         
         nav {
             background: var(--secondary);
@@ -63,21 +56,14 @@
             transition: all 0.3s;
         }
         
-        nav a:hover {
-            background: var(--accent);
-            color: var(--bg);
-        }
+        nav a:hover { background: var(--accent); color: var(--bg); }
         
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        main { max-width: 1400px; margin: 0 auto; padding: 2rem; }
         
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
             margin: 2rem 0;
         }
         
@@ -88,22 +74,12 @@
             text-align: center;
         }
         
-        .stat-number {
-            font-size: 2.5rem;
-            color: var(--primary);
-            font-weight: bold;
-        }
+        .stat-number { font-size: 2.5rem; color: var(--primary); font-weight: bold; }
+        .stat-label { color: var(--accent); margin-top: 0.5rem; }
         
-        .stat-label {
-            color: var(--accent);
-            margin-top: 0.5rem;
-        }
+        .section { margin: 3rem 0; }
         
-        .featured {
-            margin: 3rem 0;
-        }
-        
-        .featured h2 {
+        .section h2 {
             color: var(--primary);
             border-bottom: 2px solid var(--accent);
             padding-bottom: 0.5rem;
@@ -112,58 +88,40 @@
         
         .journalist-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
         }
         
         .journalist-card {
             background: var(--secondary);
-            padding: 1.5rem;
+            padding: 1rem;
             border-left: 3px solid var(--primary);
             transition: transform 0.3s;
         }
         
-        .journalist-card:hover {
-            transform: translateX(5px);
-        }
+        .journalist-card:hover { transform: translateX(5px); }
+        .journalist-card.hidden { display: none; }
         
-        .journalist-name {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .journalist-nationality {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .journalist-era {
-            color: var(--primary);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .journalist-contribution {
-            font-style: italic;
-            color: #aaa;
-        }
+        .journalist-name { color: var(--accent); font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .journalist-nationality { color: #888; font-size: 0.85rem; }
+        .journalist-era { color: var(--primary); font-size: 0.85rem; }
+        .journalist-contribution { font-style: italic; color: #aaa; font-size: 0.9rem; margin-top: 0.5rem; }
         
         .category-nav {
             display: flex;
-            gap: 1rem;
+            gap: 0.5rem;
             flex-wrap: wrap;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
         }
         
         .category-btn {
             background: transparent;
             border: 1px solid var(--accent);
             color: var(--accent);
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             cursor: pointer;
             transition: all 0.3s;
+            font-size: 0.85rem;
         }
         
         .category-btn:hover, .category-btn.active {
@@ -172,28 +130,19 @@
         }
         
         .timeline-section {
-            margin: 3rem 0;
             padding: 2rem;
             background: var(--secondary);
             border: 1px solid var(--primary);
         }
         
-        .timeline-section h2 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-        
         .timeline-item {
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             border-left: 2px solid var(--accent);
             padding-left: 1.5rem;
             margin-left: 1rem;
         }
         
-        .timeline-year {
-            color: var(--primary);
-            font-weight: bold;
-        }
+        .timeline-year { color: var(--primary); font-weight: bold; }
         
         footer {
             background: var(--secondary);
@@ -205,8 +154,8 @@
         
         .search-box {
             width: 100%;
-            max-width: 500px;
-            padding: 1rem;
+            max-width: 400px;
+            padding: 0.8rem;
             background: var(--secondary);
             border: 2px solid var(--accent);
             color: var(--text);
@@ -215,33 +164,15 @@
             display: block;
         }
         
+        .db-link {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
         @media (max-width: 768px) {
             h1 { font-size: 1.8rem; }
-            nav { gap: 1rem; }
-        }
-        
-        .category-btn {
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .category-btn:hover, .category-btn.active {
-            background: var(--accent);
-            color: var(--bg);
-        }
-        
-        .hidden {
-            display: none !important;
-        }
-        
-        .no-results {
-            text-align: center;
-            padding: 2rem;
-            color: #888;
+            nav { gap: 0.5rem; }
+            .journalist-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -252,9 +183,8 @@
     </header>
     
     <nav>
-        <a href="#home">Home</a>
-        <a href="#journalists">Journalists</a>
-        <a href="#categories">Categories</a>
+        <a href="#stats">Stats</a>
+        <a href="#journalists">Database</a>
         <a href="#timeline">Timeline</a>
         <a href="#about">About</a>
     </nav>
@@ -263,7 +193,7 @@
         <section id="stats">
             <div class="stats">
                 <div class="stat-card">
-                    <div class="stat-number">396+</div>
+                    <div class="stat-number">404</div>
                     <div class="stat-label">Journalists</div>
                 </div>
                 <div class="stat-card">
@@ -276,133 +206,288 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">140+</div>
-                    <div class="stat-label">Years of History</div>
+                    <div class="stat-label">Years</div>
                 </div>
             </div>
         </section>
         
-        <input type="text" class="search-box" placeholder="Search journalists..." id="search">
+        <p style="text-align:center; color: #888; margin: 1rem 0;">
+            Full database: <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/NEON_ARCHIVE_PROTOCOL.md" target="_blank" class="db-link">NEON_ARCHIVE_PROTOCOL.md</a>
+        </p>
         
-        <section id="categories">
-            <h2 style="color: var(--primary); margin: 2rem 0;">Browse by Category</h2>
+        <section id="journalists" class="section">
+            <h2>Browse All Journalists</h2>
             <div class="category-nav">
-                <button class="category-btn active">All</button>
-                <button class="category-btn">Pioneers</button>
-                <button class="category-btn">War Correspondents</button>
-                <button class="category-btn">Investigative</button>
-                <button class="category-btn">Podcast/Digital</button>
-                <button class="category-btn">Sports</button>
-                <button class="category-btn">Food/Travel</button>
-                <button class="category-btn">Music</button>
+                <button class="category-btn active" data-cat="all">All</button>
+                <button class="category-btn" data-cat="pioneer">Pioneers</button>
+                <button class="category-btn" data-cat="war">War</button>
+                <button class="category-btn" data-cat="investigative">Investigative</button>
+                <button class="category-btn" data-cat="digital">Digital/Podcast</button>
+                <button class="category-btn" data-cat="food">Food/Travel</button>
+                <button class="category-btn" data-cat="sports">Sports</button>
+                <button class="category-btn" data-cat="music">Music</button>
             </div>
-        </section>
-        
-        <section id="journalists" class="featured">
-            <h2>Featured Gonzo Journalists</h2>
+            
             <div class="journalist-grid">
-                <div class="journalist-card">
+                <!-- Pioneers -->
+                <div class="journalist-card" data-cat="pioneer">
                     <div class="journalist-name">Hunter S. Thompson</div>
                     <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1970s-Present</div>
-                    <div class="journalist-contribution">"Father of Gonzo Journalism"</div>
+                    <div class="journalist-era">1970s-2000s</div>
+                    <div class="journalist-contribution">Father of Gonzo</div>
                 </div>
-                <div class="journalist-card">
-                    <div class="journalist-name">Anna Politkovskaya</div>
-                    <div class="journalist-nationality">Russian</div>
-                    <div class="journalist-era">1990s-2006</div>
-                    <div class="journalist-contribution">"Voice of Chechnya"</div>
-                </div>
-                <div class="journalist-card">
-                    <div class="journalist-name">Jamal Khashoggi</div>
-                    <div class="journalist-nationality">Saudi-American</div>
-                    <div class="journalist-era">1980s-2018</div>
-                    <div class="journalist-contribution">"Voice of Dissent"</div>
-                </div>
-                <div class="journalist-card">
-                    <div class="journalist-name">Maria Ressa</div>
-                    <div class="journalist-nationality">Filipino-American</div>
-                    <div class="journalist-era">1990s-Present</div>
-                    <div class="journalist-contribution">"Nobel Laureate"</div>
-                </div>
-                <div class="journalist-card">
+                <div class="journalist-card" data-cat="pioneer">
                     <div class="journalist-name">Nellie Bly</div>
                     <div class="journalist-nationality">American</div>
                     <div class="journalist-era">1880s-1920s</div>
-                    <div class="journalist-contribution">"Original Gonzo Pioneer"</div>
+                    <div class="journalist-contribution">Original Gonzo Pioneer</div>
                 </div>
-                <div class="journalist-card">
+                <div class="journalist-card" data-cat="pioneer">
+                    <div class="journalist-name">Tom Wolfe</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1960s-2010s</div>
+                    <div class="journalist-contribution">New Journalism Pioneer</div>
+                </div>
+                <div class="journalist-card" data-cat="pioneer">
+                    <div class="journalist-name">Joan Didion</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1960s-2020s</div>
+                    <div class="journalist-contribution">New Journalism Pioneer</div>
+                </div>
+                <div class="journalist-card" data-cat="pioneer">
+                    <div class="journalist-name">Norman Mailer</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1950s-2000s</div>
+                    <div class="journalist-contribution">New Journalism</div>
+                </div>
+                <div class="journalist-card" data-cat="pioneer">
+                    <div class="journalist-name">Truman Capote</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1950s-2000s</div>
+                    <div class="journalist-contribution">Non-Fiction Novel</div>
+                </div>
+                <div class="journalist-card" data-cat="pioneer">
+                    <div class="journalist-name">Gay Talese</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1960s-Present</div>
+                    <div class="journalist-contribution">New Journalism</div>
+                </div>
+                
+                <!-- War -->
+                <div class="journalist-card" data-cat="war">
+                    <div class="journalist-name">Anna Politkovskaya</div>
+                    <div class="journalist-nationality">Russian</div>
+                    <div class="journalist-era">1990s-2006</div>
+                    <div class="journalist-contribution">Voice of Chechnya</div>
+                </div>
+                <div class="journalist-card" data-cat="war">
+                    <div class="journalist-name">Martha Gellhorn</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1930s-1990s</div>
+                    <div class="journalist-contribution">War Correspondent Pioneer</div>
+                </div>
+                <div class="journalist-card" data-cat="war">
                     <div class="journalist-name">Seymour Hersh</div>
                     <div class="journalist-nationality">American</div>
                     <div class="journalist-era">1960s-Present</div>
-                    <div class="journalist-contribution">"Investigative Legend"</div>
+                    <div class="journalist-contribution">Investigative Legend</div>
                 </div>
-                <div class="journalist-card">
-                    <div class="journalist-name">Louis Theroux</div>
-                    <div class="journalist-nationality">British</div>
-                    <div class="journalist-era">1990s-Present</div>
-                    <div class="journalist-contribution">"Master of Immersion"</div>
+                <div class="journalist-card" data-cat="war">
+                    <div class="journalist-name">Marie Colvin</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1980s-2012</div>
+                    <div class="journalist-contribution">Syria Correspondent</div>
                 </div>
-                <div class="journalist-card">
+                <div class="journalist-card" data-cat="war">
+                    <div class="journalist-name">James Foley</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">2000s-2014</div>
+                    <div class="journalist-contribution">War Journalist</div>
+                </div>
+                
+                <!-- Investigative -->
+                <div class="journalist-card" data-cat="investigative">
+                    <div class="journalist-name">Jamal Khashoggi</div>
+                    <div class="journalist-nationality">Saudi-American</div>
+                    <div class="journalist-era">1980s-2018</div>
+                    <div class="journalist-contribution">Voice of Dissent</div>
+                </div>
+                <div class="journalist-card" data-cat="investigative">
                     <div class="journalist-name">Daphne Caruana Galizia</div>
                     <div class="journalist-nationality">Maltese</div>
                     <div class="journalist-era">1980s-2017</div>
-                    <div class="journalist-contribution">"Malta's Martyr"</div>
+                    <div class="journalist-contribution">Malta's Martyr</div>
+                </div>
+                <div class="journalist-card" data-cat="investigative">
+                    <div class="journalist-name">Glenn Greenwald</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">2000s-Present</div>
+                    <div class="journalist-contribution">NSA Exposer</div>
+                </div>
+                <div class="journalist-card" data-cat="investigative">
+                    <div class="journalist-name">Anita Hill</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1990s-Present</div>
+                    <div class="journalist-contribution">Accountability Journalist</div>
+                </div>
+                <div class="journalist-card" data-cat="investigative">
+                    <div class="journalist-name">Nicky Hager</div>
+                    <div class="journalist-nationality">New Zealander</div>
+                    <div class="journalist-era">1990s-Present</div>
+                    <div class="journalist-contribution">NZ Investigative</div>
+                </div>
+                
+                <!-- Digital/Podcast -->
+                <div class="journalist-card" data-cat="digital">
+                    <div class="journalist-name">Maria Ressa</div>
+                    <div class="journalist-nationality">Filipino-American</div>
+                    <div class="journalist-era">1990s-Present</div>
+                    <div class="journalist-contribution">Nobel Laureate</div>
+                </div>
+                <div class="journalist-card" data-cat="digital">
+                    <div class="journalist-name">Louis Theroux</div>
+                    <div class="journalist-nationality">British</div>
+                    <div class="journalist-era">1990s-Present</div>
+                    <div class="journalist-contribution">Master of Immersion</div>
+                </div>
+                <div class="journalist-card" data-cat="digital">
+                    <div class="journalist-name">Sarah Koenig</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">2010s-Present</div>
+                    <div class="journalist-contribution">Serial Podcast</div>
+                </div>
+                <div class="journalist-card" data-cat="digital">
+                    <div class="journalist-name">Jon Ronson</div>
+                    <div class="journalist-nationality">British</div>
+                    <div class="journalist-era">1990s-Present</div>
+                    <div class="journalist-contribution">Quirky Gonzo UK</div>
+                </div>
+                <div class="journalist-card" data-cat="digital">
+                    <div class="journalist-name">Edward Snowden</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">2010s-Present</div>
+                    <div class="journalist-contribution">Whistleblower</div>
+                </div>
+                
+                <!-- Food/Travel -->
+                <div class="journalist-card" data-cat="food">
+                    <div class="journalist-name">Anthony Bourdain</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">2000s-2018</div>
+                    <div class="journalist-contribution">Food Travel Gonzo</div>
+                </div>
+                <div class="journalist-card" data-cat="food">
+                    <div class="journalist-name">Andrew Zimmern</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">2000s-Present</div>
+                    <div class="journalist-contribution">Bizarre Foods</div>
+                </div>
+                <div class="journalist-card" data-cat="food">
+                    <div class="journalist-name">Michael Pollan</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">2000s-Present</div>
+                    <div class="journalist-contribution">Food Systems Gonzo</div>
+                </div>
+                <div class="journalist-card" data-cat="food">
+                    <div class="journalist-name">Mark Kurlansky</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1990s-Present</div>
+                    <div class="journalist-contribution">Food History</div>
+                </div>
+                
+                <!-- Sports -->
+                <div class="journalist-card" data-cat="sports">
+                    <div class="journalist-name">Norman Mailer</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1970s</div>
+                    <div class="journalist-contribution">The Fight (Ali vs Frazier)</div>
+                </div>
+                <div class="journalist-card" data-cat="sports">
+                    <div class="journalist-name">Don Chargin</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1950s-2000s</div>
+                    <div class="journalist-contribution">Godfather of Boxing</div>
+                </div>
+                <div class="journalist-card" data-cat="sports">
+                    <div class="journalist-name">Graham Hunter</div>
+                    <div class="journalist-nationality">British</div>
+                    <div class="journalist-era">2000s-2010s</div>
+                    <div class="journalist-contribution">Barça Writer</div>
+                </div>
+                <div class="journalist-card" data-cat="sports">
+                    <div class="journalist-name">Wright Thompson</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">2010s-Present</div>
+                    <div class="journalist-contribution">ESPN Long-Form</div>
+                </div>
+                
+                <!-- Music -->
+                <div class="journalist-card" data-cat="music">
+                    <div class="journalist-name">Lester Bangs</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1970s-1980s</div>
+                    <div class="journalist-contribution">Rock Gonzo Pioneer</div>
+                </div>
+                <div class="journalist-card" data-cat="music">
+                    <div class="journalist-name">Nick Kent</div>
+                    <div class="journalist-nationality">British</div>
+                    <div class="journalist-era">1970s-Present</div>
+                    <div class="journalist-contribution">NME Writer</div>
+                </div>
+                <div class="journalist-card" data-cat="music">
+                    <div class="journalist-name">Nelson George</div>
+                    <div class="journalist-nationality">American</div>
+                    <div class="journalist-era">1980s-Present</div>
+                    <div class="journalist-contribution">Hip Hop Chronicler</div>
+                </div>
+                <div class="journalist-card" data-cat="music">
+                    <div class="journalist-name">Simon Reynolds</div>
+                    <div class="journalist-nationality">British</div>
+                    <div class="journalist-era">1990s-Present</div>
+                    <div class="journalist-contribution">Electronic Music Gonzo</div>
                 </div>
             </div>
         </section>
         
         <section id="timeline" class="timeline-section">
             <h2>The Gonzo Timeline</h2>
-            <div class="timeline-item">
-                <span class="timeline-year">1887</span> - Nellie Bly exposes asylum conditions
-            </div>
-            <div class="timeline-item">
-                <span class="timeline-year">1970</span> - "Gonzo" term coined
-            </div>
-            <div class="timeline-item">
-                <span class="timeline-year">1971</span> - Fear and Loathing in Las Vegas published
-            </div>
-            <div class="timeline-item">
-                <span class="timeline-year">1999</span> - Anthony Bourdain launches food gonzo
-            </div>
-            <div class="timeline-item">
-                <span class="timeline-year">2013</span> - Snowden revelations (Greenwald)
-            </div>
-            <div class="timeline-item">
-                <span class="timeline-year">2014</span> - Serial podcast launches gonzo audio era
-            </div>
-            <div class="timeline-item">
-                <span class="timeline-year">2021</span> - Maria Ressa wins Nobel Peace Prize
-            </div>
+            <div class="timeline-item"><span class="timeline-year">1887</span> - Nellie Bly exposes asylum conditions</div>
+            <div class="timeline-item"><span class="timeline-year">1966</span> - Thompson embeds with Hell's Angels</div>
+            <div class="timeline-item"><span class="timeline-year">1970</span> - "Gonzo" term coined</div>
+            <div class="timeline-item"><span class="timeline-year">1971</span> - Fear and Loathing in Las Vegas</div>
+            <div class="timeline-item"><span class="timeline-year">1999</span> - Anthony Bourdain launches food gonzo</div>
+            <div class="timeline-item"><span class="timeline-year">2013</span> - Snowden revelations (Greenwald)</div>
+            <div class="timeline-item"><span class="timeline-year">2014</span> - Serial podcast launches gonzo audio</div>
+            <div class="timeline-item"><span class="timeline-year">2021</span> - Maria Ressa wins Nobel Peace Prize</div>
         </section>
         
-        <section id="about" class="featured">
+        <section id="about" class="section">
             <h2>About The NEON Archive Protocol</h2>
-            <p>The NEON Archive Protocol is a comprehensive database documenting gonzo journalists from around the world and throughout history. From Nellie Bly's 1887 undercover investigations to modern podcast journalists, we've catalogued the pioneers who shaped immersive, first-person journalism.</p>
+            <p>The NEON Archive Protocol documents gonzo journalists from around the world and throughout history. From Nellie Bly's 1887 undercover investigations to modern podcast journalists.</p>
             <br>
-            <p><strong>Database maintained by:</strong> Thompson (Gonzo Journalist for The Scroll)</p>
+            <p><strong>Main Database:</strong> <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/NEON_ARCHIVE_PROTOCOL.md" class="db-link">NEON_ARCHIVE_PROTOCOL.md</a> (404 entries)</p>
+            <p><strong>Maintained by:</strong> Thompson (The Scroll)</p>
             <p><strong>Repository:</strong> github.com/Thompson420/gonzo-journalism</p>
-            <p><strong>Last Updated:</strong> March 9, 2026</p>
+            <p><strong>Last Updated:</strong> March 10, 2026</p>
         </section>
     </main>
     
     <footer>
         <p>🎭 The NEON Archive Protocol | A The Scroll Project</p>
-        <p>Database: 396+ Entries | 12 Detailed Bios | 50+ Countries</p>
+        <p>Database: 404 Entries | 12 Detailed Bios | 50+ Countries</p>
     </footer>
+    
     <script>
-    document.querySelectorAll(".category-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            const category = btn.textContent;
-            document.querySelectorAll(".journalist-card").forEach(card => {
-                if (category === "All") {
-                    card.style.display = "block";
-                } else if (card.textContent.toLowerCase().includes(category.split("/")[0].toLowerCase())) {
-                    card.style.display = "block";
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cat = btn.dataset.cat;
+            document.querySelectorAll('.journalist-card').forEach(card => {
+                if (cat === 'all' || card.dataset.cat === cat) {
+                    card.classList.remove('hidden');
                 } else {
-                    card.style.display = "none";
+                    card.classList.add('hidden');
                 }
             });
         });
