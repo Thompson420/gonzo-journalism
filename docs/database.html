@@ -1,0 +1,3820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Database | The NEON Archive Protocol</title>
+    <style>
+        :root { --primary: #ff4500; --secondary: #1a1a2e; --accent: #00d4ff; --bg: #0a0a0f; --text: #e0e0e0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Courier New', monospace; background: var(--bg); color: var(--text); line-height: 1.6; }
+        header { background: linear-gradient(135deg, var(--secondary), #2d1f3d); padding: 2rem; text-align: center; border-bottom: 3px solid var(--primary); }
+        h1 { font-size: 2rem; color: var(--primary); text-transform: uppercase; letter-spacing: 3px; }
+        .subtitle { color: var(--accent); margin-top: 0.5rem; }
+        nav { background: var(--secondary); padding: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        nav a { color: var(--text); text-decoration: none; padding: 0.5rem 1rem; border: 1px solid var(--accent); transition: all 0.3s; }
+        nav a:hover { background: var(--accent); color: var(--bg); }
+        main { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        .controls { background: var(--secondary); padding: 1rem; margin-bottom: 2rem; border: 1px solid var(--primary); border-radius: 4px; }
+        .controls input, .controls select { background: var(--bg); color: var(--text); border: 1px solid var(--accent); padding: 0.5rem; margin: 0.25rem; border-radius: 4px; }
+        .controls input { width: 200px; }
+        .controls select { min-width: 150px; }
+        .stats-bar { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; color: var(--accent); font-size: 0.9rem; }
+        .table-container { overflow-x: auto; max-height: 80vh; }
+        table { width: 100%; border-collapse: collapse; background: var(--secondary); }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #333; }
+        th { background: var(--primary); color: var(--bg); font-weight: bold; position: sticky; top: 0; z-index: 10; }
+        tr:hover { background: #252540; }
+        .name-cell a { color: var(--accent); text-decoration: none; font-weight: bold; }
+        .name-cell a:hover { text-decoration: underline; }
+        .bio-link { color: #4CAF50; font-size: 0.75rem; text-decoration: none; margin-left: 0.5rem; }
+        .bio-link:hover { text-decoration: underline; }
+        .no-bio { color: #666; font-size: 0.75rem; }
+        .nationality { font-size: 0.85rem; }
+        .era { color: var(--primary); font-size: 0.85rem; }
+        .notes { font-size: 0.8rem; color: #aaa; max-width: 350px; }
+        .contribution { font-size: 0.85rem; }
+        .pagination { display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem; flex-wrap: wrap; }
+        .pagination button { background: var(--secondary); color: var(--text); border: 1px solid var(--accent); padding: 0.5rem 1rem; cursor: pointer; transition: all 0.3s; border-radius: 4px; }
+        .pagination button:hover, .pagination button.active { background: var(--accent); color: var(--bg); }
+        .pagination button:disabled { opacity: 0.5; cursor: not-allowed; }
+        footer { background: var(--secondary); padding: 2rem; text-align: center; margin-top: 3rem; border-top: 3px solid var(--primary); }
+        .back-link { color: var(--accent); text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 768px) { th, td { padding: 0.5rem; font-size: 0.8rem; } .notes { max-width: 150px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎭 NEON Archive Database</h1>
+        <p class="subtitle">Complete Gonzo Journalism Database - 382 Entries</p>
+    </header>
+    <nav>
+        <a href="index.html">← Back to Featured</a>
+        <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank">GitHub Repo</a>
+    </nav>
+    <main>
+        <div class="controls">
+            <div class="stats-bar">
+                <span id="totalCount">Showing 382 journalists</span>
+                <span id="pageInfo"></span>
+            </div>
+            <input type="text" id="searchInput" placeholder="Search by name..." onkeyup="filterData()">
+            <select id="nationalityFilter" onchange="filterData()">
+                <option value="">All Nationalities (147)</option>
+                <option value="Afghan">Afghan</option>
+                <option value="Albanian">Albanian</option>
+                <option value="Algerian">Algerian</option>
+                <option value="American">American</option>
+                <option value="American (China)">American (China)</option>
+                <option value="Angolan">Angolan</option>
+                <option value="Argentine">Argentine</option>
+                <option value="Armenian">Armenian</option>
+                <option value="Australian">Australian</option>
+                <option value="Austrian">Austrian</option>
+                <option value="Azerbaijani">Azerbaijani</option>
+                <option value="Bangladeshi">Bangladeshi</option>
+                <option value="Belarusian">Belarusian</option>
+                <option value="Belgian">Belgian</option>
+                <option value="Beninese">Beninese</option>
+                <option value="Bolivian">Bolivian</option>
+                <option value="Brazilian">Brazilian</option>
+                <option value="British">British</option>
+                <option value="Bulgarian">Bulgarian</option>
+                <option value="Burkinabé">Burkinabé</option>
+                <option value="Burundian">Burundian</option>
+                <option value="Cambodian">Cambodian</option>
+                <option value="Canadian">Canadian</option>
+                <option value="Canadian-British">Canadian-British</option>
+                <option value="Chilean">Chilean</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Chinese-American">Chinese-American</option>
+                <option value="Colombian">Colombian</option>
+                <option value="Congolese">Congolese</option>
+                <option value="Costa Rican">Costa Rican</option>
+                <option value="Croatian">Croatian</option>
+                <option value="Cuban">Cuban</option>
+                <option value="Czech">Czech</option>
+                <option value="Danish">Danish</option>
+                <option value="Dominican">Dominican</option>
+                <option value="Dutch">Dutch</option>
+                <option value="Ecuadorian">Ecuadorian</option>
+                <option value="Egyptian">Egyptian</option>
+                <option value="Estonian">Estonian</option>
+                <option value="Ethiopian">Ethiopian</option>
+                <option value="Fijian">Fijian</option>
+                <option value="Filipino">Filipino</option>
+                <option value="Filipino-American">Filipino-American</option>
+                <option value="Finnish">Finnish</option>
+                <option value="French">French</option>
+                <option value="Georgian">Georgian</option>
+                <option value="German">German</option>
+                <option value="Ghanaian">Ghanaian</option>
+                <option value="Greek">Greek</option>
+                <option value="Guatemalan">Guatemalan</option>
+                <option value="Guinean">Guinean</option>
+                <option value="Guyanese">Guyanese</option>
+                <option value="Haitian">Haitian</option>
+                <option value="Honduran">Honduran</option>
+                <option value="Hong Konger">Hong Konger</option>
+                <option value="Hungarian">Hungarian</option>
+                <option value="Icelandic">Icelandic</option>
+                <option value="Indian">Indian</option>
+                <option value="Indonesian">Indonesian</option>
+                <option value="Iranian">Iranian</option>
+                <option value="Iranian-American">Iranian-American</option>
+                <option value="Iranian-French">Iranian-French</option>
+                <option value="Iraqi">Iraqi</option>
+                <option value="Irish">Irish</option>
+                <option value="Italian">Italian</option>
+                <option value="Italian-American">Italian-American</option>
+                <option value="Jamaican">Jamaican</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Jordanian">Jordanian</option>
+                <option value="Kazakh">Kazakh</option>
+                <option value="Kenyan">Kenyan</option>
+                <option value="Kenyan/Somali">Kenyan/Somali</option>
+                <option value="Kosovar">Kosovar</option>
+                <option value="Kurdish (Syria)">Kurdish (Syria)</option>
+                <option value="Kurdish (Turkey)">Kurdish (Turkey)</option>
+                <option value="Kyrgyz">Kyrgyz</option>
+                <option value="Kyrgyz (Uzbek)">Kyrgyz (Uzbek)</option>
+                <option value="Latvian">Latvian</option>
+                <option value="Lebanese">Lebanese</option>
+                <option value="Liberian">Liberian</option>
+                <option value="Libyan">Libyan</option>
+                <option value="Lithuanian">Lithuanian</option>
+                <option value="Malaysian">Malaysian</option>
+                <option value="Malian">Malian</option>
+                <option value="Maltese">Maltese</option>
+                <option value="Mauritanian">Mauritanian</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Moldovan">Moldovan</option>
+                <option value="Mongolian">Mongolian</option>
+                <option value="Montenegrin">Montenegrin</option>
+                <option value="Moroccan">Moroccan</option>
+                <option value="Mozambican">Mozambican</option>
+                <option value="Myanmarese">Myanmarese</option>
+                <option value="Nepali">Nepali</option>
+                <option value="New Zealander">New Zealander</option>
+                <option value="Nicaraguan">Nicaraguan</option>
+                <option value="Nigerian">Nigerian</option>
+                <option value="Nigerien">Nigerien</option>
+                <option value="North Korean defector">North Korean defector</option>
+                <option value="Norwegian">Norwegian</option>
+                <option value="Pakistani">Pakistani</option>
+                <option value="Palestinian-American">Palestinian-American</option>
+                <option value="Panamanian">Panamanian</option>
+                <option value="Papua New Guinean">Papua New Guinean</option>
+                <option value="Paraguayan">Paraguayan</option>
+                <option value="Peruvian">Peruvian</option>
+                <option value="Polish">Polish</option>
+                <option value="Portuguese">Portuguese</option>
+                <option value="Romanian">Romanian</option>
+                <option value="Russian">Russian</option>
+                <option value="Rwandan">Rwandan</option>
+                <option value="Sahrawi">Sahrawi</option>
+                <option value="Salvadoran">Salvadoran</option>
+                <option value="Saudi">Saudi</option>
+                <option value="Senegalese">Senegalese</option>
+                <option value="Serbian">Serbian</option>
+                <option value="Sierra Leonean">Sierra Leonean</option>
+                <option value="Singaporean">Singaporean</option>
+                <option value="Slovak">Slovak</option>
+                <option value="Slovenian">Slovenian</option>
+                <option value="Solomon Islander">Solomon Islander</option>
+                <option value="Somali">Somali</option>
+                <option value="South African">South African</option>
+                <option value="South Korean">South Korean</option>
+                <option value="South Sudanese">South Sudanese</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Sri Lankan">Sri Lankan</option>
+                <option value="Sudanese">Sudanese</option>
+                <option value="Swedish">Swedish</option>
+                <option value="Swiss">Swiss</option>
+                <option value="Taiwanese">Taiwanese</option>
+                <option value="Tajik">Tajik</option>
+                <option value="Tanzanian">Tanzanian</option>
+                <option value="Thai">Thai</option>
+                <option value="Togolese">Togolese</option>
+                <option value="Tongan">Tongan</option>
+                <option value="Trinidadian">Trinidadian</option>
+                <option value="Tunisian">Tunisian</option>
+                <option value="Turkmen">Turkmen</option>
+                <option value="Ugandan">Ugandan</option>
+                <option value="Ukrainian">Ukrainian</option>
+                <option value="Uruguayan">Uruguayan</option>
+                <option value="Uzbek">Uzbek</option>
+                <option value="Venezuelan">Venezuelan</option>
+                <option value="Vietnamese">Vietnamese</option>
+                <option value="Yemeni">Yemeni</option>
+                <option value="Zimbabwean">Zimbabwean</option>
+            </select>
+            <select id="eraFilter" onchange="filterData()">
+                <option value="">All Eras</option>
+                <option value="1800s">1800s</option>
+                <option value="1880s-1890s">1880s-1890s</option>
+                <option value="1920s-30s">1920s-30s</option>
+                <option value="1950s">1950s</option>
+                <option value="1950s-60s">1950s-60s</option>
+                <option value="1950s-70s">1950s-70s</option>
+                <option value="1960s">1960s</option>
+                <option value="1960s-2000s">1960s-2000s</option>
+                <option value="1960s-2010s">1960s-2010s</option>
+                <option value="1960s-2020s">1960s-2020s</option>
+                <option value="1960s-70s">1960s-70s</option>
+                <option value="1960s-80s">1960s-80s</option>
+                <option value="1965-2004">1965-2004</option>
+                <option value="1967-Present">1967-Present</option>
+                <option value="1970s">1970s</option>
+                <option value="1970s-2000s">1970s-2000s</option>
+                <option value="1970s-2020s">1970s-2020s</option>
+                <option value="1970s-80s">1970s-80s</option>
+                <option value="1980s">1980s</option>
+                <option value="1980s-1994">1980s-1994</option>
+                <option value="1980s-2000s">1980s-2000s</option>
+                <option value="1980s-2018">1980s-2018</option>
+                <option value="1980s-2020s">1980s-2020s</option>
+                <option value="1980s-2021">1980s-2021</option>
+                <option value="1980s-90s">1980s-90s</option>
+                <option value="1987-2017">1987-2017</option>
+                <option value="1990s">1990s</option>
+                <option value="1990s-2000">1990s-2000</option>
+                <option value="1990s-2000s">1990s-2000s</option>
+                <option value="1990s-2002">1990s-2002</option>
+                <option value="1990s-2006">1990s-2006</option>
+                <option value="1990s-2010s">1990s-2010s</option>
+                <option value="1990s-2020s">1990s-2020s</option>
+                <option value="1990s-2022">1990s-2022</option>
+                <option value="2000s">2000s</option>
+                <option value="2000s-10s">2000s-10s</option>
+                <option value="2000s-2013">2000s-2013</option>
+                <option value="2000s-2017">2000s-2017</option>
+                <option value="2000s-2018">2000s-2018</option>
+                <option value="2000s-2020s">2000s-2020s</option>
+                <option value="2000s-20s">2000s-20s</option>
+                <option value="2006-2020s">2006-2020s</option>
+                <option value="2010-2020s">2010-2020s</option>
+                <option value="2010s">2010s</option>
+                <option value="2010s-2020s">2010s-2020s</option>
+                <option value="2010s-20s">2010s-20s</option>
+                <option value="2013-2020s">2013-2020s</option>
+                <option value="2018-2020s">2018-2020s</option>
+                <option value="2018-23">2018-23</option>
+                <option value="2020-25">2020-25</option>
+                <option value="2020s">2020s</option>
+                <option value="2021-2025">2021-2025</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+            <select id="perPageSelect" onchange="changePerPage()">
+                <option value="30">30 per page</option>
+                <option value="50">50 per page</option>
+                <option value="100">100 per page</option>
+            </select>
+        </div>
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Nationality</th>
+                        <th>Era</th>
+                        <th>Contribution</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+        <div class="pagination" id="pagination"></div>
+    </main>
+    <footer>
+        <p>🎭 The NEON Archive Protocol | A The Scroll Project</p>
+        <p><a href="index.html" class="back-link">← Back to Featured Journalists</a></p>
+    </footer>
+    <script>
+        const database = [
+            {
+                name: "Veikko Ennala",
+                nationality: "Finnish",
+                era: "1950s",
+                contribution: "Sports reporter",
+                notes: "First documented gonzo-style immersion journalist; FEATURED IN THE SCROLL",
+                bioFile: "VEIKKO_ENNALA.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/VEIKKO_ENNALA.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Riku Rantala",
+                nationality: "Finnish",
+                era: "2000s",
+                contribution: "TV Journalist/Director",
+                notes: "\"Madventures\" - Finnish gonzo travel show; traveled world immersive documentaries; with Tunna Milonoff",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Tunna Milonoff",
+                nationality: "Finnish",
+                era: "2000s",
+                contribution: "TV Journalist/Director",
+                notes: "\"Madventures\" - Finnish gonzo travel show; traveled world immersive documentaries; with Riku Rantala",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jessikka Aro",
+                nationality: "Finnish",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "JAILED for investigating pro-Russia hate campaign; exposed Russian troll farms; convicted 2019",
+                bioFile: "JESSIKKA_ARO.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/JESSIKKA_ARO.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Marcelina "Marca" Varela",
+                nationality: "Argentine",
+                era: "1970s",
+                contribution: "Investigative reporter",
+                notes: "Exposed military censorship ring; went underground",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Javier "Che" Rojas",
+                nationality: "Uruguayan",
+                era: "1980s",
+                contribution: "Political cartoonist",
+                notes: "Published clandestine zine \"Grito Libre\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sofia "Sofi" Delgado",
+                nationality: "Chilean",
+                era: "1990s",
+                contribution: "Feminist journalist",
+                notes: "Underground newsletter \"Mujeres en Fuego\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Andrés "Andy" Pérez",
+                nationality: "Mexican",
+                era: "1970s",
+                contribution: ""Guerrilla" reporter",
+                notes: "Embedded with student protests; self-published chapbook",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Anonymous Ugandan Journalist",
+                nationality: "Ugandan",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Sold into slavery in Dubai to investigate maid abuse; posed as housemaid to expose trafficking",
+                bioFile: "anonymous_ugandan.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/anonymous_ugandan.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Hunter S. Thompson",
+                nationality: "American",
+                era: "1970s",
+                contribution: "Rolling Stone correspondent",
+                notes: "Popularized \"gonzo journalism\" term",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mariana van Zeller",
+                nationality: "Portuguese",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Goes inside dangerous black markets; drug cartels, human trafficking; gonzo-style immersive investigation",
+                bioFile: "MARIANA_VAN_ZELLER.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/MARIANA_VAN_ZELLER.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "William S. Burroughs",
+                nationality: "American",
+                era: "1950s-60s",
+                contribution: "Experimental novelist",
+                notes: "Cut-up technique influenced gonzo style",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Truman Capote",
+                nationality: "American",
+                era: "1960s",
+                contribution: "Esquire writer",
+                notes: "\"Non-fiction novel\" precursor to gonzo",
+                bioFile: "TRUMAN_CAPOTE.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/TRUMAN_CAPOTE.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Lester Bangs",
+                nationality: "American",
+                era: "1970s",
+                contribution: "Music journalist",
+                notes: "Influential music gonzo journalism",
+                bioFile: "LESTER_BANGS.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/LESTER_BANGS.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Joan Didion",
+                nationality: "American",
+                era: "1960s-70s",
+                contribution: "Vogue/NYRB writer",
+                notes: "Personal, immersive political journalism",
+                bioFile: "JOAN_DIDION.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/JOAN_DIDION.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Tom Wolfe",
+                nationality: "American",
+                era: "1960s",
+                contribution: "New York Magazine writer",
+                notes: "New Journalism pioneer, influenced gonzo",
+                bioFile: "TOM_WOLFE.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/TOM_WOLFE.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Norman Mailer",
+                nationality: "American",
+                era: "1960s",
+                contribution: "Esquire writer",
+                notes: "Participatory journalism, nonfiction novels",
+                bioFile: "NORMAN_MAILER.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/NORMAN_MAILER.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Ken Kesey",
+                nationality: "American",
+                era: "1960s",
+                contribution: "Counter-culture figure",
+                notes: "Merry Prankster journalism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Paul Krassner",
+                nationality: "American",
+                era: "1960s-70s",
+                contribution: "The Realist editor",
+                notes: "Underground satirist, gonzo precursor",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Robert Crumb",
+                nationality: "American",
+                era: "1960s-70s",
+                contribution: "Zap Comix artist",
+                notes: "Visual gonzo, counterculture journalism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ryszard Kapuściński",
+                nationality: "Polish",
+                era: "1970s-80s",
+                contribution: "War correspondent",
+                notes: "Polish gonzo, war correspondent",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Günter Grass",
+                nationality: "German",
+                era: "1960s",
+                contribution: "Der Spiegel writer",
+                notes: "German gonzo, political fiction",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Günter Wallraff",
+                nationality: "German",
+                era: "1960s-2020s",
+                contribution: "Undercover journalist",
+                notes: "LEGEND; undercover since 1960s; posed as worker, patient, migrant; exposed working conditions, tabloid journalism; famous \"Headless\" book; hosted Wolf...",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Nellie Bly",
+                nationality: "American",
+                era: "1880s-1890s",
+                contribution: "Investigative reporter",
+                notes: "PIONEER; \"stunt journalism\"; exposed asylum conditions 1887; \"Ten Days in a Mad-House\"; around the world in 72 days",
+                bioFile: "nellie_bly_bio.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/nellie_bly_bio.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Seymour Hersh",
+                nationality: "American",
+                era: "1960s-2020s",
+                contribution: "Investigative reporter",
+                notes: "LEGEND; exposed My Lai Massacre 1969; Abu Ghraib; Syrian chemical weapons; Pulitzer Prize 1970; ongoing investigative work into Biden/Ukraine",
+                bioFile: "seymour_hersh_bio.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/seymour_hersh_bio.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Veronica Guerin",
+                nationality: "Irish",
+                era: "1990s",
+                contribution: "Investigative journalist",
+                notes: "ASSASSINATED 1996; exposed gangland crime in Ireland; shot on way to court; sparked Criminal Assets Bureau establishment",
+                bioFile: "VERONICA_GUERIN.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/VERONICA_GUERIN.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Jake Adelstein",
+                nationality: "American",
+                era: "2000s-20s",
+                contribution: "Investigative journalist",
+                notes: "Covered Yakuza in Japan; wrote \"Tokyo Vice\"; death threats; exposed Japanese organized crime",
+                bioFile: "JAKE_ADELSTEIN.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/JAKE_ADELSTEIN.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Javier Valdez",
+                nationality: "Mexican",
+                era: "2000s-2017",
+                contribution: "Journalist",
+                notes: "KILLED 2017; covered drug cartels; wrote about organized crime; awarded",
+                bioFile: "JAVIER_VALDEZ.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/JAVIER_VALDEZ.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Banana Yoshimoto",
+                nationality: "Japanese",
+                era: "1980s-90s",
+                contribution: "Novelist",
+                notes: "Japanese gonzo, personal narrative",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Haruki Murakami",
+                nationality: "Japanese",
+                era: "1980s-90s",
+                contribution: "Novelist",
+                notes: "Japanese gonzo, magical realism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Binyavanga Wainaina",
+                nationality: "Kenyan",
+                era: "2000s-10s",
+                contribution: "Memoirist/Writer",
+                notes: "Founded Kwani? (2003); Caine Prize 2002; \"How to Write About Africa\" (2005); came out as gay 2014; died 2019",
+                bioFile: "BINYAVANGA_WAINAINA.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/BINYAVANGA_WAINAINA.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Clive James",
+                nationality: "Australian",
+                era: "1970s-80s",
+                contribution: "The Observer writer",
+                notes: "Australian gonzo, personal essays",
+                bioFile: "CLIVE_JAMES.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/CLIVE_JAMES.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Gabriel García Márquez",
+                nationality: "Colombian",
+                era: "1960s-80s",
+                contribution: "Novelist",
+                notes: "Magical realism, influenced gonzo",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Isabel Allende",
+                nationality: "Chilean",
+                era: "1980s-90s",
+                contribution: "Novelist",
+                notes: "Chilean gonzo, magical realism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Stewart Brand",
+                nationality: "American",
+                era: "1960s-70s",
+                contribution: "Whole Earth Catalog editor",
+                notes: "Experimental gonzo, tech journalism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sarah Koenig",
+                nationality: "American",
+                era: "2010s",
+                contribution: "Serial podcast creator",
+                notes: "Contemporary gonzo, investigative podcast",
+                bioFile: "SARAH_KOENIG.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/SARAH_KOENIG.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Ezra Klein",
+                nationality: "American",
+                era: "2010s-20s",
+                contribution: "Vox/NYT writer",
+                notes: "Contemporary gonzo, political podcast",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Casey Neistat",
+                nationality: "American",
+                era: "2010s-20s",
+                contribution: "YouTube creator",
+                notes: "Digital gonzo, vlogging",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Errol Morris",
+                nationality: "American",
+                era: "1980s-2000s",
+                contribution: "Documentary filmmaker",
+                notes: "Documentary gonzo, investigative film",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Robert Frank",
+                nationality: "American",
+                era: "1950s-60s",
+                contribution: "Photographer",
+                notes: "Photographic gonzo, documentary photography",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ira Glass",
+                nationality: "American",
+                era: "1990s-2000s",
+                contribution: "This American Life host",
+                notes: "Audio gonzo, narrative podcast",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Banksy",
+                nationality: "British",
+                era: "2000s-10s",
+                contribution: "Street artist",
+                notes: "Visual gonzo, street art journalism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Marina Abramović",
+                nationality: "Serbian",
+                era: "1970s-2000s",
+                contribution: "Performance artist",
+                notes: "Performance gonzo, activist journalism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jonathan Harris",
+                nationality: "American",
+                era: "2000s-10s",
+                contribution: "Interactive artist",
+                notes: "Interactive gonzo, data journalism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "The Yes Men",
+                nationality: "American",
+                era: "1990s-2000s",
+                contribution: "Activist group",
+                notes: "Collaborative gonzo, activist journalism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Laurie Anderson",
+                nationality: "American",
+                era: "1980s-2000s",
+                contribution: "Performance artist",
+                notes: "Hybrid gonzo, multimedia journalism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Trevor Noah",
+                nationality: "South African",
+                era: "2010s-20s",
+                contribution: "Comedian/Writer",
+                notes: "Emerging gonzo, comedic journalism",
+                bioFile: "TREVOR_NOAH.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/TREVOR_NOAH.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Anas Aremeyaw Anas",
+                nationality: "Ghanaian",
+                era: "2000s-20s",
+                contribution: "Investigative journalist",
+                notes: "\"Faceless\" undercover gonzo; \"Number 12\" exposé took down Ghana FA; collaborator assassinated 2019",
+                bioFile: "ANAS_AREMEYAW_ANAS.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/ANAS_AREMEYAW_ANAS.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Fisayo Soyombo",
+                nationality: "Nigerian",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Undercover gonzo; got arrested to expose police corruption; spent 5 days in cell, 8 days in prison",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Cecilia Okoth",
+                nationality: "Ugandan",
+                era: "2018-23",
+                contribution: "Investigative journalist",
+                notes: "Undercover at cancer center exposing medical bribery; exposed child trafficking to Kenya; helped rescue ~300 girls",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Estacio Valoi",
+                nationality: "Mozambican",
+                era: "2010s",
+                contribution: "Investigative journalist",
+                notes: "Ruby mining exposé in Cabo Delgado; exposed corruption + deaths",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Carlos Cardoso",
+                nationality: "Mozambican",
+                era: "1990s-2000",
+                contribution: "Investigative journalist",
+                notes: "Exposed bank privatization corruption; murdered 2000",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Rafael Marques de Morais",
+                nationality: "Angolan",
+                era: "2000s-20s",
+                contribution: "Anti-corruption journalist",
+                notes: "Runs \"Maka Angola\"; won 2015 Allard Prize for International Integrity",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Maria Sarungi Tsehai",
+                nationality: "Tanzanian",
+                era: "2020s",
+                contribution: "Journalist",
+                notes: "Briefly abducted in Kenya; activist journalist",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Erick Kabendera",
+                nationality: "Tanzanian",
+                era: "2010s",
+                contribution: "Investigative journalist",
+                notes: "Arrested 2019 on sedition charges; jailed",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Zimbabwe Gold Mafia Journalists",
+                nationality: "Zimbabwean",
+                era: "2023",
+                contribution: "Investigative journalists",
+                notes: "Exposed gold smuggling + money laundering involving gov officials",
+                bioFile: "zimbabwe_gold_mafia.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/zimbabwe_gold_mafia.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Pape Alé Niang",
+                nationality: "Senegalese",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Arrested multiple times; hunger strike 2023; investigated political corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Phillipbert Brown",
+                nationality: "Liberian",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Investigated \"missing billions\"; received death threats; declared wanted",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Omar Radi",
+                nationality: "Moroccan",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Jailed 2020-2024 for \"espionage\"; targeted with Pegasus spyware; investigated corruption; released after royal pardon",
+                bioFile: "OMAR_RADI.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/OMAR_RADI.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Jamal Khashoggi",
+                nationality: "Saudi",
+                era: "1980s-2018",
+                contribution: "Journalist/Author",
+                notes: "Assassinated 2018 at Saudi consulate in Istanbul; critic of MBS; founded DAWN; Washington Post columnist; covered Afghanistan, Al-Qaeda; Time Person o...",
+                bioFile: "JAMAL_KHASHOGGI.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/JAMAL_KHASHOGGI.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Ghaith Abdul-Ahad",
+                nationality: "Iraqi",
+                era: "2000s-20s",
+                contribution: "Journalist/Photographer",
+                notes: "Born Baghdad; deserted Saddam's army; lived underground 6 years; covered Iraq, Afghanistan, Libya, Syria; imprisoned by Taliban 5 days; detained by Li...",
+                bioFile: "GHAITH_ABDUL-AHAD.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/GHAITH_ABDUL-AHAD.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Theo Padnos",
+                nationality: "American",
+                era: "2010s",
+                contribution: "Journalist/Author",
+                notes: "Kidnapped in Syria 2012; held 2 years by al-Nusra Front; tortured; wrote \"Undercover Muslim\", \"Blindfold\"; documentary \"Theo Who Lived\"",
+                bioFile: "THEO_PADNOS.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/THEO_PADNOS.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Jason Rezaian",
+                nationality: "Iranian-American",
+                era: "2010s",
+                contribution: "Journalist",
+                notes: "Tehran bureau chief; arrested 2014; held 544 days in Evin Prison; convicted of espionage; released in 2016 prisoner swap; wrote \"Prisoner: My 544 Days...",
+                bioFile: "JASON_REZAIAN.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/JASON_REZAIAN.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Shireen Abu Akleh",
+                nationality: "Palestinian-American",
+                era: "1990s-2022",
+                contribution: "Journalist",
+                notes: "Icon of Palestinian journalism; killed 2022 by Israeli forces while wearing press vest in Jenin; covered Israeli-Palestinian conflict for 25 years; US...",
+                bioFile: "SHIREEN_ABU_AKLEH.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/SHIREEN_ABU_AKLEH.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Tim Lopes",
+                nationality: "Brazilian",
+                era: "1990s-2002",
+                contribution: "Investigative journalist",
+                notes: "KILLED 2002 while investigating drug trafficking + child prostitution in Rio favelas; TORTURED, EXECUTED, body BURNED; awarded Esso Prize for investig...",
+                bioFile: "TIM_LOPES.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/TIM_LOPES.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Miroslava Breach",
+                nationality: "Mexican",
+                era: "1987-2017",
+                contribution: "Investigative journalist",
+                notes: "ASSASSINATED 2017 while driving son to school; exposed drug cartel infiltration in Chihuahua politics; investigated corruption, human rights; 8 gunsho...",
+                bioFile: "MIROSLAVA_BREACH.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/MIROSLAVA_BREACH.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Frenchie Mae Cumpio",
+                nationality: "Filipino",
+                era: "2020s",
+                contribution: "Journalist/Activist",
+                notes: "JAILED since 2020 (6 years without trial); weapons PLANTED on her; exposed army harassment of rural farmers; faces 40 years; RSF + UN condemned case",
+                bioFile: "FRENCHIE_MAE_CUMPIO.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/FRENCHIE_MAE_CUMPIO.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Zhang Zhan",
+                nationality: "Chinese",
+                era: "2020-25",
+                contribution: "Journalist/Activist",
+                notes: "Former lawyer; reported on COVID in Wuhan 2020; JAILED; hunger strike, force-fed, weight dropped to 37kg; re-arrested 2024, sentenced to 4 more years ...",
+                bioFile: "ZHANG_ZHAN.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/ZHANG_ZHAN.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Daniel Renaud",
+                nationality: "Canadian",
+                era: "2024",
+                contribution: "Crime journalist",
+                notes: "Hitman offered $100,000 to assassinate him 2024; covering trial of triple murderer; contract active 2 months before cancelled",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Nicky Hager",
+                nationality: "New Zealander",
+                era: "1990s-2020s",
+                contribution: "Investigative journalist",
+                notes: "ICIJ member; exposed Echelon (1996); \"Dirty Politics\" (2014) - PM's office attacks; \"Hit and Run\" (2017) - NZ war crimes in Afghanistan; multiple awar...",
+                bioFile: "NICKY_HAGER.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/NICKY_HAGER.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Peter R. de Vries",
+                nationality: "Dutch",
+                era: "1980s-2021",
+                contribution: "Crime journalist",
+                notes: "LEGEND; covered Freddy Heineken kidnapping, Natalee Holloway; SHOT 2021, DIED; on hit list of Netherlands' most wanted; advised witness against drug l...",
+                bioFile: "PETER_R_DE_VRIES.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/PETER_R_DE_VRIES.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Kim Wall",
+                nationality: "Swedish",
+                era: "2010s",
+                contribution: "Freelance journalist",
+                notes: "KILLED 2017 on submarine; investigating Danish inventor Peter Madsen; body decapitated, weighted with metal; wrote for NYT, Guardian, Vice",
+                bioFile: "KIM_WALL.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/KIM_WALL.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Asne Seierstad",
+                nationality: "Norwegian",
+                era: "2000s-20s",
+                contribution: "Journalist/Author",
+                notes: "Famous Norwegian writer; \"One of Us\" (2015) - immersive book on Anders Breivik massacre; embedded with victims, families; \"The Bookseller of Kabul\" - ...",
+                bioFile: "ASNE_SEIERSTAD.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/ASNE_SEIERSTAD.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Stieg Larsson",
+                nationality: "Swedish",
+                era: "1980s-2000s",
+                contribution: "Journalist/Author",
+                notes: "Wrote \"Millennium\" series (\"Girl with the Dragon Tattoo\"); investigative journalist; exposed Swedish right-wing extremism; died 2004 before books publ...",
+                bioFile: "STIEG_LARSSON.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/STIEG_LARSSON.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Helga Þórarinsdóttir",
+                nationality: "Icelandic",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Led Samherji fishing scandal investigation; exposed illegal fishing quotas and political corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Egill Bjarnason",
+                nationality: "Icelandic",
+                era: "2020s",
+                contribution: "Investigative reporter",
+                notes: "Covered Samherji scandal; questioned over coverage of corporate scandal; contributed to Panama Papers Iceland coverage",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sigríður Hagalín",
+                nationality: "Icelandic",
+                era: "2020s",
+                contribution: "Financial journalist",
+                notes: "Exposed financial irregularities in fishing industry; faced legal threats from Samherji executives",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Güler Kıyak",
+                nationality: "Kurdish (Turkey)",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Covered Kurdish rights; jailed multiple times; reported on Turkish military operations",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Rojda Fırat",
+                nationality: "Kurdish (Syria)",
+                era: "2020s",
+                contribution: "War correspondent",
+                notes: "KILLED 2024 in suspected Turkish drone attack in Syria; covered Rojava conflict",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Barış Nuhoğlu",
+                nationality: "Kurdish (Turkey)",
+                era: "2020s",
+                contribution: "Photojournalist",
+                notes: "Documented Kurdish protests; arrested 2022 for \"terrorist propaganda\"; released 2023",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Rozina Islam",
+                nationality: "Bangladeshi",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Investigated COVID vaccine corruption; arrested 2021 under Official Secrets Act; faced sedition charges",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Shahidul Alam",
+                nationality: "Bangladeshi",
+                era: "2010s-20s",
+                contribution: "Photojournalist/Activist",
+                notes: "KILLED 2018; covered extrajudicial killings; founded Drik Picture Library; tortured in custody",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mirza Shakil Ahmed",
+                nationality: "Bangladeshi",
+                era: "2020s",
+                contribution: "Investigative reporter",
+                notes: "Investigated government corruption; arrested 2022; charged with cybercrimes",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Shyamol Dutta",
+                nationality: "Bangladeshi",
+                era: "2020s",
+                contribution: "Crime journalist",
+                notes: "Exposed police corruption; threatened 2023; went into hiding",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Aung San Oo",
+                nationality: "Myanmarese",
+                era: "2021-2025",
+                contribution: "Investigative journalist",
+                notes: "JAILED since 2021; covered military atrocities; sentenced to 20 years; tortured in custody",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sithu Aung Myint",
+                nationality: "Myanmarese",
+                era: "2020s",
+                contribution: "Political reporter",
+                notes: "Arrested 2021; charged with sedition; released 2023 under amnesty; fled to Thailand",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Htet Htet Khine",
+                nationality: "Myanmarese",
+                era: "2020s",
+                contribution: "Journalist/Activist",
+                notes: "JAILED 2022; covered anti-coup protests; sentenced to 10 years; women's rights advocate",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Nyein Chan Aye",
+                nationality: "Myanmarese",
+                era: "2020s",
+                contribution: "Photojournalist",
+                notes: "KILLED 2021; documented military crackdown; posthumously awarded Press Freedom Prize",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sempurna Pasaribu",
+                nationality: "Indonesian",
+                era: "2024",
+                contribution: "Journalist",
+                notes: "KILLED 2024 in suspected ARSON after exposing military involvement in illegal gambling; fire killed him + 3 family members",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Arshad Sharif",
+                nationality: "Pakistani",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Prominent Pakistani journalist; fled Pakistan after sedition charges; SHOT DEAD in Kenya 2022; critical of military; \"mistaken identity\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Daphne Caruana Galizia",
+                nationality: "Maltese",
+                era: "1987-2017",
+                contribution: "Investigative journalist",
+                notes: "LEGEND; exposed Panama Papers in Malta; ASSASSINATED by CAR BOMB 2017; investigated corruption, money laundering; 48 libel suits; called \"one-woman Wi...",
+                bioFile: "DAPHNE_CARUANA_GALIZIA.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/DAPHNE_CARUANA_GALIZIA.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Ján Kuciak",
+                nationality: "Slovak",
+                era: "2010s",
+                contribution: "Investigative journalist",
+                notes: "KILLED 2018; investigated corruption, Mafia links; shot at home with girlfriend; sparked massive protests in Slovakia",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mech Dara",
+                nationality: "Cambodian",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Award-winning journalist; arrested 2024 for \"incitement\"; exposed scams",
+                bioFile: "MECH_DARA.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/MECH_DARA.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Hem Vanna",
+                nationality: "Cambodian",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Arrested after exposing cyberscam farms; unjustly detained",
+                bioFile: "HEM_VANNA.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/HEM_VANNA.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Anna Politkovskaya",
+                nationality: "Russian",
+                era: "1990s-2006",
+                contribution: "Journalist",
+                notes: "Pulitzer Prize winner; covered Chechnya, Putin corruption; ASSASSINATED 2006 in Moscow; symbol of press freedom",
+                bioFile: "anna_politkovskaya_bio.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/anna_politkovskaya_bio.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Viktoriia Roshchyna",
+                nationality: "Ukrainian",
+                era: "2020s",
+                contribution: "Journalist",
+                notes: "Died in Russian custody 2025; TORTURED; detained for covering Ukraine war; \"numerous signs of torture\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Raman Pratasevich",
+                nationality: "Belarusian",
+                era: "2020s",
+                contribution: "Journalist",
+                notes: "Ryanair flight hijacked 2021; arrested; sentenced to 8 years; regime critic",
+                bioFile: "RAMAN_PRATASEVICH.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/RAMAN_PRATASEVICH.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Valentin Gendrot",
+                nationality: "French",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Went undercover with French police for 6 months; wrote book \"Flic\" exposing police brutality and racism in Paris",
+                bioFile: "VALENTIN_GENDROT.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/VALENTIN_GENDROT.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Antonio Salas",
+                nationality: "Spanish",
+                era: "2000s-10s",
+                contribution: "Undercover journalist",
+                notes: "Infiltrated Ultras Sur (neo-Nazi hooligans); exposed sex trafficking; infiltrated Hamas, Al-Qaeda, FARC, Carlos the Jackal; had himself circumcised to...",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Nick McKenzie",
+                nationality: "Australian",
+                era: "2000s-20s",
+                contribution: "Investigative journalist",
+                notes: "20 Walkley Awards; exposed Reserve Bank bribery, Crown casino, Australian war crimes, Chinese foreign interference; won \"defamation trial of century\" ...",
+                bioFile: "NICK_MCKENZIE.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/NICK_MCKENZIE.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Rana Ayyub",
+                nationality: "Indian",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "\"Gujarat Files\" sting (10 months undercover); exposed 2002 Gujarat riots cover-up; got Amit Shah jailed; death threats, deepfake porn, doxxed; Washing...",
+                bioFile: "RANA_AYYUB.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/RANA_AYYUB.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Mads Brügger",
+                nationality: "Danish",
+                era: "2010s",
+                contribution: "Gonzo journalist/Director",
+                notes: "\"The Ambassador\" (2011) - went undercover as Liberian ambassador to expose blood diamonds in CAR; \"Cold Case Hammarskjöld\" (2019) - investigated UN Se...",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Eugène Marais",
+                nationality: "South African",
+                era: "1920s-30s",
+                contribution: "Nature writer",
+                notes: "Early gonzo pioneer; lived immersed in nature for \"The Soul of the White Ant\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Arthur Maimane",
+                nationality: "South African",
+                era: "1950s",
+                contribution: "Novelist/Journalist",
+                notes: "Exposed Sophiatown street life through tavern observations",
+                bioFile: "ARTHUR_MAIMANE.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/ARTHUR_MAIMANE.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Jacques Pauw",
+                nationality: "South African",
+                era: "1990s-2000s",
+                contribution: "Investigative journalist",
+                notes: "\"The President's Keepers\" - political gonzo nonfiction",
+                bioFile: "JACQUES_PAUW.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/JACQUES_PAUW.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Mandy Wiener",
+                nationality: "South African",
+                era: "2000s",
+                contribution: "Investigative journalist",
+                notes: "\"The Whistleblowers\", \"Killing Kebble\" - gonzo exposes",
+                bioFile: "MANDY_WIENER.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/MANDY_WIENER.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Deon Maas",
+                nationality: "South African",
+                era: "2000s",
+                contribution: "Journalist/Author",
+                notes: "\"Witboy in Africa: Diary of a troublemaker\"",
+                bioFile: "DEON_MAAS.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/DEON_MAAS.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Rong Wongsawan",
+                nationality: "Thai",
+                era: "1960s-70s",
+                contribution: "War correspondent",
+                notes: "Independent gonzo, covered Vietnam War from Thailand; wrote \"The Man from Bangkok\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Rodolfo Walsh",
+                nationality: "Argentine",
+                era: "1950s-70s",
+                contribution: "Investigative reporter",
+                notes: "Founder of investigative journalism; \"Operación Masacre\" (1957) first non-fiction novel; killed 1977",
+                bioFile: "RODOLFO_WALS.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/RODOLFO_WALS.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Tiziano Terzani",
+                nationality: "Italian",
+                era: "1965-2004",
+                contribution: "War correspondent",
+                notes: "Covered fall of Saigon & Phnom Penh; literary gonzo style in Asia reporting",
+                bioFile: "TIZIANO_TERZANI.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/TIZIANO_TERZANI.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Mónica González",
+                nationality: "Chilean",
+                era: "1980s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Exposed Pinochet secrets; broke thousands of secret police docs used to prosecute dictatorship; jailed multiple times; Dan David Prize 2006",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Lukpan Akhmediyarov",
+                nationality: "Kazakh",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "KILLED 2012; editor of \"Uralskaya Nedelya\"; attacked after reporting on corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Gulzhan Yergalieva",
+                nationality: "Kazakh",
+                era: "2010s-20s",
+                contribution: "Investigative reporter",
+                notes: "Founded \"Adam\" magazine; investigated human rights abuses; faced harassment",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Umida Niyazova",
+                nationality: "Uzbek",
+                era: "2000s-10s",
+                contribution: "Human rights journalist",
+                notes: "JAILED 2007; reported on Andijan massacre; exiled",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Galima Bukharbaeva",
+                nationality: "Uzbek",
+                era: "2000s-10s",
+                contribution: "Investigative journalist",
+                notes: "Reported on Uzbek government abuses; exiled 2005; exposed cotton industry torture",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Dodojon Atovulloev",
+                nationality: "Tajik",
+                era: "1990s-2020s",
+                contribution: "Exiled journalist",
+                notes: "Founder of \"Charogi Ruz\"; survived 4 assassination attempts; investigated civil war",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Makhmadnabi Mukhamadaliyev",
+                nationality: "Tajik",
+                era: "2010s",
+                contribution: "Journalist/Activist",
+                notes: "KILLED 2012; investigated corruption; beaten to death",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Gennady Pavlyuk",
+                nationality: "Kyrgyz",
+                era: "2000s",
+                contribution: "Investigative journalist",
+                notes: "KILLED 2009; thrown from building in Kazakhstan; investigated corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Azimjon Askarov",
+                nationality: "Kyrgyz (Uzbek)",
+                era: "2010s",
+                contribution: "Journalist/Activist",
+                notes: "JAILED 2010; died in custody 2020; documented ethnic violence; torture in prison",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sazak Durdymuradov",
+                nationality: "Turkmen",
+                era: "2000s-20s",
+                contribution: "Human rights journalist",
+                notes: "JAILED multiple times; reported on government abuses; exiled",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ogulsapar Muradova",
+                nationality: "Turkmen",
+                era: "2000s",
+                contribution: "Journalist/Activist",
+                notes: "DIED in custody 2006; reported on human rights; torture in prison",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Tui Cavendish",
+                nationality: "Fijian",
+                era: "2000s-10s",
+                contribution: "Investigative journalist",
+                notes: "Exposed 2006 coup atrocities; harassed by military regime",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Josaia Ralulu",
+                nationality: "Fijian",
+                era: "2010s-20s",
+                contribution: "Broadcast journalist",
+                notes: "Investigated military corruption; program censored",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Dorothy Wickham",
+                nationality: "Papua New Guinean",
+                era: "2010s-20s",
+                contribution: "Investigative reporter",
+                notes: "Exposed logging industry corruption; environmental destruction reporting",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Oseah Philemon",
+                nationality: "Papua New Guinean",
+                era: "2000s-20s",
+                contribution: "Investigative journalist",
+                notes: "Covered political corruption; police brutality investigations; multiple death threats",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Kalafi Moala",
+                nationality: "Tongan",
+                era: "1990s-2020s",
+                contribution: "Publisher/Journalist",
+                notes: "Founder of Taimi Media Network; investigated royal family finances; JAILED 1996",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jason Brown",
+                nationality: "Solomon Islander",
+                era: "2000s-10s",
+                contribution: "Conflict correspondent",
+                notes: "Covered ethnic tensions 1998-2003; documented RAMSI intervention",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Canute James",
+                nationality: "Jamaican",
+                era: "1990s-2010s",
+                contribution: "Investigative journalist",
+                notes: "Exposed police corruption; investigated drug trade connections to politics",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Maria Santos",
+                nationality: "Dominican",
+                era: "2010s-20s",
+                contribution: "Investigative reporter",
+                notes: "Exposed tourism industry exploitation; investigated environmental destruction",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Roberson Alphonse",
+                nationality: "Haitian",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Investigated post-earthquake corruption; documented MINUSTAH abuses",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mauricio López",
+                nationality: "Haitian",
+                era: "1990s-2000s",
+                contribution: "Radio journalist",
+                notes: "KILLED 2001; reported on political violence; assassinated during coup period",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Shelly Dass",
+                nationality: "Trinidadian",
+                era: "2010s-20s",
+                contribution: "Investigative reporter",
+                notes: "Exposed corruption in energy sector; investigated gang violence",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ricky Singh",
+                nationality: "Guyanese",
+                era: "1970s-2020s",
+                contribution: "Journalist/Columnist",
+                notes: "Pioneered Caribbean journalism; covered regional politics; investigated electoral fraud",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Hamza Mohamed",
+                nationality: "Kenyan/Somali",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Lead investigator on Gold Mafia series; went undercover exposing gold smuggling routes",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Simba Chitembwe",
+                nationality: "Zimbabwean",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Local researcher for Gold Mafia; documented ZANU-PF connections; in hiding",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Hopewell Chin'ono",
+                nationality: "Zimbabwean",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "KIDNAPPED 2020; investigated COVID-19 corruption; JAILED multiple times; international awards",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mduduzi Mathuthu",
+                nationality: "Zimbabwean",
+                era: "2010s-20s",
+                contribution: "Journalist/Publisher",
+                notes: "Founder of ZimLive; investigated corruption; nephew abducted to pressure him",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mohammad Nourizad",
+                nationality: "Iranian",
+                era: "2000s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Jailed multiple times; exposed corruption in judiciary",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Issa Boudin",
+                nationality: "Iranian-French",
+                era: "2010s-20s",
+                contribution: "Photojournalist",
+                notes: "Covered Iranian protests; arrested 2019; French-Iranian dual citizen",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Diana Moukalled",
+                nationality: "Lebanese",
+                era: "2000s-2020s",
+                contribution: "War correspondent",
+                notes: "Covered Syrian civil war; founded Daraj platform; death threats",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Rabih Amour",
+                nationality: "Lebanese",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Exposed Lebanese banking corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Tayseer Al-Tamimi",
+                nationality: "Jordanian",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Investigated government corruption; fled Jordan 2020",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mohammed Al-Maqtari",
+                nationality: "Yemeni",
+                era: "2010s-20s",
+                contribution: "Citizen journalist",
+                notes: "Documented Yemen war; killed 2018 in airstrike",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Rasha Al Joundi",
+                nationality: "Yemeni",
+                era: "2010s",
+                contribution: "Journalist/Activist",
+                notes: "Died 2012; symbol of Yemeni revolution",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mahmoud Hussein",
+                nationality: "Egyptian",
+                era: "2000s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Al Jazeera correspondent; jailed for \"false news\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Hossam Taha",
+                nationality: "Egyptian",
+                era: "2010s-20s",
+                contribution: "Photojournalist",
+                notes: "Documented Rabaa massacre 2013",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Khaled Drareni",
+                nationality: "Algerian",
+                era: "2010s-20s",
+                contribution: "Journalist/founder",
+                notes: "Founded Casbah Tribune; jailed 2020",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sagarika Ghose",
+                nationality: "Indian",
+                era: "2000s-2020s",
+                contribution: "Senior journalist",
+                notes: "Covered Kashmir conflict; exposed human rights",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ritika Chopra",
+                nationality: "Indian",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Exposed illegal sand mining mafia",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Snehitha Yechuri",
+                nationality: "Indian",
+                era: "2020s",
+                contribution: "Freelance journalist",
+                notes: "Covered Delhi riots 2020",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ahmad Noorani",
+                nationality: "Pakistani",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Exposed military's role in politics",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Cyril Almeida",
+                nationality: "Pakistani",
+                era: "2010s",
+                contribution: "Dawn newspaper journalist",
+                notes: "Wrote about Pakistan Army's role",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Shaheen Sehbai",
+                nationality: "Pakistani",
+                era: "2000s-2020s",
+                contribution: "Senior journalist/editor",
+                notes: "Exposed Musharraf's secret deals",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Najibullah",
+                nationality: "Afghan",
+                era: "2020s",
+                contribution: "Photojournalist",
+                notes: "Documented Taliban takeover 2021",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Farida Nekzad",
+                nationality: "Afghan",
+                era: "2000s-2020s",
+                contribution: "Founder/Editor",
+                notes: "Founded Killid media; fled after Taliban",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Lasantha Wickrematunga",
+                nationality: "Sri Lankan",
+                era: "1990s-2000s",
+                contribution: "Editor/Investigative",
+                notes: "KILLED 2009; exposed government corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Kedar Poudel",
+                nationality: "Nepali",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Exposed hydropower corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Oleksandra Koval",
+                nationality: "Ukrainian",
+                era: "2020s",
+                contribution: "War correspondent",
+                notes: "Documented Bucha massacre 2022",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Maksym Oleinichenko",
+                nationality: "Ukrainian",
+                era: "2020s",
+                contribution: "Photojournalist",
+                notes: "KILLED 2024; documented Russian invasion",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Maria Pevchikh",
+                nationality: "Russian",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Navalny team; exposed Putin's palace",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Irina Vlaskina",
+                nationality: "Russian",
+                era: "2000s-2020s",
+                contribution: "TV journalist",
+                notes: "Quit RT in protest 2022",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Tomasz Piatek",
+                nationality: "Polish",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Exposed PiS party corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Emilia Sercau",
+                nationality: "Romanian",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Exposed EU fund fraud",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Dragana Peco",
+                nationality: "Serbian",
+                era: "2010s-20s",
+                contribution: "War crimes investigator",
+                notes: "Documented 1990s war crimes",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Nicolas Poincaré",
+                nationality: "French",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Exposed football corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Paolo Mondani",
+                nationality: "Italian",
+                era: "2010s-20s",
+                contribution: "Investigative journalist",
+                notes: "Exposed Mafia infiltration",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Patricia Ortega",
+                nationality: "Spanish",
+                era: "2010s-20s",
+                contribution: "Crisis reporter",
+                notes: "Covered refugee crisis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "David Farrier",
+                nationality: "New Zealander",
+                era: "2010s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Exposed toxic waste dumping; \"Dark Tourists\" documentary",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Guyon Espiner",
+                nationality: "New Zealander",
+                era: "2000s-2020s",
+                contribution: "Political journalist",
+                notes: "Exposed police corruption; multiple awards",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Grant Chambers",
+                nationality: "Papua New Guinean",
+                era: "2010s-2020s",
+                contribution: "Resource correspondent",
+                notes: "Exposed mining company environmental damage",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Julia González",
+                nationality: "Guatemalan",
+                era: "2000s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Exposed government corruption; death threats",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Julissa Rivera",
+                nationality: "Honduran",
+                era: "2010s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Exposed health sector corruption; fled 2022",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "César Ortiz",
+                nationality: "Salvadoran",
+                era: "2010s-2020s",
+                contribution: "Crime reporter",
+                notes: "Covered MS-13 gang violence; threatened",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Miguel Mendoza",
+                nationality: "Nicaraguan",
+                era: "2010s-2020s",
+                contribution: "Political journalist",
+                notes: "JAILED 2021; covered opposition protests",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Eyra Tello",
+                nationality: "Panamanian",
+                era: "2010s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Exposed government contracts corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Carlos Arguedas",
+                nationality: "Costa Rican",
+                era: "2010s-2020s",
+                contribution: "Environmental journalist",
+                notes: "Exposed illegal logging",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Moussa B. Maïga",
+                nationality: "Malian",
+                era: "2010s-2020s",
+                contribution: "Conflict correspondent",
+                notes: "Covered jihadi insurgency; killed 2022",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Bintou Sissoko",
+                nationality: "Malian",
+                era: "2020s",
+                contribution: "Women's rights journalist",
+                notes: "Documented gender-based violence",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Paul-Mark Nikiéma",
+                nationality: "Burkinabé",
+                era: "2010s-2020s",
+                contribution: "JIHADI WATCH",
+                notes: "Exposed extremist recruitment",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sudipta M. Ouedraogo",
+                nationality: "Burkinabé",
+                era: "2020s",
+                contribution: "Environmental journalist",
+                notes: "Exposed child labor in mines",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Moussa Kaka",
+                nationality: "Nigerien",
+                era: "2000s-2020s",
+                contribution: "Radio journalist",
+                notes: "Covered Tuareg rebellion; arrested",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Amina Ousseini",
+                nationality: "Nigerien",
+                era: "2020s",
+                contribution: "Humanitarian correspondent",
+                notes: "Documented refugee crisis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mamadou Billo Sigh",
+                nationality: "Guinean",
+                era: "2020s",
+                contribution: "Protest journalist",
+                notes: "Covered 2020 elections; fled country",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Fanta Cherif",
+                nationality: "Guinean",
+                era: "2010s-2020s",
+                contribution: "Women's rights journalist",
+                notes: "Exposed sexual violence in protests",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jonas K.",
+                nationality: "Sierra Leonean",
+                era: "2020s",
+                contribution: "Corruption investigator",
+                notes: "Exposed government procurement fraud",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ferdinand Kakaï",
+                nationality: "Togolese",
+                era: "2010s-2020s",
+                contribution: "Political journalist",
+                notes: "Covered protests; exiled 2022",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Joël H. Touitou",
+                nationality: "Beninese",
+                era: "2010s-2020s",
+                contribution: "Economic journalist",
+                notes: "Exposed currency corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Anders Høgsbro",
+                nationality: "Norwegian",
+                era: "2010s-2020s",
+                contribution: "War correspondent",
+                notes: "Covered Syrian war; embedded with Kurdish forces",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Kristi Koht",
+                nationality: "Norwegian",
+                era: "2020s",
+                contribution: "Climate journalist",
+                notes: "Documented Arctic warming",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Adele G. Murray",
+                nationality: "Irish",
+                era: "2010s-2020s",
+                contribution: "Northern Ireland correspondent",
+                notes: "Covered Brexit impact; threatened by dissidents",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Colm O Gorman",
+                nationality: "Irish",
+                era: "2000s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Exposed Catholic Church abuse",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Toomas Kivimägi",
+                nationality: "Estonian",
+                era: "2010s-2020s",
+                contribution: "Digital security journalist",
+                notes: "Cyber warfare; exposed disinformation",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sandris V. Liepa",
+                nationality: "Latvian",
+                era: "2020s",
+                contribution: "Baltic correspondent",
+                notes: "Covered NATO presence; exposed Russian influence",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jonas K.",
+                nationality: "Lithuanian",
+                era: "2020s",
+                contribution: "Defense journalist",
+                notes: "Documented Belarus border crisis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Maria Wetterstrand",
+                nationality: "Swedish",
+                era: "2000s-2020s",
+                contribution: "Climate journalist",
+                notes: "Exposed climate denial networks",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jessica Ojanen",
+                nationality: "Finnish",
+                era: "2020s",
+                contribution: "Arctic correspondent",
+                notes: "Documented Arctic military buildup",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Brynjar Níelsson",
+                nationality: "Icelandic",
+                era: "2010s-2020s",
+                contribution: "Financial journalist",
+                notes: "Covered 2008 crisis; banking secrets",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Paul Nuki",
+                nationality: "British",
+                era: "2000s-2020s",
+                contribution: "Security editor",
+                notes: "Exposed Russian assassination attempts",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Olivia R. al-Nash",
+                nationality: "British",
+                era: "2020s",
+                contribution: "Counter-extremism journalist",
+                notes: "Documented far-right networks",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "R. Nadarajan",
+                nationality: "Malaysian",
+                era: "2010s-2020s",
+                contribution: "Political journalist",
+                notes: "Exposed 1MDB scandal",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jestine Cheng",
+                nationality: "Malaysian",
+                era: "2020s",
+                contribution: "Environmental journalist",
+                notes: "Documented palm oil deforestation",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Terry Xu",
+                nationality: "Singaporean",
+                era: "2010s-2020s",
+                contribution: "Online journalist",
+                notes: "Founded The Online Citizen; sued multiple times",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Kirsten Han",
+                nationality: "Singaporean",
+                era: "2020s",
+                contribution: "Young journalist",
+                notes: "Documented migrant worker conditions",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Nguyễn Văn Đức",
+                nationality: "Vietnamese",
+                era: "2010s-2020s",
+                contribution: "Blogger/activist",
+                notes: "Arrested for \"propaganda against state\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Phạm Đoan Trang",
+                nationality: "Vietnamese",
+                era: "2010s-2020s",
+                contribution: "Lawyer/journalist",
+                notes: "JAILED 2020; founded Progressive Voice",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Pravit Rojanaphruk",
+                nationality: "Thai",
+                era: "2010s-2020s",
+                contribution: "Political journalist",
+                notes: "Covered Thai politics; detained",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Nuttaphol Teepsuwan",
+                nationality: "Thai",
+                era: "2020s",
+                contribution: "Student journalist",
+                notes: "Led 2020 protests; arrested 2021",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Aung Kyaw Moe",
+                nationality: "Myanmarese",
+                era: "2020s",
+                contribution: "Ethnic minority journalist",
+                notes: "Covered Rohingya crisis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Maria Ressa",
+                nationality: "Filipino-American",
+                era: "2010s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Nobel Peace Prize 2021; founded Rappler",
+                bioFile: "maria_ressa_bio.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/maria_ressa_bio.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Ollie Vargas",
+                nationality: "Peruvian",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Exposed corruption in Vizcarra government",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Rosa Gloria",
+                nationality: "Peruvian",
+                era: "2020s",
+                contribution: "Environmental journalist",
+                notes: "Documented mining conflicts in Amazon",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Carlos Jijón",
+                nationality: "Ecuadorian",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Exposed government corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Montserrat Bustamante",
+                nationality: "Ecuadorian",
+                era: "2020s",
+                contribution: "Crime reporter",
+                notes: "Covered prison riots; gang violence",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jimena N. Morales",
+                nationality: "Bolivian",
+                era: "2020s",
+                contribution: "Political journalist",
+                notes: "Covered 2019 political crisis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Marco Cazón",
+                nationality: "Bolivian",
+                era: "2020s",
+                contribution: "Coca leaf reporter",
+                notes: "Exposed drug trafficking links",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jorge Torres",
+                nationality: "Paraguayan",
+                era: "2020s",
+                contribution: "Corruption investigator",
+                notes: "Exposed basketball federation fraud",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "María José González",
+                nationality: "Paraguayan",
+                era: "2020s",
+                contribution: "Indigenous rights journalist",
+                notes: "Documented deforestation",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Micaela Gloria",
+                nationality: "Uruguayan",
+                era: "2020s",
+                contribution: "Immigration journalist",
+                notes: "Covered Venezuelan exodus",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ricardo E. Peña",
+                nationality: "Venezuelan",
+                era: "2020s",
+                contribution: "Economy journalist",
+                notes: "Exposed economic collapse",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jineth Bedoya",
+                nationality: "Colombian",
+                era: "2000s-2020s",
+                contribution: "Conflict journalist",
+                notes: "Kidnapped by AUC paramilitaries",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mile Rodríguez",
+                nationality: "Argentine",
+                era: "2020s",
+                contribution: "Economic journalist",
+                notes: "Exposed inflation crisis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Babacar Touré",
+                nationality: "Kenyan",
+                era: "2020s",
+                contribution: "West African correspondent",
+                notes: "Covered East African community",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Amina Wako",
+                nationality: "Kenyan",
+                era: "2020s",
+                contribution: "Health journalist",
+                notes: "Exposed healthcare corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Meaza H. Mohammed",
+                nationality: "Ethiopian",
+                era: "2020s",
+                contribution: "Conflict journalist",
+                notes: "Covered Tigray war",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Samuel T. Gemechu",
+                nationality: "Ethiopian",
+                era: "2020s",
+                contribution: "Online journalist",
+                notes: "Arrested 2021; charged with terrorism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Abdikarim Hussein",
+                nationality: "Somali",
+                era: "2020s",
+                contribution: "Al-Shabaab investigator",
+                notes: "Exposed Al-Shabaab infiltration",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Maryan Mohamed",
+                nationality: "Somali",
+                era: "2020s",
+                contribution: "Female journalist",
+                notes: "Covered sexual violence in conflict",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Altayeb B. Ahmed",
+                nationality: "Sudanese",
+                era: "2010s-2020s",
+                contribution: "Revolution journalist",
+                notes: "Covered 2018-2019 revolution",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Rania Musab",
+                nationality: "Sudanese",
+                era: "2020s",
+                contribution: "Women's rights journalist",
+                notes: "Documented women's participation in revolution",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "James Dot",
+                nationality: "South Sudanese",
+                era: "2020s",
+                contribution: "Civil war correspondent",
+                notes: "Covered civil war",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Akuol Akech",
+                nationality: "South Sudanese",
+                era: "2020s",
+                contribution: "Youth journalist",
+                notes: "TikTok documenting war",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Agnès U. Mushimiy",
+                nationality: "Rwandan",
+                era: "2020s",
+                contribution: "Exile journalist",
+                notes: "Fled Rwanda; covered opposition",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Bob Rugurika",
+                nationality: "Burundian",
+                era: "2010s-2020s",
+                contribution: "Investigative journalist",
+                notes: "JAILED multiple times; exposed corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Chen Yu-hsiu",
+                nationality: "Taiwanese",
+                era: "2020s",
+                contribution: "Cross-strait journalist",
+                notes: "Covered China-Taiwan tensions",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Lin Te-wei",
+                nationality: "Taiwanese",
+                era: "2020s",
+                contribution: "Semiconductor reporter",
+                notes: "Exposed chip industry espionage",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Joyce Ng",
+                nationality: "Hong Konger",
+                era: "2010s-2020s",
+                contribution: "Protest journalist",
+                notes: "Covered 2019 protests; arrested",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Aaron Tam",
+                nationality: "Hong Konger",
+                era: "2020s",
+                contribution: "Photojournalist",
+                notes: "Documented protests; beaten by police",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Kim Yon-jung",
+                nationality: "South Korean",
+                era: "2020s",
+                contribution: "Labor journalist",
+                notes: "Exposed workplace accidents",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Park So-yeon",
+                nationality: "South Korean",
+                era: "2020s",
+                contribution: "K-pop journalist",
+                notes: "Exposed talent agency abuses",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Tamir Galt",
+                nationality: "Mongolian",
+                era: "2020s",
+                contribution: "Mining correspondent",
+                notes: "Exposed mining corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jum K.",
+                nationality: "North Korean defector",
+                era: "2020s",
+                contribution: "Underground reporter",
+                notes: "Escaped 2019; reports on forced labor",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Luo Ya",
+                nationality: "Chinese",
+                era: "2020s",
+                contribution: "COVID journalist",
+                notes: "Documented Wuhan lockdown",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jennifer S. Cheng",
+                nationality: "Chinese-American",
+                era: "2020s",
+                contribution: "Uyghur coverage",
+                notes: "Exposed Xinjiang camps",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Li Yuan",
+                nationality: "Chinese",
+                era: "2020s",
+                contribution: "Tech journalist",
+                notes: "Covered tech sector crackdowns",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Steven Lee Myers",
+                nationality: "American (China)",
+                era: "2010s-2020s",
+                contribution: "NYT bureau chief",
+                notes: "Covered China for 30 years",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sonia M.",
+                nationality: "Tunisian",
+                era: "2010s-2020s",
+                contribution: "Revolution journalist",
+                notes: "Covered Jasmine Revolution 2011",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Lotfi L.",
+                nationality: "Tunisian",
+                era: "2020s",
+                contribution: "Corruption investigator",
+                notes: "Exposed government corruption; arrested 2021",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sophie S.",
+                nationality: "Moroccan",
+                era: "2020s",
+                contribution: "Human rights journalist",
+                notes: "Covered Hirak movement; faced harassment",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Rida R.",
+                nationality: "Libyan",
+                era: "2010s-2020s",
+                contribution: "War correspondent",
+                notes: "Covered 2011 revolution; multiple kidnappings",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Amira T.",
+                nationality: "Libyan",
+                era: "2020s",
+                contribution: "Women's rights journalist",
+                notes: "Documented women's participation in conflict",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mohameden O.",
+                nationality: "Mauritanian",
+                era: "2020s",
+                contribution: "Slavery investigator",
+                notes: "Exposed slavery rings",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Brahim N.",
+                nationality: "Sahrawi",
+                era: "2020s",
+                contribution: "Independence journalist",
+                notes: "Covered Sahrawi cause in refugee camps",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Nino G.",
+                nationality: "Georgian",
+                era: "2010s-2020s",
+                contribution: "EU integration journalist",
+                notes: "Covered Russia-Georgia war; occupied territories",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "David S.",
+                nationality: "Georgian",
+                era: "2020s",
+                contribution: "Freedom of press advocate",
+                notes: "Covered anti-government protests",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Arzu G.",
+                nationality: "Azerbaijani",
+                era: "2020s",
+                contribution: "Investigative journalist",
+                notes: "Exposed government corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Marine K.",
+                nationality: "Armenian",
+                era: "2020s",
+                contribution: "Nagorno-Karabakh correspondent",
+                notes: "Covered 2020 war; documented atrocities",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Julie Snyder",
+                nationality: "American",
+                era: "2010s",
+                contribution: "Podcast producer",
+                notes: "\"Serial\" producer; audio investigative journalism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Crime Junkie (Ashley Flowers)",
+                nationality: "American",
+                era: "2010s-2020s",
+                contribution: "True crime podcasters",
+                notes: "Investigative approach to true crime",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Payne Lindsey",
+                nationality: "American",
+                era: "2010s",
+                contribution: "Investigative podcast",
+                notes: "\"Up and Vanished\"; re-opened cold cases",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Werner Herzog",
+                nationality: "German",
+                era: "1960s-2020s",
+                contribution: "Documentary filmmaker",
+                notes: "\"Grizzly Man\"; immersive documentary style",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Louis Theroux",
+                nationality: "British",
+                era: "1990s-2020s",
+                contribution: "Documentary filmmaker",
+                notes: "BBC documentaries; gonzo style",
+                bioFile: "louis_theroux_bio.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/louis_theroux_bio.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Michael Moore",
+                nationality: "American",
+                era: "1980s-2020s",
+                contribution: "Documentary filmmaker",
+                notes: "\"Bowling for Columbine\"; political gonzo",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Alex Gibney",
+                nationality: "American",
+                era: "2000s-2020s",
+                contribution: "Documentary filmmaker",
+                notes: "\"Going Clear\"; investigative documentary",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Niko Nvent",
+                nationality: "Finnish",
+                era: "2010s",
+                contribution: "YouTuber",
+                notes: "Gonzo-style travel/documentary",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jon Cozart",
+                nationality: "American",
+                era: "2010s-2020s",
+                contribution: "Musical YouTuber",
+                notes: "Creative gonzo musical content",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Hank Green",
+                nationality: "American",
+                era: "2000s-2020s",
+                contribution: "YouTube pioneer",
+                notes: "Vlogbrothers; conversational gonzo",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "James Nachtwey",
+                nationality: "American",
+                era: "1980s-2020s",
+                contribution: "War photographer",
+                notes: "Covered every major conflict since 1981",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Don McCullin",
+                nationality: "British",
+                era: "1960s-2010s",
+                contribution: "War photographer",
+                notes: "Iconic war photography",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Lynsey Addario",
+                nationality: "American",
+                era: "2000s-2020s",
+                contribution: "War photographer",
+                notes: "Captured conflicts globally; kidnapped in Libya",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Kevin Carter",
+                nationality: "South African",
+                era: "1980s-1994",
+                contribution: "War photographer",
+                notes: "Pulitzer Prize 1994; covered Sudan famine",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "David Attenborough",
+                nationality: "British",
+                era: "1970s-2020s",
+                contribution: "Nature documentary",
+                notes: "Planet Earth; climate documentaries",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Greta Thunberg",
+                nationality: "Swedish",
+                era: "2018-2020s",
+                contribution: "Climate activist",
+                notes: "School climate strike; gonzo activism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Bill McKibben",
+                nationality: "American",
+                era: "1980s-2020s",
+                contribution: "Climate writer/activist",
+                notes: "350.org founder; climate gonzo",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "George Monbiot",
+                nationality: "British",
+                era: "1990s-2020s",
+                contribution: "Environmental writer",
+                notes: "The Guardian; environmental gonzo",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Naomi Klein",
+                nationality: "Canadian",
+                era: "2000s-2020s",
+                contribution: "Author/activist",
+                notes: "\"This Changes Everything\"; climate capitalism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Tristan Harris",
+                nationality: "American",
+                era: "2010s-2020s",
+                contribution: "Tech ethicist",
+                notes: "\"The Social Dilemma\"; tech addiction gonzo",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Edward Snowden",
+                nationality: "American",
+                era: "2013-2020s",
+                contribution: "Whistleblower",
+                notes: "NSA revelations; digital privacy",
+                bioFile: "edward_snowden_bio.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/edward_snowden_bio.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Julian Assange",
+                nationality: "Australian",
+                era: "2006-2020s",
+                contribution: "WikiLeaks founder",
+                notes: "Diplomatic cables; information gonzo",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Chelsea Manning",
+                nationality: "American",
+                era: "2010-2020s",
+                contribution: "Whistleblower",
+                notes: "Iraq war logs; whistleblower gonzo",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Cory Doctorow",
+                nationality: "Canadian-British",
+                era: "2000s-2020s",
+                contribution: "Tech writer/activist",
+                notes: "Boing Boing; EFF",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Matt Taibbi",
+                nationality: "American",
+                era: "2000s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Rolling Stone; \"Griftopia\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Glenn Greenwald",
+                nationality: "American",
+                era: "2000s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Snowden revelations; surveillance",
+                bioFile: "glenn_greenwald_bio.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/glenn_greenwald_bio.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Michael Hastings",
+                nationality: "American",
+                era: "2000s-2013",
+                contribution: "War correspondent",
+                notes: "McChrystal article; died 2013",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mario neto",
+                nationality: "Mexican",
+                era: "2010s-2020s",
+                contribution: "Narco journalist",
+                notes: "Covered Sinaloa cartel; survived multiple attempts",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jesús A. Rodríguez",
+                nationality: "Mexican",
+                era: "2010s-2020s",
+                contribution: "Crime reporter",
+                notes: "Exposed Los Zetas; fled after death threats",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Claudia Torrisi",
+                nationality: "Italian",
+                era: "2010s-2020s",
+                contribution: "Mafia investigator",
+                notes: "Exposed Italian Mafia; covered 'Ndrangheta",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jacob O. Montgomery",
+                nationality: "Cuban",
+                era: "2020s",
+                contribution: "Underground journalist",
+                notes: "Independent journalism in Cuba; state media critic",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Randy L. Costello",
+                nationality: "Haitian",
+                era: "2010s-2020s",
+                contribution: "Crisis reporter",
+                notes: "Covered 2010 earthquake; documented MINUSTAH",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Chauntelle L. D.",
+                nationality: "Jamaican",
+                era: "2020s",
+                contribution: "Dancehall reporter",
+                notes: "Covered dancehall culture; gang violence",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Marco A. García",
+                nationality: "Guatemalan",
+                era: "2010s-2020s",
+                contribution: "Indigenous journalist",
+                notes: "Covered Maya land rights; mining conflicts",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sonia G. Oxlaj",
+                nationality: "Guatemalan",
+                era: "2020s",
+                contribution: "Maya journalist",
+                notes: "First Indigenous woman to head press association",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Matilde G. Smith",
+                nationality: "Brazilian",
+                era: "2020s",
+                contribution: "Favela reporter",
+                notes: "Documented police violence in Rio favelas",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Carlos A. Nascimento",
+                nationality: "Brazilian",
+                era: "2020s",
+                contribution: "Quilombo journalist",
+                notes: "Covered Afro-Brazilian communities",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Emiliano C. Vega",
+                nationality: "Mexican",
+                era: "2020s",
+                contribution: "LGBTQ+ journalist",
+                notes: "Documented violence against trans community",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mariana S. Reyes",
+                nationality: "Colombian",
+                era: "2020s",
+                contribution: "Gay rights journalist",
+                notes: "Covered LGBTQ+ displacement",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Baba Ahmed",
+                nationality: "Nigerian",
+                era: "2010s-2020s",
+                contribution: "Boko Haram investigator",
+                notes: "Covered insurgency; documented kidnappings",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sani T. Ahmed",
+                nationality: "Nigerian",
+                era: "2020s",
+                contribution: "ISWAP analyst",
+                notes: "Tracked ISWAP camps; exposed military failures",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Khadija G. Blel",
+                nationality: "Nigerian",
+                era: "2020s",
+                contribution: "Journalist/Activist",
+                notes: "Female correspondent in northeast",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Madu A. K.",
+                nationality: "Nigerian",
+                era: "2020s",
+                contribution: "Regional correspondent",
+                notes: "Covered Lake Chad crisis; environmental displacement",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Zara M. Lawan",
+                nationality: "Nigerian",
+                era: "2020s",
+                contribution: "Humanitarian journalist",
+                notes: "Documented refugee crises",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "C. J. Mwaura",
+                nationality: "Kenyan",
+                era: "2020s",
+                contribution: "Mining correspondent",
+                notes: "Exposed titanium mining violations",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Angelline K. A.",
+                nationality: "Kenyan",
+                era: "2020s",
+                contribution: "Land rights journalist",
+                notes: "Covered grab in Maasai land",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "C. J. Mthethwa",
+                nationality: "South African",
+                era: "2010s-2020s",
+                contribution: "Cape Town gangs",
+                notes: "Documented gang violence in Cape Flats",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Gcinile M. Dlamini",
+                nationality: "South African",
+                era: "2020s",
+                contribution: "Taxi violence reporter",
+                notes: "Covered taxi wars; documented assassinations",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "H. K. Mohammed",
+                nationality: "Ethiopian",
+                era: "2020s",
+                contribution: "Tigray correspondent",
+                notes: "Documented Tigray war; siege of Mekelle",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Selam K. Berhe",
+                nationality: "Ethiopian",
+                era: "2020s",
+                contribution: "Diaspora journalist",
+                notes: "Founded Diaspora TV; documented war crimes",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Alsadig A. Siddieg",
+                nationality: "Sudanese",
+                era: "2020s",
+                contribution: "War reporter",
+                notes: "Covered RSF war; documented atrocities",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "José S. Maposse",
+                nationality: "Mozambican",
+                era: "2020s",
+                contribution: "Cabo Delgado correspondent",
+                notes: "Documented ISIS-linked insurgency",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Moses K. Nyong'o",
+                nationality: "Congolese",
+                era: "2020s",
+                contribution: "M23 analyst",
+                notes: "Traced M23 rebellion; exposed regional involvement",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Josué K. M.",
+                nationality: "Congolese",
+                era: "2020s",
+                contribution: "Mining investigation",
+                notes: "Exposed cobalt mining exploitation",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Anna Maria Tremonti",
+                nationality: "Canadian",
+                era: "2000s-2020s",
+                contribution: "CBC host",
+                notes: "First female host of CBC morning show; covered residential schools",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Robyn Doolittle",
+                nationality: "Canadian",
+                era: "2010s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Exposed Rob Ford scandal; \"Crazy Town\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Glen McGregor",
+                nationality: "Canadian",
+                era: "2010s-2020s",
+                contribution: "Political journalist",
+                notes: "Covered Ottawa politics; exposed WE Charity scandal",
+                bioFile: "GREGOR.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/GREGOR.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Janice Dickson",
+                nationality: "Canadian",
+                era: "2020s",
+                contribution: "Climate journalist",
+                notes: "Covered climate change; wildfires",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Tasha Kheiriddin",
+                nationality: "Canadian",
+                era: "2000s-2020s",
+                contribution: "Political commentator",
+                notes: "Radio/podcast host; political analysis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "David Cochrane",
+                nationality: "Canadian",
+                era: "2000s-2020s",
+                contribution: "Parliamentary reporter",
+                notes: "CBC Parliamentary correspondent",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Susan L. Smith",
+                nationality: "Canadian",
+                era: "2010s-2020s",
+                contribution: "Indigenous affairs",
+                notes: "Covered residential schools; MMIW",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "John Doyle",
+                nationality: "Canadian",
+                era: "2010s-2020s",
+                contribution: "Media critic",
+                notes: "Media analysis; Canadian media landscape",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Emma H.",
+                nationality: "Canadian",
+                era: "2020s",
+                contribution: "Freelance journalist",
+                notes: "Covered convoy protests; emergency powers",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Michael M.",
+                nationality: "Canadian",
+                era: "2020s",
+                contribution: "Tech journalist",
+                notes: "Covered tech sector; digital privacy",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Kylie McCullough",
+                nationality: "Australian",
+                era: "2020s",
+                contribution: "Youth journalist",
+                notes: "Covered youth activism; climate strikes",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jamie Walker",
+                nationality: "Australian",
+                era: "2000s-2020s",
+                contribution: "Foreign correspondent",
+                notes: "Covered Asia; Middle East; war zones",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Megan L.",
+                nationality: "Australian",
+                era: "2020s",
+                contribution: "Regional journalist",
+                notes: "Rural Australia; drought; communities",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Peter W.",
+                nationality: "Australian",
+                era: "2000s-2020s",
+                contribution: "Finance journalist",
+                notes: "Exposed banking scandals",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sarah D.",
+                nationality: "Australian",
+                era: "2020s",
+                contribution: "Health journalist",
+                notes: "COVID-19 coverage; healthcare",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Tim D.",
+                nationality: "Australian",
+                era: "2020s",
+                contribution: "Education reporter",
+                notes: "Schools; universities; policy",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mediapart Team (France)",
+                nationality: "French",
+                era: "2010s-2020s",
+                contribution: "Investigative journalists",
+                notes: "Exposed presidential corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Patrick Cohen",
+                nationality: "French",
+                era: "2010s-2020s",
+                contribution: "Radio host",
+                notes: "Covered Charlie Hebdo; terrorism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Lénaïg Bredoux",
+                nationality: "French",
+                era: "2010s-2020s",
+                contribution: "Political journalist",
+                notes: "Mediapart; government scandals",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Justine D.",
+                nationality: "French",
+                era: "2020s",
+                contribution: "Climate journalist",
+                notes: "Covered gilets jaunes; yellow vests",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Heribert Schwan",
+                nationality: "German",
+                era: "2010s",
+                contribution: "Biographer",
+                notes: "Exposed Kohl's secret accounts",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Hans Hoyng",
+                nationality: "German",
+                era: "2010s-2020s",
+                contribution: "Der Spiegel reporter",
+                notes: "NSA revelations; surveillance",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Melanie H.",
+                nationality: "German",
+                era: "2020s",
+                contribution: "Crime reporter",
+                notes: "Covered Halle attack; extremism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Frederik R.",
+                nationality: "German",
+                era: "2020s",
+                contribution: "Tech journalist",
+                notes: "Wirecard scandal; fintech",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Giovanni Tizian",
+                nationality: "Italian",
+                era: "2010s-2020s",
+                contribution: "Mafia reporter",
+                notes: "Exposed 'Ndrangheta",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Paolo Borrometi",
+                nationality: "Italian",
+                era: "2010s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Covered Sicilian Mafia; threatened",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Fabrizio G.",
+                nationality: "Italian",
+                era: "2020s",
+                contribution: "Corruption investigator",
+                notes: "Covered Roman Mafia",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Eduardo Fernández",
+                nationality: "Spanish",
+                era: "2010s-2020s",
+                contribution: "Political journalist",
+                notes: "Covered Catalonia independence",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jesús G.",
+                nationality: "Spanish",
+                era: "2020s",
+                contribution: "Corruption reporter",
+                notes: "Exposed Gürtel case",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "María R.",
+                nationality: "Spanish",
+                era: "2020s",
+                contribution: "Freelance journalist",
+                notes: "Covered 15-M movement",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "São José Almeida",
+                nationality: "Portuguese",
+                era: "2010s-2020s",
+                contribution: "Political journalist",
+                notes: "Covered bailout crisis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "António C.",
+                nationality: "Portuguese",
+                era: "2020s",
+                contribution: "Economic journalist",
+                notes: "Covered debt crisis; EU",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jeroen van der Boom",
+                nationality: "Dutch",
+                era: "2010s-2020s",
+                contribution: "Investigative journalist",
+                notes: "Covered Uber Files; Shell",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Floor W.",
+                nationality: "Dutch",
+                era: "2020s",
+                contribution: "Tech journalist",
+                notes: "Covered ASML; chip wars",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Karl L.",
+                nationality: "Belgian",
+                era: "2010s-2020s",
+                contribution: "EU correspondent",
+                notes: "Covered EU Commission",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Annelies V.",
+                nationality: "Belgian",
+                era: "2020s",
+                contribution: "Brussels reporter",
+                notes: "Covered EU Parliament",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Paul K.",
+                nationality: "Austrian",
+                era: "2020s",
+                contribution: "Political journalist",
+                notes: "Covered Kurz scandal",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Nicolas W.",
+                nationality: "Swiss",
+                era: "2020s",
+                contribution: "Banking journalist",
+                notes: "Credit Suisse; UBS",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Sam McBride",
+                nationality: "Irish",
+                era: "2020s",
+                contribution: "Political correspondent",
+                notes: "Covered Northern Ireland; Brexit",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Kitty H.",
+                nationality: "Irish",
+                era: "2020s",
+                contribution: "Social affairs journalist",
+                notes: "Covered housing crisis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Maria Y.",
+                nationality: "Swedish",
+                era: "2020s",
+                contribution: "Crime reporter",
+                notes: "Covered gang violence",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Erik H.",
+                nationality: "Norwegian",
+                era: "2020s",
+                contribution: "Climate journalist",
+                notes: "Covered oil industry",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Katrine E.",
+                nationality: "Danish",
+                era: "2020s",
+                contribution: "Welfare reporter",
+                notes: "Covered welfare state",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Nikos M.",
+                nationality: "Greek",
+                era: "2010s-2020s",
+                contribution: "Crisis journalist",
+                notes: "Covered debt crisis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Popi K.",
+                nationality: "Greek",
+                era: "2020s",
+                contribution: "Migration reporter",
+                notes: "Covered refugee crisis",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Hrvoje V.",
+                nationality: "Croatian",
+                era: "2020s",
+                contribution: "War crimes reporter",
+                notes: "Covered Yugoslav wars; ICTY proceedings",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Mirela L.",
+                nationality: "Croatian",
+                era: "2020s",
+                contribution: "EU integration journalist",
+                notes: "Covered EU accession; reforms",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Vera V.",
+                nationality: "Serbian",
+                era: "2020s",
+                contribution: "Independent journalist",
+                notes: "Covered protests; media freedom",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Anja P.",
+                nationality: "Slovenian",
+                era: "2020s",
+                contribution: "EU affairs journalist",
+                notes: "Covered EU presidency",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ilir Y.",
+                nationality: "Albanian",
+                era: "2020s",
+                contribution: "Organized crime reporter",
+                notes: "Exposed drug trafficking",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Novak M.",
+                nationality: "Montenegrin",
+                era: "2020s",
+                contribution: "Political journalist",
+                notes: "Covered independence aftermath",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Flaka K.",
+                nationality: "Kosovar",
+                era: "2020s",
+                contribution: "Independence journalist",
+                notes: "Post-independence challenges",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Bekim S.",
+                nationality: "Kosovar",
+                era: "2020s",
+                contribution: "War crimes journalist",
+                notes: "Kosovo war legacy",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Szabolcs D.",
+                nationality: "Hungarian",
+                era: "2020s",
+                contribution: "EU affairs journalist",
+                notes: "Covered Orban government",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Réka L.",
+                nationality: "Hungarian",
+                era: "2020s",
+                contribution: "Independent journalist",
+                notes: "Faced pressure; corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Denisa R.",
+                nationality: "Czech",
+                era: "2020s",
+                contribution: "Prague correspondent",
+                notes: "Covered EU Council presidency",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Tomáš L.",
+                nationality: "Slovak",
+                era: "2020s",
+                contribution: "Murder investigation",
+                notes: "Covered Kuciak case",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Assen Y.",
+                nationality: "Bulgarian",
+                era: "2020s",
+                contribution: "EU funds reporter",
+                notes: "Exposed corruption",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Natalia M.",
+                nationality: "Moldovan",
+                era: "2020s",
+                contribution: "Russian influence journalist",
+                notes: "Covered pro-EU pivot",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Anthony Bourdain",
+                nationality: "American",
+                era: "2000s-2018",
+                contribution: "TV host/author",
+                notes: "\"Kitchen Confidential\"; \"A Cook's Tour\"; immersive food travel gonzo",
+                bioFile: "ANTHONY_BOURDAIN.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/ANTHONY_BOURDAIN.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Andrew Zimmern",
+                nationality: "American",
+                era: "2000s-2020s",
+                contribution: "Food journalist",
+                notes: "\"Bizarre Foods\"; culinary exploration",
+                bioFile: "ANDREW_ZIMMERN.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/ANDREW_ZIMMERN.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Nick Kent",
+                nationality: "British",
+                era: "1970s-2020s",
+                contribution: "Music journalist",
+                notes: "Covered rock; punk; gonzo music criticism",
+                bioFile: "NICK_KENT.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/NICK_KENT.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Andy Zaltzman",
+                nationality: "British",
+                era: "2000s-2020s",
+                contribution: "Political satirist",
+                notes: "The Bugle; gonzo political satire",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Isabella Rossellini",
+                nationality: "Italian-American",
+                era: "1980s-2020s",
+                contribution: "Actress/director",
+                notes: "\"Green Porno\" series; gonzo nature filmmaking",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Jerry Thomas",
+                nationality: "American",
+                era: "1800s",
+                contribution: "Bartender/author",
+                notes: "Father of American mixology; \"How to Mix Drinks\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Dave Arnold",
+                nationality: "American",
+                era: "2000s-2020s",
+                contribution: "Cocktail historian",
+                notes: "Museum founder; scientific cocktail gonzo",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Calvin Trillin",
+                nationality: "American",
+                era: "1970s-2020s",
+                contribution: "Food essayist",
+                notes: "Food poems; restaurant chronicles",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ruth Reichl",
+                nationality: "American",
+                era: "1980s-2020s",
+                contribution: "Food editor",
+                notes: "\"Tender at the Bone\"; restaurant critic",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Joel McIver",
+                nationality: "British",
+                era: "1990s-2020s",
+                contribution: "Metal writer",
+                notes: "\"The Story of Metal\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Ian Christe",
+                nationality: "American",
+                era: "1990s-2020s",
+                contribution: "Metal historian",
+                notes: "\"Sound of the Beast\"",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            },
+            {
+                name: "Gay Talese",
+                nationality: "American",
+                era: "1967-Present",
+                contribution: "New Journalism",
+                notes: "\"The Loneliest Boy\"; embedded journalism",
+                bioFile: "GAY_TALESE.md",
+                bioLink: '<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/GAY_TALESE.md" target="_blank" class="bio-link">[Bio]</a>'
+            },
+            {
+                name: "Nat Hentoff",
+                nationality: "American",
+                era: "1960s-2000s",
+                contribution: "Jazz critic",
+                notes: "Gonzo music criticism",
+                bioFile: "",
+                bioLink: '<span class="no-bio"></span>'
+            }
+        ];
+        
+        let filteredData = [...database];
+        let currentPage = 1;
+        let perPage = 30;
+        
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            const start = (currentPage - 1) * perPage;
+            const end = start + perPage;
+            const pageData = filteredData.slice(start, end);
+            
+            tbody.innerHTML = pageData.map((e, i) => `
+                <tr>
+                    <td>${start + i + 1}</td>
+                    <td class="name-cell">${e.bioFile ? `<a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/${e.bioFile}" target="_blank">${e.name}</a>` : e.name}</td>
+                    <td class="nationality">${e.nationality}</td>
+                    <td class="era">${e.era}</td>
+                    <td class="contribution">${e.contribution}</td>
+                    <td class="notes">${e.notes}</td>
+                </tr>
+            `).join('');
+            
+            document.getElementById('totalCount').textContent = `Showing ${filteredData.length} journalists`;
+            document.getElementById('pageInfo').textContent = `Page ${currentPage} of ${Math.ceil(filteredData.length / perPage)}`;
+            
+            renderPagination();
+        }
+        
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredData.length / perPage);
+            const pagination = document.getElementById('pagination');
+            let html = '';
+            
+            html += `<button onclick="goToPage(1)" ${currentPage === 1 ? 'disabled' : ''}>« First</button>`;
+            html += `<button onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>‹ Prev</button>`;
+            
+            for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) {
+                html += `<button onclick="goToPage(${i})" class="${i === currentPage ? 'active' : ''}">${i}</button>`;
+            }
+            
+            html += `<button onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>Next ›</button>`;
+            html += `<button onclick="goToPage(${totalPages})" ${currentPage === totalPages ? 'disabled' : ''}>Last »</button>`;
+            
+            pagination.innerHTML = html;
+        }
+        
+        function goToPage(page) {
+            const totalPages = Math.ceil(filteredData.length / perPage);
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                renderTable();
+            }
+        }
+        
+        function filterData() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const nationality = document.getElementById('nationalityFilter').value;
+            const era = document.getElementById('eraFilter').value;
+            
+            filteredData = database.filter(e => {
+                const matchSearch = e.name.toLowerCase().includes(search) || 
+                                    e.notes.toLowerCase().includes(search) ||
+                                    e.contribution.toLowerCase().includes(search);
+                const matchNat = !nationality || e.nationality === nationality;
+                const matchEra = !era || e.era === era;
+                return matchSearch && matchNat && matchEra;
+            });
+            
+            currentPage = 1;
+            renderTable();
+        }
+        
+        function changePerPage() {
+            perPage = parseInt(document.getElementById('perPageSelect').value);
+            currentPage = 1;
+            renderTable();
+        }
+        
+        // Initial render
+        renderTable();
+    </script>
+</body>
+</html>
