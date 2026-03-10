@@ -5,172 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The NEON Archive Protocol | Gonzo Journalism Database</title>
     <style>
-        :root {
-            --primary: #ff4500;
-            --secondary: #1a1a2e;
-            --accent: #00d4ff;
-            --bg: #0a0a0f;
-            --text: #e0e0e0;
-        }
-        
+        :root { --primary: #ff4500; --secondary: #1a1a2e; --accent: #00d4ff; --bg: #0a0a0f; --text: #e0e0e0; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Courier New', monospace;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--secondary), #2d1f3d);
-            padding: 3rem 2rem;
-            text-align: center;
-            border-bottom: 3px solid var(--primary);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 0.5rem;
-        }
-        
+        body { font-family: 'Courier New', monospace; background: var(--bg); color: var(--text); line-height: 1.6; }
+        header { background: linear-gradient(135deg, var(--secondary), #2d1f3d); padding: 3rem 2rem; text-align: center; border-bottom: 3px solid var(--primary); }
+        h1 { font-size: 2.5rem; color: var(--primary); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 0.5rem; }
         .subtitle { color: var(--accent); font-size: 1.1rem; }
-        
-        nav {
-            background: var(--secondary);
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--accent);
-            transition: all 0.3s;
-        }
-        
+        nav { background: var(--secondary); padding: 1rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: var(--text); text-decoration: none; padding: 0.5rem 1rem; border: 1px solid var(--accent); transition: all 0.3s; }
         nav a:hover { background: var(--accent); color: var(--bg); }
-        
         main { max-width: 1400px; margin: 0 auto; padding: 2rem; }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .stat-card {
-            background: var(--secondary);
-            padding: 1.5rem;
-            border: 1px solid var(--primary);
-            text-align: center;
-        }
-        
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .stat-card { background: var(--secondary); padding: 1.5rem; border: 1px solid var(--primary); text-align: center; }
         .stat-number { font-size: 2.5rem; color: var(--primary); font-weight: bold; }
         .stat-label { color: var(--accent); margin-top: 0.5rem; }
-        
         .section { margin: 3rem 0; }
-        
-        .section h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .journalist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1rem;
-        }
-        
-        .journalist-card {
-            background: var(--secondary);
-            padding: 1rem;
-            border-left: 3px solid var(--primary);
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-        
-        .journalist-card:hover { 
-            transform: translateX(5px); 
-            background: #252540;
-        }
-        
+        .section h2 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+        .journalist-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+        .journalist-card { background: var(--secondary); padding: 1rem; border-left: 3px solid var(--primary); transition: transform 0.3s; cursor: pointer; }
+        .journalist-card:hover { transform: translateX(5px); background: #252540; }
         .journalist-card.hidden { display: none; }
-        
-        .journalist-card a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        
+        .journalist-card a { text-decoration: none; color: inherit; display: block; }
         .journalist-name { color: var(--accent); font-size: 1.1rem; margin-bottom: 0.3rem; }
         .journalist-nationality { color: #888; font-size: 0.85rem; }
         .journalist-era { color: var(--primary); font-size: 0.85rem; }
         .journalist-contribution { font-style: italic; color: #aaa; font-size: 0.9rem; margin-top: 0.5rem; }
         .journalist-bio-link { color: var(--accent); font-size: 0.8rem; text-decoration: underline; margin-top: 0.5rem; }
-        
-        .category-nav {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-        }
-        
-        .category-btn {
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            padding: 0.4rem 0.8rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.85rem;
-        }
-        
-        .category-btn:hover, .category-btn.active {
-            background: var(--accent);
-            color: var(--bg);
-        }
-        
-        .timeline-section {
-            padding: 2rem;
-            background: var(--secondary);
-            border: 1px solid var(--primary);
-        }
-        
-        .timeline-item {
-            padding: 0.8rem 0;
-            border-left: 2px solid var(--accent);
-            padding-left: 1.5rem;
-            margin-left: 1rem;
-        }
-        
+        .category-nav { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1.5rem 0; }
+        .category-btn { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 0.4rem 0.8rem; cursor: pointer; transition: all 0.3s; font-size: 0.85rem; }
+        .category-btn:hover, .category-btn.active { background: var(--accent); color: var(--bg); }
+        .timeline-section { padding: 2rem; background: var(--secondary); border: 1px solid var(--primary); }
+        .timeline-item { padding: 0.8rem 0; border-left: 2px solid var(--accent); padding-left: 1.5rem; margin-left: 1rem; }
         .timeline-year { color: var(--primary); font-weight: bold; }
-        
-        footer {
-            background: var(--secondary);
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-            border-top: 3px solid var(--primary);
-        }
-        
+        footer { background: var(--secondary); padding: 2rem; text-align: center; margin-top: 3rem; border-top: 3px solid var(--primary); }
         .db-link { color: var(--accent); text-decoration: underline; }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            nav { gap: 0.5rem; }
-            .journalist-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) { h1 { font-size: 1.8rem; } nav { gap: 0.5rem; } .journalist-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -178,40 +47,24 @@
         <h1>🎭 The NEON Archive Protocol</h1>
         <p class="subtitle">A Comprehensive Database of Gonzo Journalists Worldwide</p>
     </header>
-    
     <nav>
         <a href="#stats">Stats</a>
         <a href="#featured">Featured</a>
         <a href="#timeline">Timeline</a>
         <a href="#about">About</a>
     </nav>
-    
     <main>
         <section id="stats">
             <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-number">404</div>
-                    <div class="stat-label">Journalists</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Detailed Bios</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Countries</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">140+</div>
-                    <div class="stat-label">Years</div>
-                </div>
+                <div class="stat-card"><div class="stat-number">404</div><div class="stat-label">Journalists</div></div>
+                <div class="stat-card"><div class="stat-number">36</div><div class="stat-label">Featured Bios</div></div>
+                <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label">Countries</div></div>
+                <div class="stat-card"><div class="stat-number">140+</div><div class="stat-label">Years</div></div>
             </div>
         </section>
-        
         <p style="text-align:center; color: #888; margin: 1rem 0;">
             Full database: <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/NEON_ARCHIVE_PROTOCOL.md" target="_blank" class="db-link">NEON_ARCHIVE_PROTOCOL.md</a>
         </p>
-        
         <section id="featured" class="section">
             <h2>Featured Journalists</h2>
             <div class="category-nav">
@@ -224,262 +77,118 @@
                 <button class="category-btn" data-cat="sports">Sports</button>
                 <button class="category-btn" data-cat="music">Music</button>
             </div>
-            
             <div class="journalist-grid">
                 <!-- Pioneers -->
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/hunter_thompson_bio.md" target="_blank" class="journalist-card" data-cat="pioneer">
-                    <div class="journalist-name">Hunter S. Thompson</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1970s-2000s</div>
-                    <div class="journalist-contribution">Father of Gonzo</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Hunter S. Thompson</div><div class="journalist-nationality">American</div><div class="journalist-era">1970s-2000s</div><div class="journalist-contribution">Father of Gonzo</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/nellie_bly_bio.md" target="_blank" class="journalist-card" data-cat="pioneer">
-                    <div class="journalist-name">Nellie Bly</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1880s-1920s</div>
-                    <div class="journalist-contribution">Original Gonzo Pioneer</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Nellie Bly</div><div class="journalist-nationality">American</div><div class="journalist-era">1880s-1920s</div><div class="journalist-contribution">Original Gonzo Pioneer</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="pioneer">
-                    <div class="journalist-name">Tom Wolfe</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1960s-2010s</div>
-                    <div class="journalist-contribution">New Journalism Pioneer</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/TOM_WOLFE.md" target="_blank" class="journalist-card" data-cat="pioneer">
+                    <div class="journalist-name">Tom Wolfe</div><div class="journalist-nationality">American</div><div class="journalist-era">1960s-2010s</div><div class="journalist-contribution">New Journalism Pioneer</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="pioneer">
-                    <div class="journalist-name">Joan Didion</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1960s-2020s</div>
-                    <div class="journalist-contribution">New Journalism Pioneer</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/JOAN_DIDION.md" target="_blank" class="journalist-card" data-cat="pioneer">
+                    <div class="journalist-name">Joan Didion</div><div class="journalist-nationality">American</div><div class="journalist-era">1960s-2020s</div><div class="journalist-contribution">New Journalism Pioneer</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="pioneer">
-                    <div class="journalist-name">Norman Mailer</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1950s-2000s</div>
-                    <div class="journalist-contribution">New Journalism</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/NORMAN_MAILER.md" target="_blank" class="journalist-card" data-cat="pioneer">
+                    <div class="journalist-name">Norman Mailer</div><div class="journalist-nationality">American</div><div class="journalist-era">1950s-2000s</div><div class="journalist-contribution">New Journalism</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="pioneer">
-                    <div class="journalist-name">Truman Capote</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1950s-2000s</div>
-                    <div class="journalist-contribution">Non-Fiction Novel</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/TRUMAN_CAPOTE.md" target="_blank" class="journalist-card" data-cat="pioneer">
+                    <div class="journalist-name">Truman Capote</div><div class="journalist-nationality">American</div><div class="journalist-era">1950s-2000s</div><div class="journalist-contribution">Non-Fiction Novel</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="pioneer">
-                    <div class="journalist-name">Gay Talese</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1960s-Present</div>
-                    <div class="journalist-contribution">New Journalism</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/GAY_TALESE.md" target="_blank" class="journalist-card" data-cat="pioneer">
+                    <div class="journalist-name">Gay Talese</div><div class="journalist-nationality">American</div><div class="journalist-era">1960s-Present</div><div class="journalist-contribution">New Journalism</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                
                 <!-- War -->
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/anna_politkovskaya_bio.md" target="_blank" class="journalist-card" data-cat="war">
-                    <div class="journalist-name">Anna Politkovskaya</div>
-                    <div class="journalist-nationality">Russian</div>
-                    <div class="journalist-era">1990s-2006</div>
-                    <div class="journalist-contribution">Voice of Chechnya</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Anna Politkovskaya</div><div class="journalist-nationality">Russian</div><div class="journalist-era">1990s-2006</div><div class="journalist-contribution">Voice of Chechnya</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="war">
-                    <div class="journalist-name">Martha Gellhorn</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1930s-1990s</div>
-                    <div class="journalist-contribution">War Correspondent Pioneer</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/MARTHA_GELLHORN.md" target="_blank" class="journalist-card" data-cat="war">
+                    <div class="journalist-name">Martha Gellhorn</div><div class="journalist-nationality">American</div><div class="journalist-era">1930s-1990s</div><div class="journalist-contribution">War Correspondent Pioneer</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/seymour_hersh_bio.md" target="_blank" class="journalist-card" data-cat="war">
-                    <div class="journalist-name">Seymour Hersh</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1960s-Present</div>
-                    <div class="journalist-contribution">Investigative Legend</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Seymour Hersh</div><div class="journalist-nationality">American</div><div class="journalist-era">1960s-Present</div><div class="journalist-contribution">Investigative Legend</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="war">
-                    <div class="journalist-name">Marie Colvin</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1980s-2012</div>
-                    <div class="journalist-contribution">Syria Correspondent</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/MARIE_COLVIN.md" target="_blank" class="journalist-card" data-cat="war">
+                    <div class="journalist-name">Marie Colvin</div><div class="journalist-nationality">American</div><div class="journalist-era">1980s-2012</div><div class="journalist-contribution">Syria Correspondent</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="war">
-                    <div class="journalist-name">James Foley</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">2000s-2014</div>
-                    <div class="journalist-contribution">War Journalist</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/JAMES_FOLEY.md" target="_blank" class="journalist-card" data-cat="war">
+                    <div class="journalist-name">James Foley</div><div class="journalist-nationality">American</div><div class="journalist-era">2000s-2014</div><div class="journalist-contribution">War Journalist</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                
                 <!-- Investigative -->
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/jamal_khashoggi_bio.md" target="_blank" class="journalist-card" data-cat="investigative">
-                    <div class="journalist-name">Jamal Khashoggi</div>
-                    <div class="journalist-nationality">Saudi-American</div>
-                    <div class="journalist-era">1980s-2018</div>
-                    <div class="journalist-contribution">Voice of Dissent</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Jamal Khashoggi</div><div class="journalist-nationality">Saudi-American</div><div class="journalist-era">1980s-2018</div><div class="journalist-contribution">Voice of Dissent</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/daphne_galizia_bio.md" target="_blank" class="journalist-card" data-cat="investigative">
-                    <div class="journalist-name">Daphne Caruana Galizia</div>
-                    <div class="journalist-nationality">Maltese</div>
-                    <div class="journalist-era">1980s-2017</div>
-                    <div class="journalist-contribution">Malta's Martyr</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Daphne Caruana Galizia</div><div class="journalist-nationality">Maltese</div><div class="journalist-era">1980s-2017</div><div class="journalist-contribution">Malta's Martyr</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/glenn_greenwald_bio.md" target="_blank" class="journalist-card" data-cat="investigative">
-                    <div class="journalist-name">Glenn Greenwald</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">2000s-Present</div>
-                    <div class="journalist-contribution">NSA Exposer</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Glenn Greenwald</div><div class="journalist-nationality">American</div><div class="journalist-era">2000s-Present</div><div class="journalist-contribution">NSA Exposer</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/anita_hill_bio.md" target="_blank" class="journalist-card" data-cat="investigative">
-                    <div class="journalist-name">Anita Hill</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1990s-Present</div>
-                    <div class="journalist-contribution">Accountability Journalist</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Anita Hill</div><div class="journalist-nationality">American</div><div class="journalist-era">1990s-Present</div><div class="journalist-contribution">Accountability Journalist</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="investigative">
-                    <div class="journalist-name">Nicky Hager</div>
-                    <div class="journalist-nationality">New Zealander</div>
-                    <div class="journalist-era">1990s-Present</div>
-                    <div class="journalist-contribution">NZ Investigative</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/NICKY_HAGER.md" target="_blank" class="journalist-card" data-cat="investigative">
+                    <div class="journalist-name">Nicky Hager</div><div class="journalist-nationality">New Zealander</div><div class="journalist-era">1990s-Present</div><div class="journalist-contribution">NZ Investigative</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                
                 <!-- Digital/Podcast -->
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/maria_ressa_bio.md" target="_blank" class="journalist-card" data-cat="digital">
-                    <div class="journalist-name">Maria Ressa</div>
-                    <div class="journalist-nationality">Filipino-American</div>
-                    <div class="journalist-era">1990s-Present</div>
-                    <div class="journalist-contribution">Nobel Laureate</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Maria Ressa</div><div class="journalist-nationality">Filipino-American</div><div class="journalist-era">1990s-Present</div><div class="journalist-contribution">Nobel Laureate</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/louis_theroux_bio.md" target="_blank" class="journalist-card" data-cat="digital">
-                    <div class="journalist-name">Louis Theroux</div>
-                    <div class="journalist-nationality">British</div>
-                    <div class="journalist-era">1990s-Present</div>
-                    <div class="journalist-contribution">Master of Immersion</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Louis Theroux</div><div class="journalist-nationality">British</div><div class="journalist-era">1990s-Present</div><div class="journalist-contribution">Master of Immersion</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="digital">
-                    <div class="journalist-name">Sarah Koenig</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">2010s-Present</div>
-                    <div class="journalist-contribution">Serial Podcast</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/SARAH_KOENIG.md" target="_blank" class="journalist-card" data-cat="digital">
+                    <div class="journalist-name">Sarah Koenig</div><div class="journalist-nationality">American</div><div class="journalist-era">2010s-Present</div><div class="journalist-contribution">Serial Podcast</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="digital">
-                    <div class="journalist-name">Jon Ronson</div>
-                    <div class="journalist-nationality">British</div>
-                    <div class="journalist-era">1990s-Present</div>
-                    <div class="journalist-contribution">Quirky Gonzo UK</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/JON_RONSON.md" target="_blank" class="journalist-card" data-cat="digital">
+                    <div class="journalist-name">Jon Ronson</div><div class="journalist-nationality">British</div><div class="journalist-era">1990s-Present</div><div class="journalist-contribution">Quirky Gonzo UK</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
                 <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/edward_snowden_bio.md" target="_blank" class="journalist-card" data-cat="digital">
-                    <div class="journalist-name">Edward Snowden</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">2010s-Present</div>
-                    <div class="journalist-contribution">Whistleblower</div>
-                    <div class="journalist-bio-link">→ Read Bio</div>
+                    <div class="journalist-name">Edward Snowden</div><div class="journalist-nationality">American</div><div class="journalist-era">2010s-Present</div><div class="journalist-contribution">Whistleblower</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                
                 <!-- Food/Travel -->
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="food">
-                    <div class="journalist-name">Anthony Bourdain</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">2000s-2018</div>
-                    <div class="journalist-contribution">Food Travel Gonzo</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/ANTHONY_BOURDAIN.md" target="_blank" class="journalist-card" data-cat="food">
+                    <div class="journalist-name">Anthony Bourdain</div><div class="journalist-nationality">American</div><div class="journalist-era">2000s-2018</div><div class="journalist-contribution">Food Travel Gonzo</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="food">
-                    <div class="journalist-name">Andrew Zimmern</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">2000s-Present</div>
-                    <div class="journalist-contribution">Bizarre Foods</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/ANDREW_ZIMMERN.md" target="_blank" class="journalist-card" data-cat="food">
+                    <div class="journalist-name">Andrew Zimmern</div><div class="journalist-nationality">American</div><div class="journalist-era">2000s-Present</div><div class="journalist-contribution">Bizarre Foods</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="food">
-                    <div class="journalist-name">Michael Pollan</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">2000s-Present</div>
-                    <div class="journalist-contribution">Food Systems Gonzo</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/MICHAEL_POLLAN.md" target="_blank" class="journalist-card" data-cat="food">
+                    <div class="journalist-name">Michael Pollan</div><div class="journalist-nationality">American</div><div class="journalist-era">2000s-Present</div><div class="journalist-contribution">Food Systems Gonzo</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="food">
-                    <div class="journalist-name">Mark Kurlansky</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1990s-Present</div>
-                    <div class="journalist-contribution">Food History</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/MARK_KURLANSKY.md" target="_blank" class="journalist-card" data-cat="food">
+                    <div class="journalist-name">Mark Kurlansky</div><div class="journalist-nationality">American</div><div class="journalist-era">1990s-Present</div><div class="journalist-contribution">Food History</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                
                 <!-- Sports -->
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="sports">
-                    <div class="journalist-name">Norman Mailer</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1970s</div>
-                    <div class="journalist-contribution">The Fight (Ali vs Frazier)</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/NORMAN_MAILER.md" target="_blank" class="journalist-card" data-cat="sports">
+                    <div class="journalist-name">Norman Mailer</div><div class="journalist-nationality">American</div><div class="journalist-era">1970s</div><div class="journalist-contribution">The Fight (Ali vs Frazier)</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="sports">
-                    <div class="journalist-name">Don Chargin</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1950s-2000s</div>
-                    <div class="journalist-contribution">Godfather of Boxing</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/DON_CHARGIN.md" target="_blank" class="journalist-card" data-cat="sports">
+                    <div class="journalist-name">Don Chargin</div><div class="journalist-nationality">American</div><div class="journalist-era">1950s-2000s</div><div class="journalist-contribution">Godfather of Boxing</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="sports">
-                    <div class="journalist-name">Graham Hunter</div>
-                    <div class="journalist-nationality">British</div>
-                    <div class="journalist-era">2000s-2010s</div>
-                    <div class="journalist-contribution">Barça Writer</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/GRAHAM_HUNTER.md" target="_blank" class="journalist-card" data-cat="sports">
+                    <div class="journalist-name">Graham Hunter</div><div class="journalist-nationality">British</div><div class="journalist-era">2000s-2010s</div><div class="journalist-contribution">Barça Writer</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="sports">
-                    <div class="journalist-name">Wright Thompson</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">2010s-Present</div>
-                    <div class="journalist-contribution">ESPN Long-Form</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/WRIGHT_THOMPSON.md" target="_blank" class="journalist-card" data-cat="sports">
+                    <div class="journalist-name">Wright Thompson</div><div class="journalist-nationality">American</div><div class="journalist-era">2010s-Present</div><div class="journalist-contribution">ESPN Long-Form</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                
                 <!-- Music -->
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="music">
-                    <div class="journalist-name">Lester Bangs</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1970s-1980s</div>
-                    <div class="journalist-contribution">Rock Gonzo Pioneer</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/LESTER_BANGS.md" target="_blank" class="journalist-card" data-cat="music">
+                    <div class="journalist-name">Lester Bangs</div><div class="journalist-nationality">American</div><div class="journalist-era">1970s-1980s</div><div class="journalist-contribution">Rock Gonzo Pioneer</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="music">
-                    <div class="journalist-name">Nick Kent</div>
-                    <div class="journalist-nationality">British</div>
-                    <div class="journalist-era">1970s-Present</div>
-                    <div class="journalist-contribution">NME Writer</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/NICK_KENT.md" target="_blank" class="journalist-card" data-cat="music">
+                    <div class="journalist-name">Nick Kent</div><div class="journalist-nationality">British</div><div class="journalist-era">1970s-Present</div><div class="journalist-contribution">NME Writer</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="music">
-                    <div class="journalist-name">Nelson George</div>
-                    <div class="journalist-nationality">American</div>
-                    <div class="journalist-era">1980s-Present</div>
-                    <div class="journalist-contribution">Hip Hop Chronicler</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/NELSON_GEORGE.md" target="_blank" class="journalist-card" data-cat="music">
+                    <div class="journalist-name">Nelson George</div><div class="journalist-nationality">American</div><div class="journalist-era">1980s-Present</div><div class="journalist-contribution">Hip Hop Chronicler</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
-                <a href="https://github.com/Thompson420/gonzo-journalism" target="_blank" class="journalist-card" data-cat="music">
-                    <div class="journalist-name">Simon Reynolds</div>
-                    <div class="journalist-nationality">British</div>
-                    <div class="journalist-era">1990s-Present</div>
-                    <div class="journalist-contribution">Electronic Music Gonzo</div>
-                    <div class="journalist-bio-link">→ View in DB</div>
+                <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/docs/SIMON_REYNOLDS.md" target="_blank" class="journalist-card" data-cat="music">
+                    <div class="journalist-name">Simon Reynolds</div><div class="journalist-nationality">British</div><div class="journalist-era">1990s-Present</div><div class="journalist-contribution">Electronic Music Gonzo</div><div class="journalist-bio-link">→ Read Bio</div>
                 </a>
             </div>
         </section>
-        
         <section id="timeline" class="timeline-section">
             <h2>The Gonzo Timeline</h2>
             <div class="timeline-item"><span class="timeline-year">1887</span> - Nellie Bly exposes asylum conditions</div>
@@ -491,24 +200,20 @@
             <div class="timeline-item"><span class="timeline-year">2014</span> - Serial podcast launches gonzo audio</div>
             <div class="timeline-item"><span class="timeline-year">2021</span> - Maria Ressa wins Nobel Peace Prize</div>
         </section>
-        
         <section id="about" class="section">
             <h2>About The NEON Archive Protocol</h2>
-            <p>The NEON Archive Protocol documents gonzo journalists from around the world and throughout history. From Nellie Bly's 1887 undercover investigations to modern podcast journalists.</p>
-            <br>
+            <p>The NEON Archive Protocol documents gonzo journalists from around the world and throughout history.</p><br>
             <p><strong>Main Database:</strong> <a href="https://github.com/Thompson420/gonzo-journalism/blob/master/NEON_ARCHIVE_PROTOCOL.md" class="db-link">NEON_ARCHIVE_PROTOCOL.md</a> (404 entries)</p>
-            <p><strong>Detailed Bios:</strong> <a href="https://github.com/Thompson420/gonzo-journalism/tree/main/docs" class="db-link">/docs folder</a></p>
+            <p><strong>Featured Bios:</strong> 36 detailed biographies of key gonzo journalists</p>
             <p><strong>Maintained by:</strong> Thompson (The Scroll)</p>
             <p><strong>Repository:</strong> github.com/Thompson420/gonzo-journalism</p>
-            <p><strong>Last Updated:</strong> March 10, 2026</p>
+            <p><strong>Last March 10, 2026 Updated:</strong></p>
         </section>
     </main>
-    
     <footer>
         <p>🎭 The NEON Archive Protocol | A The Scroll Project</p>
-        <p>Database: 404 Entries | 12 Detailed Bios | 50+ Countries</p>
+        <p>Database: 404 Entries | 36 Featured Bios | 50+ Countries</p>
     </footer>
-    
     <script>
     document.querySelectorAll('.category-btn').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -516,11 +221,8 @@
             btn.classList.add('active');
             const cat = btn.dataset.cat;
             document.querySelectorAll('.journalist-card').forEach(card => {
-                if (cat === 'all' || card.dataset.cat === cat) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
+                if (cat === 'all' || card.dataset.cat === cat) card.classList.remove('hidden');
+                else card.classList.add('hidden');
             });
         });
     });
