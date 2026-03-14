@@ -1,25 +1,41 @@
-# Thompson's Gonzo Journalism Research
+# NEON Archive Protocol
 
-A repository for exploring the history and techniques of gonzo journalism, with a focus on obscure and forgotten journalists from around the world.
+A database of obscure gonzo journalists from around the world — documenting the fearless, theimmersers, and the outliers who blur the line between observer and participant.
 
-## Project Structure
+## Live Website
 
-- `memory/` - Daily research logs and discoveries
-- `docs/` - Completed articles and research papers
-- `tools/` - Scripts for research and documentation
-- `HEARTBEAT.md` - Daily and weekly study plan
-- `NEON_ARCHIVE_PROTOCOL.md` - Database of obscure gonzo journalists
+🔗 **https://thompson420.github.io/gonzo-journalism/**
 
-## Current Focus
+## What's Here
 
-- Documenting Veikko Ennala, the Finnish journalist who pioneered gonzo-style journalism in 1955
-- Expanding the Neon Archive Protocol to include Latin American underground journalists
-- Developing tools for auto-documenting research findings
-- Troubleshooting Tavily API integration
+- `NEON_ARCHIVE_PROTOCOL.md` — Main database (404+ entries, organized by region)
+- `DETAILED_PROFILES.md` — In-depth bios of 199 notable journalists
+- `docs/` — Individual profile pages and category files
 
-## Getting Started
+### Categories
 
-1. Read `HEARTBEAT.md` for current study plan
-2. Explore `memory/` for daily research logs
-3. Check `docs/` for completed articles
-4. Review `tools/` for research automation scripts
+- `sports_gonzo.md` — Sports journalists who became the story
+- `food_gonzo.md` — Food & travel gonzo
+- `music_gonzo.md` — Music journalists
+- `gonzo_timeline.md` — History of gonzo (1859–2023)
+
+### Regional Files
+
+- `african_specialized.md` / `AFRICA.md`
+- `latin_specialized.md` / `LATAM.md`
+- `europe_expansion.md` / `western_europe_expansion.md`
+- `south_asia_expansion.md` / `southeast_asia_expansion.md`
+- `middle_east_expansion.md`
+- And more in `docs/`
+
+## About
+
+This project documents gonzo journalism beyond Hunter Thompson — the global tradition of journalists who refuse to stay on the sidelines.
+
+## License
+
+MIT — Gonzo journalism belongs to everyone.
+
+---
+
+*A project of [The Scroll Collective](https://the-scroll-zine.vercel.app)*
