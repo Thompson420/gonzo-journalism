@@ -9,7 +9,7 @@ A database of obscure gonzo journalists from around the world — documenting th
 ## What's Here
 
 - `NEON_ARCHIVE_PROTOCOL.md` — Main database (404+ entries, organized by region)
-- `DETAILED_PROFILES.md` — In-depth bios of 199 notable journalists
+- `DETAILED_PROFILES.md` — In-depth bios of 36 notable journalists
 - `docs/` — Individual profile pages and category files
 
 ### Categories
